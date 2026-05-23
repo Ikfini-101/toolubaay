@@ -36,11 +36,11 @@ interface Props {
         <div class="flex gap-4 pr-4 shrink-0">
           {
             imagePaths.map((img, index) => (
-              <div class="carousel-item flex-none w-[240px] h-[180px] overflow-hidden rounded-2xl border border-neutral-200/30 shadow-md transition-transform duration-300 hover:scale-105">
+              <div class="carousel-item flex-none h-[250px] overflow-hidden rounded-2xl border border-neutral-200/30 shadow-md transition-transform duration-300 hover:scale-105">
                 <Image
                   src={img}
                   alt={`Coopérative agricole TooluBaay - Image ${index + 1}`}
-                  class="w-full h-full object-cover"
+                  class="h-full w-auto object-cover"
                   loading="eager"
                 />
               </div>
@@ -50,11 +50,11 @@ interface Props {
         <div class="flex gap-4 pr-4 shrink-0">
           {
             imagePaths.map((img, index) => (
-              <div class="carousel-item flex-none w-[240px] h-[180px] overflow-hidden rounded-2xl border border-neutral-200/30 shadow-md transition-transform duration-300 hover:scale-105">
+              <div class="carousel-item flex-none h-[250px] overflow-hidden rounded-2xl border border-neutral-200/30 shadow-md transition-transform duration-300 hover:scale-105">
                 <Image
                   src={img}
                   alt={`Coopérative agricole TooluBaay - Image ${index + 1}`}
-                  class="w-full h-full object-cover"
+                  class="h-full w-auto object-cover"
                   loading="lazy"
                 />
               </div>
