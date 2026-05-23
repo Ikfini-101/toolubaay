@@ -119,3 +119,83 @@
     cursor: pointer;
   }
 }
+
+/* --- PREMIUM CLASSIC GLASSMORPHISM & AVIF BACKGROUND SYSTEM --- */
+
+body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), 
+                    url('../../images/women_cooperative_background.avif') !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.dark body {
+  background-image: linear-gradient(rgba(15, 15, 17, 0.65), rgba(15, 15, 17, 0.65)), 
+                    url('../../images/women_cooperative_background.avif') !important;
+}
+
+/* Polished Glassmorphism panels for page sections */
+main section,
+main .glass-panel {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 2rem !important;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.06), 
+              inset 0 1px 0 0 rgba(255, 255, 255, 0.25) !important;
+  padding: 3rem 2rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Soft hover effect to make the interface feel responsive and alive */
+main section:hover,
+main .glass-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 50px -10px rgba(0, 0, 0, 0.08), 
+              inset 0 1px 0 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Dark mode adjustments for glassmorphism */
+.dark main section,
+.dark main .glass-panel {
+  background: rgba(24, 24, 27, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 50px -15px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 0 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark main section:hover,
+.dark main .glass-panel:hover {
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.65), 
+              inset 0 1px 0 0 rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Make sure text elements remain highly legible over the glassmorphic panels */
+main section h1,
+main section h2,
+main section h3 {
+  color: var(--color-gray-900, #111) !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark main section h1,
+.dark main section h2,
+.dark main section h3 {
+  color: var(--color-white, #fff) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+main section p,
+main section li {
+  color: var(--color-gray-800, #222) !important;
+}
+
+.dark main section p,
+.dark main section li {
+  color: var(--color-gray-200, #e4e4e7) !important;
+}
