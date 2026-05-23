@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Perfect for small households, tastings, and retail trials, our 250g pot brings the rich taste of authentic Senegalese peanuts to your table while supporting sustainable rural development.
   btnTitle: "Contact sales to order"
-  btnURL: "/contact"
+  btnURL: "/en/contact"
 descriptionList:
   - title: "100% Natural"
     subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."

@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Notre pot de 500g est la taille idéale pour les repas quotidiens des familles (mafé, etc.) ou pour le partage, offrant de la pâte d'arachide de qualité supérieure tout en créant un impact social.
   btnTitle: "Contacter le service commercial"
-  btnURL: "/fr/contact"
+  btnURL: "/contact"
 descriptionList:
   - title: "100% Naturel"
     subTitle: "Uniquement des arachides sélectionnées du Sénégal, sans conservateur ni ajout d'huile ou de sucre."

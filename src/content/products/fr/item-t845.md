@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Idéal pour les cantines, restaurants, hôtels et les distributeurs exportateurs. Notre seau de 5kg offre le meilleur prix au kilo avec toutes les garanties de traçabilité et de sécurité alimentaire de TooluBaay.
   btnTitle: "Contacter le service commercial"
-  btnURL: "/fr/contact"
+  btnURL: "/contact"
 descriptionList:
   - title: "100% Naturel"
     subTitle: "Uniquement des arachides sélectionnées du Sénégal, sans conservateur ni ajout d'huile ou de sucre."

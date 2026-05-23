@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Loved by restaurant owners and larger households, our 1kg pot offers the perfect value for money. Experience authentic Senegalese arachide paste with complete traceability.
   btnTitle: "Contact sales to order"
-  btnURL: "/contact"
+  btnURL: "/en/contact"
 descriptionList:
   - title: "100% Natural"
     subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."

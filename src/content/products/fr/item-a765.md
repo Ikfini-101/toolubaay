@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Parfait pour les petits ménages, les dégustations ou pour tester notre produit. Notre pot de 250g apporte la saveur riche de l'arachide sénégalaise tout en soutenant le développement rural.
   btnTitle: "Contacter le service commercial"
-  btnURL: "/fr/contact"
+  btnURL: "/contact"
 descriptionList:
   - title: "100% Naturel"
     subTitle: "Uniquement des arachides sélectionnées du Sénégal, sans conservateur ni ajout d'huile ou de sucre."

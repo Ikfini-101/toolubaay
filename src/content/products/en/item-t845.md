@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Designed for professional food service, catering, and export distributors, our 5kg bucket provides the best cost-to-volume ratio, ensuring high quality and traceable origin.
   btnTitle: "Contact sales to order"
-  btnURL: "/contact"
+  btnURL: "/en/contact"
 descriptionList:
   - title: "100% Natural"
     subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."

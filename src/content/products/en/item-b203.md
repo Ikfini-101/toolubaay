@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Our 500g pot is the ideal choice for regular consumption by families who enjoy rich peanut stews (mafé) or delicious peanut spreads, while creating positive social change.
   btnTitle: "Contact sales to order"
-  btnURL: "/contact"
+  btnURL: "/en/contact"
 descriptionList:
   - title: "100% Natural"
     subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."

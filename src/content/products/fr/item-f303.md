@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Très apprécié pour la restauration locale et les grandes tablées familiales, notre pot de 1kg offre le meilleur rapport qualité-prix pour un usage quotidien avec une traçabilité totale.
   btnTitle: "Contacter le service commercial"
-  btnURL: "/fr/contact"
+  btnURL: "/contact"
 descriptionList:
   - title: "100% Naturel"
     subTitle: "Uniquement des arachides sélectionnées du Sénégal, sans conservateur ni ajout d'huile ou de sucre."

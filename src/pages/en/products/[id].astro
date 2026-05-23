@@ -14,14 +14,13 @@ declare global {
   }
 }
 
-// This gets the static paths for all the unique products
-
+// This gets the static paths for all the unique products in English
 export async function getStaticPaths() {
   const productEntries = await getCollection("products", ({ id }) =>
-    id.startsWith("fr/")
+    id.startsWith("en/")
   );
   return productEntries.map((product) => {
-    const idWithoutLang = product.id.replace(/^fr\//, ""); // Remove the "fr/" prefix
+    const idWithoutLang = product.id.replace(/^en\//, ""); // Remove the "en/" prefix
     return {
       params: { id: idWithoutLang },
       props: { product },
@@ -33,18 +32,18 @@ const { product } = Astro.props;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.description;
-const ogTitle = `${product.data.title} | Produits | ${SITE.title}`;
+const ogTitle = `${product.data.title} | Products | ${SITE.title}`;
 ---
 
 <MainLayout
   title={pageTitle}
-  lang="fr"
+  lang="en"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${SITE.url}/products/${product.id.replace(/^(fr|en|es)\//, "")}`,
+    "@id": `${SITE.url}/en/products/${product.id.replace(/^(fr|en|es)\//, "")}`,
     name: product.data.title,
     description: product.data.description,
     brand: {
@@ -359,7 +358,7 @@ const ogTitle = `${product.data.title} | Produits | ${SITE.title}`;
       button.classList.add(
         "active",
         "bg-neutral-100",
-        ",hover:border-transparent",
+        "hover:border-transparent",
         "dark:bg-white/[.05]"
       );
 
