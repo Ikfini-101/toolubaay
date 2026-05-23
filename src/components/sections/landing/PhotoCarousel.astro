@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+
+// Dynamically load all cooperative and CEO photos converted to AVIF
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/carousel/*.avif', { eager: true });
+const imagePaths = Object.values(images).map(img => img.default);
+
+const { title, subTitle } = Astro.props;
+
+interface Props {
+  title: string;
+  subTitle?: string;
+}
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+  <!-- Section Title & Description -->
+  <div class="mx-auto mb-8 w-full space-y-1 text-center sm:w-1/2 lg:w-1/3">
+    <h2 class="text-balance text-2xl font-bold leading-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl">
+      {title}
+    </h2>
+    {
+      subTitle && (
+        <p class="text-pretty leading-tight text-neutral-600 dark:text-neutral-400">
+          {subTitle}
+        </p>
+      )
+    }
+  </div>
+
+  <!-- Carousel Frame (Premium Glassmorphism Wrapper) -->
+  <div class="relative overflow-hidden w-full rounded-[2rem] border border-yellow-100/40 bg-yellow-50/20 py-8 dark:border-neutral-700/40 dark:bg-neutral-800/20 backdrop-blur-xs">
+    <div class="carousel-container flex w-full">
+      <!-- Track containing two identical strips for a seamless loop -->
+      <div class="carousel-track flex will-change-transform">
+        <div class="flex gap-4 pr-4 shrink-0">
+          {
+            imagePaths.map((img, index) => (
+              <div class="carousel-item flex-none w-[240px] h-[180px] overflow-hidden rounded-2xl border border-neutral-200/30 shadow-md transition-transform duration-300 hover:scale-105">
+                <Image
+                  src={img}
+                  alt={`Coopérative agricole TooluBaay - Image ${index + 1}`}
+                  class="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            ))
+          }
+        </div>
+        <div class="flex gap-4 pr-4 shrink-0">
+          {
+            imagePaths.map((img, index) => (
+              <div class="carousel-item flex-none w-[240px] h-[180px] overflow-hidden rounded-2xl border border-neutral-200/30 shadow-md transition-transform duration-300 hover:scale-105">
+                <Image
+                  src={img}
+                  alt={`Coopérative agricole TooluBaay - Image ${index + 1}`}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Infinite horizontal scrolling keyframes */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .carousel-container {
+    /* Gradient masks on edges to create a soft fade-out effect */
+    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+  }
+
+  .carousel-track {
+    /* Very fast scrolling (18 seconds for a full loop of 17 images) */
+    animation: scroll 18s linear infinite;
+  }
+
+  /* Pause on hover so users can examine the cooperative details */
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+</style>
