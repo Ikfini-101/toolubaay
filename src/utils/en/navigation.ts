@@ -21,7 +21,7 @@ const footerLinks = [
     section: "Partners",
     links: [
       { name: "Become a Partner", url: "/en/contact" },
-      { name: "Documentation", url: "/en/welcome-to-docs/" },
+      { name: "Technology", url: "/en/technology" },
     ],
   },
 ];

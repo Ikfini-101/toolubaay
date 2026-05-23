@@ -68,6 +68,85 @@ interface Props {
       </main>
     </div>
     <FooterSection />
+
+    <!-- Fixed mobile language switcher (bottom-left, visible only on small screens) -->
+    <div class="fixed bottom-5 left-4 z-50 md:hidden" id="mobile-lang-switcher">
+      <div class="relative" id="mobile-lang-dropdown-container">
+        <button
+          id="mobile-lang-btn"
+          type="button"
+          aria-label="Changer de langue"
+          class="flex items-center gap-1.5 rounded-full bg-emerald-700/90 backdrop-blur-sm px-3 py-2 text-sm font-semibold text-white shadow-lg border border-emerald-500/40 transition hover:bg-emerald-600 active:scale-95"
+        >
+          <svg class="h-4 w-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+          </svg>
+          <span id="mobile-lang-label">FR</span>
+          <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+        <!-- Dropdown menu (opens upward) -->
+        <div
+          id="mobile-lang-menu"
+          class="absolute bottom-full left-0 mb-2 hidden min-w-[120px] rounded-xl bg-white shadow-xl border border-neutral-200 dark:bg-neutral-900 dark:border-neutral-700 overflow-hidden"
+        >
+          <a href="/" class="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-neutral-700 hover:bg-emerald-50 dark:text-neutral-200 dark:hover:bg-neutral-800">
+            🇫🇷 Français
+          </a>
+          <a href="/en" class="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-neutral-700 hover:bg-emerald-50 dark:text-neutral-200 dark:hover:bg-neutral-800">
+            🇬🇧 English
+          </a>
+          <a href="/es" class="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-neutral-700 hover:bg-emerald-50 dark:text-neutral-200 dark:hover:bg-neutral-800">
+            🇪🇸 Español
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Mobile language switcher toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("mobile-lang-btn");
+        const menu = document.getElementById("mobile-lang-menu");
+        const label = document.getElementById("mobile-lang-label");
+        
+        // Set current language label
+        const path = window.location.pathname;
+        if (path.startsWith("/en")) label && (label.textContent = "EN");
+        else if (path.startsWith("/es")) label && (label.textContent = "ES");
+        else label && (label.textContent = "FR");
+
+        btn?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          menu?.classList.toggle("hidden");
+        });
+
+        // Close on outside click
+        document.addEventListener("click", () => {
+          menu?.classList.add("hidden");
+        });
+
+        // Navigate preserving current page path on lang change
+        const langLinks = menu?.querySelectorAll("a");
+        langLinks?.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetLang = link.getAttribute("href") as string;
+            const url = new URL(window.location.href);
+            const langs = ["en", "es"];
+            const cleanPath = url.pathname
+              .split("/")
+              .filter((p) => p && !langs.includes(p))
+              .join("/");
+            let newPath = targetLang === "/" ? `/${cleanPath}` : `${targetLang}/${cleanPath}`;
+            newPath = newPath.replace(/\/+/g, "/");
+            if (newPath === "") newPath = "/";
+            window.location.href = `${url.origin}${newPath}`;
+          });
+        });
+      });
+    </script>
+
     <script>
       // https://preline.co
       import "preline/preline.js";
