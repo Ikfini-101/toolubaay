@@ -1,13 +1,13 @@
 ---
-title: "SF-FN F303"
-description: "Hex Bolts"
+title: "TooluBaay Peanut Paste - 1kg"
+description: "Premium peanut paste, 1kg format. 100% natural, ocre colored, perfect for large families and local restaurants."
 main:
-  id: 4
+  id: 3
   content: |
-    Introducing the SF-FN F303 Hex Bolts – the perfect choice for heavy-duty fastening applications. Crafted with precision and durability in mind, these hex bolts provide the strength and reliability you need for your toughest projects.
-  imgCard: "@/images/product-image-4.avif"
-  imgMain: "@/images/product-image-main-4.avif"
-  imgAlt: "Mockup boxes of hex bolts"
+    Discover our 1kg premium peanut paste. Handcrafted by local women GIE cooperatives in Senegal, guaranteed aflatoxin-free, natural, ocre and delicious.
+  imgCard: "@/images/peanut_paste_jar.png"
+  imgMain: "@/images/peanut_paste_jar.png"
+  imgAlt: "TooluBaay 1kg peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
@@ -15,41 +15,36 @@ tabs:
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
     title: "Specifications"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Blueprints"
 longDescription:
-  title: "Heavy-Duty Fastening Solutions"
+  title: "The Large Household and Restaurant Favorite"
   subTitle: |
-    The SF-FN F303 Hex Bolts are designed to handle the toughest fastening challenges with ease. Whether you're working on construction projects or heavy machinery, these hex bolts deliver the strength and reliability you need.
-  btnTitle: "Contact sales to learn more"
-  btnURL: "#"
+    Loved by restaurant owners and larger households, our 1kg pot offers the perfect value for money. Experience authentic Senegalese arachide paste with complete traceability.
+  btnTitle: "Contact sales to order"
+  btnURL: "/contact"
 descriptionList:
-  - title: "Strength and Durability"
-    subTitle: "Constructed from high-quality materials, these hex bolts are built to withstand heavy loads and tough conditions."
-  - title: "Precision Engineering"
-    subTitle: "Engineered with precision-cut threads and exact specifications, ensuring a tight and secure fit every time."
-  - title: "Versatility"
-    subTitle: "Suitable for a wide range of applications, from construction to machinery, providing versatile fastening solutions."
+  - title: "100% Natural"
+    subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."
+  - title: "Aflatoxin Tested"
+    subTitle: "Rigorously tested to ensure compliance with international food safety standards."
+  - title: "Direct Social Impact"
+    subTitle: "Guarantees fair price purchasing directly from rural women GIE cooperatives."
 specificationsLeft:
-  - title: "Material"
-    subTitle: "Made from premium-grade steel or alloy, offering exceptional strength and corrosion resistance."
-  - title: "Thread Design"
-    subTitle: "Precision-cut threads ensure optimal grip and reliability, even in high-stress environments."
-  - title: "Quantity"
-    subTitle: "Each set includes a sufficient quantity of hex bolts to tackle various projects and applications."
-  - title: "Sizes"
-    subTitle: "Available in a range of sizes to accommodate different project requirements, ensuring versatility and compatibility."
-specificationsRight:
-  - title: "Finish"
-    subTitle: "Finished with a protective coating to enhance corrosion resistance and extend service life."
-  - title: "Load Capacity"
-    subTitle: "Designed to meet or exceed industry standards for load-bearing capacity, ensuring reliable performance under heavy loads."
-  - title: "Certifications"
-    subTitle: "Compliant with relevant industry standards and certifications, guaranteeing quality and reliability."
-  - title: "Applications"
-    subTitle: "Ideal for use in construction, machinery, automotive, and other heavy-duty applications that demand strong and reliable fastening."
+  - title: "Format"
+    subTitle: "1kg plastic pot with hermetic seal"
+  - title: "Ingredients"
+    subTitle: "100% selected peanuts (Arachis hypogaea)"
+  - title: "Shelf Life"
+    subTitle: "12 months from manufacturing date"
+  - title: "Origin"
+    subTitle: "Tambacounda, Senegal"
+tableData:
+  - feature: ["Nutrient", "Per 100g"]
+    description:
+      - ["Energy (kcal)", "588"]
+      - ["Proteins (g)", "25"]
+      - ["Lipids (g)", "48"]
+      - ["Carbohydrates (g)", "15"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"  
+  first: "@/images/toolubaay_placeholder.png"
+  second: "@/images/toolubaay_placeholder.png"
 ---

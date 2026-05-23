@@ -1,13 +1,13 @@
 ---
-title: "SF-BN B203"
-description: "Tap Bolts and Nuts Set"
+title: "TooluBaay Peanut Paste - 500g"
+description: "Premium peanut paste, 500g format. 100% natural, rich texture, perfect for regular household use."
 main:
-  id: 3
+  id: 2
   content: |
-    Meet the SF-BN B203 – your reliable companion for professional-grade fastening. This comprehensive box set comes with a versatile selection of tap bolts and nuts, meticulously crafted to provide the strongest hold for your construction and assembly projects.
-  imgCard: "@/images/product-image-3.avif"
-  imgMain: "@/images/product-image-main-3.avif"
-  imgAlt: "Mockup boxes of a tap bolts and nuts set"
+    Discover our 500g premium peanut paste. Sourced from local agricultural cooperatives of rural women, zero additives, and certified aflatoxin-free.
+  imgCard: "@/images/peanut_paste_jar.png"
+  imgMain: "@/images/peanut_paste_jar.png"
+  imgAlt: "TooluBaay 500g peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
@@ -15,41 +15,36 @@ tabs:
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
     title: "Specifications"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Blueprints"
 longDescription:
-  title: "Strength Meets Precision"
+  title: "The Standard Family Format"
   subTitle: |
-    The SF-BN B203 Tap Bolts and Nuts Set offers robust durability and precision for construction professionals, ensuring reliable performance in every application, from house framing to machinery assembly.
-  btnTitle: "Contact sales to learn more"
-  btnURL: "#"
+    Our 500g pot is the ideal choice for regular consumption by families who enjoy rich peanut stews (mafé) or delicious peanut spreads, while creating positive social change.
+  btnTitle: "Contact sales to order"
+  btnURL: "/contact"
 descriptionList:
-  - title: "Corrosion Resistance"
-    subTitle: "Zinc coating not only provides a polished look but also shields against corrosion, ensuring longevity."
-  - title: "Improved Safety"
-    subTitle: "A secure fitting translates to safer structures with reduced risk of component failure."
-  - title: "Convenience"
-    subTitle: "This all-in-one set means you have the right size on hand, cutting down on project delays and additional trips to the hardware store."
+  - title: "100% Natural"
+    subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."
+  - title: "Aflatoxin Tested"
+    subTitle: "Rigorously tested to ensure compliance with international food safety standards."
+  - title: "Direct Social Impact"
+    subTitle: "Guarantees fair price purchasing directly from rural women GIE cooperatives."
 specificationsLeft:
-  - title: "Material Composition"
-    subTitle: "Manufactured from high-grade steel, delivering strength and reliability for demanding applications."
-  - title: "Surface Finish"
-    subTitle: "Protected with a zinc coating to offer enhanced corrosion resistance and longevity."
-  - title: "Quantity Per Set"
-    subTitle: "The set includes a balanced selection of 25 tap bolts and 25 matching nuts."
-  - title: "Size Assortment"
-    subTitle: "Features a comprehensive range of sizes to cater to various project requirements, ensuring compatibility and versatility."
-specificationsRight:
-  - title: "Thread Details"
-    subTitle: "Engineered with precision-cut threads for a secure fit and easy installation."
-  - title: "Mechanical Properties"
-    subTitle: "Each bolt and nut is designed to meet specific load rating or strength grades, suitable for structural applications."
-  - title: "Standards and Certifications"
-    subTitle: "Complies with relevant industry standards and certifications, ensuring consistent quality and safety."
-  - title: "Suitable Applications"
-    subTitle: "Ideal for a wide array of uses, from construction environments to mechanical assemblies that demand strong and secure joints."
+  - title: "Format"
+    subTitle: "500g plastic pot with hermetic seal"
+  - title: "Ingredients"
+    subTitle: "100% selected peanuts (Arachis hypogaea)"
+  - title: "Shelf Life"
+    subTitle: "12 months from manufacturing date"
+  - title: "Origin"
+    subTitle: "Tambacounda, Senegal"
+tableData:
+  - feature: ["Nutrient", "Per 100g"]
+    description:
+      - ["Energy (kcal)", "588"]
+      - ["Proteins (g)", "25"]
+      - ["Lipids (g)", "48"]
+      - ["Carbohydrates (g)", "15"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"  
+  first: "@/images/toolubaay_placeholder.png"
+  second: "@/images/toolubaay_placeholder.png"
 ---

@@ -1,13 +1,13 @@
 ---
-title: "SF-AB A765"
-description: "Assorted Screw Set" 
+title: "TooluBaay Peanut Paste - 250g"
+description: "Premium peanut paste, 250g format. 100% natural, ocre colored, rich in proteins."
 main:
-  id: 2
+  id: 1
   content: |
-    Introducing the SF-AB A765 Assorted Screw Set – the ultimate solution for your screw fastening needs. This comprehensive set includes a wide variety of screws meticulously curated to tackle various projects with ease and precision.
-  imgCard: "@/images/product-image-2.avif"
-  imgMain: "@/images/product-image-main-2.avif"
-  imgAlt: "Mockup boxes of assorted screw set"
+    Discover our 250g premium peanut paste. Handcrafted by rural women GIE cooperatives in Tambacounda, Senegal, using zero additives and rigorously tested for aflatoxins.
+  imgCard: "@/images/peanut_paste_jar.png"
+  imgMain: "@/images/peanut_paste_jar.png"
+  imgAlt: "TooluBaay 250g peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
@@ -15,40 +15,36 @@ tabs:
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
     title: "Specifications"
-  - id: "tabs-with-card-item-3"
-    dataTab: "#tabs-with-card-3"
-    title: "Blueprints"
 longDescription:
-  title: "Versatile Screw Fastening Solutions"
+  title: "A Compact Jar of Natural Goodness"
   subTitle: |
-    The SF-AB A765 Assorted Screw Set offers unmatched versatility and convenience, making it the perfect choice for DIY enthusiasts and professionals alike. With a comprehensive selection of screws, you'll always have the right fastener for the job.
-  btnTitle: "Contact sales to learn more"
-  btnURL: "#"
+    Perfect for small households, tastings, and retail trials, our 250g pot brings the rich taste of authentic Senegalese peanuts to your table while supporting sustainable rural development.
+  btnTitle: "Contact sales to order"
+  btnURL: "/contact"
 descriptionList:
-  - title: "Wide Variety"
-    subTitle: "Includes a diverse range of screw types and sizes to accommodate various applications and materials."
-  - title: "Ease of Use"
-    subTitle: "Each screw is designed for effortless installation, ensuring hassle-free fastening every time."
-  - title: "Convenience"
-    subTitle: "Eliminates the need for multiple trips to the hardware store, saving time and effort on your projects."
+  - title: "100% Natural"
+    subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."
+  - title: "Aflatoxin Tested"
+    subTitle: "Rigorously tested to ensure compliance with international food safety standards."
+  - title: "Direct Social Impact"
+    subTitle: "Guarantees fair price purchasing directly from rural women GIE cooperatives."
 specificationsLeft:
-  - title: "Material"
-    subTitle: "Constructed from high-quality materials such as stainless steel, ensuring durability and corrosion resistance."
-  - title: "Assortment"
-    subTitle: "Contains a generous assortment of screws, including wood screws, machine screws, and sheet metal screws."
-  - title: "Quantity"
-    subTitle: "Each set includes a sufficient quantity of screws to handle a wide range of projects and tasks."
-  - title: "Sizes"
-    subTitle: "Available in various sizes to suit different project requirements, ensuring compatibility and versatility."
+  - title: "Format"
+    subTitle: "250g plastic pot with hermetic seal"
+  - title: "Ingredients"
+    subTitle: "100% selected peanuts (Arachis hypogaea)"
+  - title: "Shelf Life"
+    subTitle: "12 months from manufacturing date"
+  - title: "Origin"
+    subTitle: "Tambacounda, Senegal"
 tableData:
-  - feature: ["Specification", "Value"]
+  - feature: ["Nutrient", "Per 100g"]
     description:
-      - ["Length (mm)", "Various"]
-      - ["Weight (g)", "N/A"]
-      - ["Material", "Stainless Steel"]
-      - ["Finish", "Assorted"]
-      - ["Package Contents", "Various screws in a set"]
+      - ["Energy (kcal)", "588"]
+      - ["Proteins (g)", "25"]
+      - ["Lipids (g)", "48"]
+      - ["Carbohydrates (g)", "15"]
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+  first: "@/images/toolubaay_placeholder.png"
+  second: "@/images/toolubaay_placeholder.png"
 ---

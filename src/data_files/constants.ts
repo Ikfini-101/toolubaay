@@ -1,14 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
-
-
 export const SITE = {
-  title: "ScrewFast",
-  tagline: "Top-quality Hardware Tools",
-  description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://screwfast.uk",
-  author: "Emil Gulamov",
+  title: "TooluBaay",
+  tagline: "AgriTech & Coopérative Arachide au Sénégal",
+  description: "TooluBaay est une entreprise sociale sénégalaise structurant la filière arachide avec un réseau de GIE de femmes rurales, combinant innovation numérique (assistance météo, diagnostic IA) et transformation locale durable.",
+  description_short: "TooluBaay structure la filière arachide et soutient l'autonomisation des femmes rurales au Sénégal grâce à l'AgriTech.",
+  url: "https://toolubaay.sn",
+  author: "TooluBaay Cooperative",
 };
 
 export const SEO = {
@@ -17,7 +15,7 @@ export const SEO = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    inLanguage: "en-US",
+    inLanguage: "fr-FR",
     "@id": SITE.url,
     url: SITE.url,
     name: SITE.title,
@@ -32,11 +30,11 @@ export const SEO = {
 };
 
 export const OG = {
-  locale: "en_US",
+  locale: "fr_FR",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : Hardware Tools & Construction Services`,
-  description: "Equip your projects with ScrewFast's top-quality hardware tools and expert construction services. Trusted by industry leaders, ScrewFast offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+  title: `${SITE.title}: AgriTech & Transformation d'Arachide Inclusive au Sénégal`,
+  description: "Découvrez notre modèle de pâte d'arachide premium 100% naturelle et l'impact direct sur les coopératives de femmes rurales.",
   image: ogImageSrc,
 };
 

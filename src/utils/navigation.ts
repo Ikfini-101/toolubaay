@@ -2,27 +2,26 @@
 const navBarLinks = [
   { name: "Home", url: "/" },
   { name: "Products", url: "/products" },
-  { name: "Services", url: "/services" },
-  { name: "Blog", url: "/blog" },
+  { name: "Impact", url: "/impact" },
+  { name: "Technology", url: "/technology" },
+  { name: "Traceability", url: "/traceability" },
   { name: "Contact", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "TooluBaay GIE",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Home", url: "/" },
+      { name: "Products & Impact", url: "/products" },
+      { name: "Traceability Module", url: "/traceability" },
     ],
   },
   {
-    section: "Company",
+    section: "Partners",
     links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Become a Partner", url: "/contact" },
+      { name: "Documentation", url: "/welcome-to-docs/" },
     ],
   },
 ];
@@ -30,9 +29,6 @@ const footerLinks = [
 const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
 };
 
 export default {
