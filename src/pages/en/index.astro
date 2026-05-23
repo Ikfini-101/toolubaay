@@ -1,0 +1,138 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import heroImage from "@images/peanut_farm_hero.png";
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import featureImage from "@images/women_cooperative.png";
+import tools from "@images/toolubaay_placeholder.png";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { partnersData } from "@/data_files/constants";
+
+const avatarSrcs: Array<string> = [
+  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+];
+---
+
+<MainLayout lang="en">
+  <AnnouncementBanner
+    btnId="dismiss-button"
+    btnTitle="Discover our B2B Program"
+    url={getRelativeLocaleUrl("en", "contact")}
+  />
+
+  <HeroSection
+    title=`Empower Rural Women, <span
+        class="text-yellow-500 dark:text-yellow-400">Transform Agriculture</span>`
+    subTitle="TooluBaay structures the peanut value chain in Senegal, providing rural women cooperatives with digital tools, sustainable training, and B2B market access."
+    primaryBtn="Explore Our Products"
+    primaryBtnURL={getRelativeLocaleUrl("en", "products")}
+    secondaryBtn="Partner With Us"
+    secondaryBtnURL={getRelativeLocaleUrl("en", "contact")}
+    withReview={false}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold">4.8</span> / 5`
+    starCount={4}
+    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+    src={heroImage}
+    alt="Peanut farming cooperative in Senegal"
+  />
+
+  <ClientsSection
+    title="Supported by Visionary Partners"
+    subTitle="Leveraging collaborative efforts to scale inclusive AgriTech."
+    partners={partnersData}
+  />
+
+  <FeaturesGeneral
+    title="Cultivating Impact & Innovation"
+    subTitle="At TooluBaay, we address the unique challenges of rural farming in Senegal. By combining AgriTech solutions with local transformation, we support women GIEs, improve crop resilience, and deliver top-quality peanut products."
+    src={featureImage}
+    alt="Peanut transformation by local women GIE cooperative"
+    features={features}
+  />
+
+  <FeaturesNavs
+    title=`Harnessing <span class="text-yellow-500 dark:text-yellow-400">AgriTech</span> for Smarter Farming.`
+    tabs={[
+      {
+        heading: "Smart Weather Tracking",
+        content:
+          "Our app provides localized agro-meteorological forecasting in local languages (Wolof, Pulaar, Mandingue), ensuring farmers make informed decisions about when to plant, irrigate, and harvest.",
+        svg: "tools",
+        src: tools,
+        alt: "TooluBaay mobile app screenshot",
+        first: true,
+      },
+      {
+        heading: "AI Chatbot Assistance",
+        content:
+          "An interactive voice chatbot (currently in development) designed to answer farming questions in local languages, making expert agricultural advice accessible to all.",
+        svg: "dashboard",
+        src: tools,
+        alt: "Voice chatbot diagram",
+        second: true,
+      },
+      {
+        heading: "Crop Disease Diagnosis",
+        content:
+          "Using advanced AI image recognition, farmers can take photos of crop leaves to identify pests and diseases instantly, receiving immediate bio-treatment suggestions.",
+        svg: "house",
+        src: tools,
+        alt: "Taking photo of crop leaf",
+      },
+    ]}
+  />
+
+  <TestimonialsSection
+    title="Redefining Rural Value Chains"
+    subTitle="Empowering farmers through technology and fair remuneration to drive sustainable food sovereignty."
+    testimonials={[
+      {
+        content:
+          "TooluBaay has completely changed how we work. With the meteorological help and the direct purchase prices, our cooperative's income has increased, and we are proud to see our peanut paste in premium packaging.",
+        author: "Manio Keita",
+        role: "President | GIE KamBen (Dialacoto)",
+        avatarSrc:
+          "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=320&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      },
+    ]}
+    statistics={[
+      {
+        count: "120+",
+        description:
+          "women farmers empowered in Dialacoto, Missira, and Netteboulou",
+      },
+      {
+        count: "+25%",
+        description:
+          "increase in cooperative revenues in Phase 1",
+      },
+      {
+        count: "10",
+        description:
+          "active GIE cooperatives structured in Tambacounda region",
+      },
+      {
+        count: "100%",
+        description: "natural premium peanut paste, aflatoxin-free certified",
+      },
+    ]}
+  />
+
+  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+
+  <HeroSectionAlt
+    title="Support Sovereignty & Impact"
+    subTitle="Join us in expanding the inclusive peanut transformation value chain across Senegal."
+    url={getRelativeLocaleUrl("en", "contact")}
+  />
+</MainLayout>

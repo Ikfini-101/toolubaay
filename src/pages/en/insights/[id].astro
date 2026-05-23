@@ -8,12 +8,12 @@ import { getCollection, render } from "astro:content";
 // Use `getStaticPaths` to generate static routes for generated pages on build
 export async function getStaticPaths() {
   const insightPosts = await getCollection("insights", ({ id }) =>
-    id.startsWith("fr/")
+    id.startsWith("en/")
   );
   return insightPosts.map((post) => {
-    const idWithoutLang = post.id.replace(/^fr\//, ""); // Remove the "fr/" prefix
+    const idWithoutLang = post.id.replace(/^en\//, ""); // Remove the "fr/" prefix
     return {
-      params: { lang: "fr", id: idWithoutLang },
+      params: { id: idWithoutLang },
       props: { post },
     };
   });
@@ -31,7 +31,6 @@ const ogTitle = `${post.data.title} | Insights | ${SITE.title}`;
 
 <MainLayout
   title={pageTitle}
-  lang="fr"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
   structuredData={{
@@ -54,9 +53,8 @@ const ogTitle = `${post.data.title} | Insights | ${SITE.title}`;
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://screwfast.uk/fr/insights/${post.id.replace(/^fr\//, "")}`,
+      "@id": `https://screwfast.uk/insights/${post.id.replace(/^en\//, "")}`,
     },
-    inLanguage: "fr",
   }}
 >
   <section class="py-6 sm:py-8 lg:py-12">

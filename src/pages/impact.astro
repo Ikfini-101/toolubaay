@@ -4,52 +4,53 @@ import { Image } from "astro:assets";
 import womenCoop from "@images/women_cooperative.png";
 import { SITE } from "@data/constants";
 
-const pageTitle = `Our Impact | ${SITE.title}`;
+const pageTitle = `Notre Impact | ${SITE.title}`;
 const metaDescription =
-  "Explore how TooluBaay empowers rural women cooperatives in Senegal, guarantees fair wages, and drives sustainable agricultural transformation.";
-const ogTitle = "Impact & Sustainability | TooluBaay";
+  "Découvrez comment TooluBaay autonomise les coopératives de femmes rurales au Sénégal, garantit des revenus équitables et pilote une transformation agricole durable.";
+const ogTitle = "Impact & Durabilité | TooluBaay";
 
 // GIE Cooperatives data
 const cooperatives = [
-  { code: "TB-TBA-001", name: "GIE Kamben Transformation", location: "Dialacoto", leader: "Manio Keita", role: "Active Pilot GIE" },
-  { code: "TB-TBA-002", name: "GIE Fokaben", location: "Darsalam", leader: "Koule Makalou", role: "Partner GIE" },
-  { code: "TB-TBA-003", name: "GIE GPF Leral", location: "Diagle-Sine", leader: "Waatew Diouf", role: "Partner GIE" },
-  { code: "TB-TBA-004", name: "GIE Fandema Kaffo", location: "Bantantinty", leader: "Fanta Toure", role: "Partner GIE" },
-  { code: "TB-TBA-005", name: "GIE And Jubbo", location: "Sinthiou Malem", leader: "Mamadou Aliou Ba", role: "Partner GIE" },
-  { code: "TB-TBA-006", name: "GIE Takku Ligguey", location: "Keur Ousmane", leader: "Ndeye Fatou Ndiaye", role: "Partner GIE" },
-  { code: "TB-TBA-007", name: "GIE Berete", location: "Darou Ndibélane", leader: "Fatoumata Bintou Diallo", role: "Partner GIE" },
-  { code: "TB-TBA-008", name: "GIE Deggo", location: "Darou Ndibélane", leader: "Alsane Diop", role: "Partner GIE" },
-  { code: "TB-TBA-009", name: "GIE 4R", location: "Sinthiou Malem", leader: "Ndiémé Camara", role: "Partner GIE" },
-  { code: "TB-TBA-010", name: "GIE Alanso 2", location: "Bantantity", leader: "Coumba Waly", role: "Partner GIE" }
+  { code: "TB-TBA-001", name: "GIE Kamben Transformation", location: "Dialacoto", leader: "Manio Keita", role: "GIE Pilote Actif" },
+  { code: "TB-TBA-002", name: "GIE Fokaben", location: "Darsalam", leader: "Koule Makalou", role: "GIE Partenaire" },
+  { code: "TB-TBA-003", name: "GIE GPF LERAL", location: "Diagle-Sine", leader: "Waatew Diouf", role: "GIE Partenaire" },
+  { code: "TB-TBA-004", name: "GIE Fandema Kaffo", location: "Bantantinty", leader: "Fanta Toure", role: "GIE Partenaire" },
+  { code: "TB-TBA-005", name: "GIE And Jubbo", location: "Sinthiou Malem", leader: "Mamadou Aliou Ba", role: "GIE Partenaire" },
+  { code: "TB-TBA-006", name: "GIE Takku Ligguey", location: "Keur Ousmane", leader: "Ndeye Fatou Ndiaye", role: "GIE Partenaire" },
+  { code: "TB-TBA-007", name: "GIE Berete", location: "Darou Ndibélane", leader: "Fatoumata Bintou Diallo", role: "GIE Partenaire" },
+  { code: "TB-TBA-008", name: "GIE Deggo", location: "Darou Ndibélane", leader: "Alsane Diop", role: "GIE Partenaire" },
+  { code: "TB-TBA-009", name: "GIE 4R", location: "Sinthiou Malem", leader: "Ndiémé Camara", role: "GIE Partenaire" },
+  { code: "TB-TBA-010", name: "GIE Alanso 2", location: "Bantantity", leader: "Coumba Waly", role: "GIE Partenaire" }
 ];
 
 // SDG goals data
 const sdgs = [
   {
     number: "1",
-    title: "No Poverty",
-    description: "By buying peanut paste at a guaranteed price of 800 FCFA/kg (above local market rates), we secure stable, increased incomes for rural families."
+    title: "Pas de pauvreté",
+    description: "En achetant la pâte d'arachide brute à un prix garanti de 800 FCFA/kg (bien supérieur au marché local), nous sécurisons et augmentons les revenus des familles rurales."
   },
   {
     number: "5",
-    title: "Gender Equality",
-    description: "We work directly with women-led economic interest groups (GIE), providing tools, formalization, and training to foster financial independence."
+    title: "Égalité entre les sexes",
+    description: "Nous collaborons directement avec des groupements d'intérêt économique (GIE) gérés par des femmes, en leur apportant matériel et formation pour leur indépendance financière."
   },
   {
     number: "8",
-    title: "Decent Work",
-    description: "Creating over 120 direct jobs in Phase 1, professionalizing the peanut transformation craft under high safety and hygiene standards."
+    title: "Travail décent",
+    description: "Création de plus de 120 emplois directs en Phase 1, structurant et professionnalisant la filière artisanale sous des normes d'hygiène et de qualité strictes."
   },
   {
     number: "13",
-    title: "Climate Action",
-    description: "Equipping farmers with agro-climatic advisories and mobile tech to build resilience against erratic climate patterns in Senegal."
+    title: "Mesures climatiques",
+    description: "Mise à disposition de technologies d'assistance climatique (météo locale, calendriers culturaux) pour adapter les cultures aux dérèglements environnementaux."
   }
 ];
 ---
 
 <MainLayout
   title={pageTitle}
+  lang="fr"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
   structuredData={{
@@ -57,15 +58,15 @@ const sdgs = [
     "@type": "WebPage",
     "@id": "https://toolubaay.sn/impact",
     url: "https://toolubaay.sn/impact",
-    name: "Our Impact | TooluBaay",
-    description: "Discover the socio-economic and environmental impact of TooluBaay's cooperative model in Senegal.",
+    name: "Notre Impact | TooluBaay",
+    description: "Découvrez l'impact socio-économique et environnemental du modèle coopératif TooluBaay au Sénégal.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://toolubaay.sn",
       name: "TooluBaay",
-      description: "AgriTech and rural women peanut transformation cooperative in Senegal."
+      description: "AgriTech et coopérative de transformation d'arachide par des femmes rurales au Sénégal."
     },
-    inLanguage: "en-US"
+    inLanguage: "fr"
   }}
 >
   <!-- Hero Section -->
@@ -74,19 +75,19 @@ const sdgs = [
       <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
-            Our Mission & Impact
+            Notre Mission & Impact
           </span>
           <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl md:text-5xl">
-            Empowering Women, <span class="text-emerald-600 dark:text-emerald-500">Transforming Communities</span>
+            Autonomiser les Femmes, <span class="text-emerald-600 dark:text-emerald-500">Transformer les Communautés</span>
           </h1>
           <p class="mt-6 text-lg text-neutral-600 dark:text-neutral-400">
-            TooluBaay operates an inclusive hybrid model that merges AgriTech innovation with local agro-transformation. By supporting rural women-led GIEs (Groupements d'Intérêt Économique) in Tambacounda and Kaffrine, we bridge the gap between smallholder producers and B2B markets.
+            TooluBaay déploie un modèle hybride inclusif associant innovation AgriTech et agro-transformation locale. En soutenant des GIE (Groupements d'Intérêt Économique) gérés par des femmes rurales dans les régions de Tambacounda et Kaffrine, nous comblons le fossé entre les petits producteurs et les marchés B2B.
           </p>
         </div>
         <div class="relative">
           <Image
             src={womenCoop}
-            alt="Women cooperative members sorting and transforming peanuts"
+            alt="Membres de la coopérative de femmes triant et transformant des arachides"
             class="w-full rounded-2xl object-cover shadow-xl dark:shadow-neutral-950"
           />
           <div class="absolute -bottom-6 -start-6 h-40 w-40 rounded-2xl bg-amber-500/10 -z-10"></div>
@@ -102,23 +103,23 @@ const sdgs = [
       <div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
         <div class="text-center">
           <p class="text-4xl font-extrabold text-amber-500 md:text-5xl">120+</p>
-          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Direct Beneficiaries</h2>
-          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Women & youth in Phase 1</p>
+          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Bénéficiaires Directes</h2>
+          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Femmes & jeunes en Phase 1</p>
         </div>
         <div class="text-center">
           <p class="text-4xl font-extrabold text-emerald-600 md:text-5xl">10 GIE</p>
-          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Active Cooperatives</h2>
-          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Locally organized GIE networks</p>
+          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Coopératives Actives</h2>
+          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Réseau de GIE locaux</p>
         </div>
         <div class="text-center">
           <p class="text-4xl font-extrabold text-amber-500 md:text-5xl">800 F</p>
-          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Guaranteed Price</h2>
-          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">FCFA/kg paid directly to women</p>
+          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Prix Garanti</h2>
+          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">FCFA/kg payé directement aux femmes</p>
         </div>
         <div class="text-center">
           <p class="text-4xl font-extrabold text-emerald-600 md:text-5xl">10%</p>
-          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Profit Reinvestment</h2>
-          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Dedicated to business training</p>
+          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Réinvestissement</h2>
+          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Dédié aux formations professionnelles</p>
         </div>
       </div>
     </div>
@@ -128,8 +129,8 @@ const sdgs = [
   <section class="bg-neutral-50 py-16 dark:bg-neutral-900 lg:py-24">
     <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Alignment with Sustainable Development Goals</h2>
-        <p class="mt-4 text-neutral-600 dark:text-neutral-400">Our business model is engineered around social impact, targeting key United Nations SDGs to drive lasting rural development in Senegal.</p>
+        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Alignement avec les Objectifs de Développement Durable</h2>
+        <p class="mt-4 text-neutral-600 dark:text-neutral-400">Notre modèle d'impact est structuré autour des priorités des Nations Unies pour dynamiser durablement l'économie rurale sénégalaise.</p>
       </div>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -138,7 +139,7 @@ const sdgs = [
             <span class="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-100 text-lg font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
               {sdg.number}
             </span>
-            <h3 class="mt-5 font-bold text-neutral-800 dark:text-neutral-200 text-lg">SDG {sdg.number}: {sdg.title}</h3>
+            <h3 class="mt-5 font-bold text-neutral-800 dark:text-neutral-200 text-lg">ODD {sdg.number}: {sdg.title}</h3>
             <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed flex-grow">
               {sdg.description}
             </p>
@@ -152,9 +153,9 @@ const sdgs = [
   <section class="bg-white py-16 dark:bg-neutral-950 lg:py-24">
     <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mb-12">
-        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Our Network of Women GIE Cooperatives</h2>
+        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Notre Réseau de GIE de Femmes Rurales</h2>
         <p class="mt-4 text-neutral-600 dark:text-neutral-400">
-          In Phase 1, we partner with 10 local cooperatives across the Tambacounda region, standardizing production equipment and providing a launch kit to guarantee safety and hygiene.
+          En Phase 1, nous collaborons avec 10 coopératives locales dans la région de Tambacounda. Nous uniformisons le matériel de production et offrons un kit de démarrage pour garantir des normes d'hygiène et de sécurité élevées.
         </p>
       </div>
 
@@ -172,10 +173,10 @@ const sdgs = [
                 {coop.name}
               </h3>
               <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-                <span class="font-semibold text-neutral-700 dark:text-neutral-300">Location:</span> {coop.location}
+                <span class="font-semibold text-neutral-700 dark:text-neutral-300">Localisation:</span> {coop.location}
               </p>
               <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-                <span class="font-semibold text-neutral-700 dark:text-neutral-300">Leader:</span> {coop.leader}
+                <span class="font-semibold text-neutral-700 dark:text-neutral-300">Responsable:</span> {coop.leader}
               </p>
             </div>
           </div>

@@ -10,10 +10,11 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/peanut_farm_hero.png";
-import faqs from "@data/faqs.json";
-import features from "@data/features.json";
+import faqs from "@data/fr/faqs.json";
+import features from "@data/fr/features.json";
 import featureImage from "@images/women_cooperative.png";
 import tools from "@images/toolubaay_placeholder.png";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { partnersData } from "@/data_files/constants";
 
 const avatarSrcs: Array<string> = [
@@ -21,85 +22,84 @@ const avatarSrcs: Array<string> = [
 ];
 ---
 
-<MainLayout>
+<MainLayout lang="fr">
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Discover our B2B Program"
-    url="/contact"
+    btnTitle="Découvrez notre programme B2B"
+    url={getRelativeLocaleUrl("fr", "contact")}
   />
 
   <HeroSection
-    title=`Empower Rural Women, <span
-        class="text-yellow-500 dark:text-yellow-400">Transform Agriculture</span>`
-    subTitle="TooluBaay structures the peanut value chain in Senegal, providing rural women cooperatives with digital tools, sustainable training, and B2B market access."
-    primaryBtn="Explore Our Products"
-    primaryBtnURL="/products"
-    secondaryBtn="Partner With Us"
-    secondaryBtnURL="/contact"
+    title=`Valoriser les Femmes Rurales, <span class="text-yellow-500 dark:text-yellow-400">Transformer l'Agriculture</span>`
+    subTitle="TooluBaay structure la filière arachide au Sénégal, fournissant aux coopératives de femmes rurales des outils numériques, des formations durables et un accès au marché B2B."
+    primaryBtn="Découvrir nos produits"
+    primaryBtnURL={getRelativeLocaleUrl("fr", "products")}
+    secondaryBtn="Devenir Partenaire"
+    secondaryBtnURL={getRelativeLocaleUrl("fr", "contact")}
     withReview={false}
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
-    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+    reviews=`À partir de plus de <span class="font-bold">12,8k</span> avis`
     src={heroImage}
-    alt="Peanut farming cooperative in Senegal"
+    alt="Coopérative de culture d'arachide au Sénégal"
   />
 
   <ClientsSection
-    title="Supported by Visionary Partners"
-    subTitle="Leveraging collaborative efforts to scale inclusive AgriTech."
+    title="Soutenu par des Partenaires Visionnaires"
+    subTitle="Un effort collaboratif pour déployer l'AgriTech inclusive à grande échelle."
     partners={partnersData}
   />
 
   <FeaturesGeneral
-    title="Cultivating Impact & Innovation"
-    subTitle="At TooluBaay, we address the unique challenges of rural farming in Senegal. By combining AgriTech solutions with local transformation, we support women GIEs, improve crop resilience, and deliver top-quality peanut products."
+    title="Cultiver l'Impact & l'Innovation"
+    subTitle="Chez TooluBaay, nous relevons les défis uniques de l'agriculture familiale au Sénégal. En combinant solutions AgriTech et transformation locale, nous renforçons les GIE de femmes, améliorons la résilience des cultures et livrons une pâte d'arachide premium de qualité supérieure."
     src={featureImage}
-    alt="Peanut transformation by local women GIE cooperative"
+    alt="Transformation de la pâte d'arachide par des femmes locales"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Harnessing <span class="text-yellow-500 dark:text-yellow-400">AgriTech</span> for Smarter Farming.`
+    title=`L'intelligence <span class="text-yellow-500 dark:text-yellow-400">AgriTech</span> au service des champs.`
     tabs={[
       {
-        heading: "Smart Weather Tracking",
+        heading: "Suivi Agroclimatique",
         content:
-          "Our app provides localized agro-meteorological forecasting in local languages (Wolof, Pulaar, Mandingue), ensuring farmers make informed decisions about when to plant, irrigate, and harvest.",
+          "Notre application mobile fournit des prévisions météo agricoles localisées et vocales dans les langues locales (wolof, pulaar, mandingue), aidant les paysans à planifier au mieux leurs récoltes.",
         svg: "tools",
         src: tools,
-        alt: "TooluBaay mobile app screenshot",
+        alt: "Application mobile TooluBaay",
         first: true,
       },
       {
-        heading: "AI Chatbot Assistance",
+        heading: "Chatbot IA Vocal",
         content:
-          "An interactive voice chatbot (currently in development) designed to answer farming questions in local languages, making expert agricultural advice accessible to all.",
+          "Un conseiller agricole virtuel interactif (en cours de développement) conçu pour répondre en langues locales aux questions des producteurs pour démocratiser l'accès au conseil.",
         svg: "dashboard",
         src: tools,
-        alt: "Voice chatbot diagram",
+        alt: "Schéma du conseiller IA vocal",
         second: true,
       },
       {
-        heading: "Crop Disease Diagnosis",
+        heading: "Diagnostic de Maladies par Photo",
         content:
-          "Using advanced AI image recognition, farmers can take photos of crop leaves to identify pests and diseases instantly, receiving immediate bio-treatment suggestions.",
+          "Grâce à la reconnaissance d'images par IA, le producteur prend une photo d'une feuille malade et reçoit instantanément un diagnostic et des suggestions de traitement bio.",
         svg: "house",
         src: tools,
-        alt: "Taking photo of crop leaf",
+        alt: "Prise de photo d'une feuille malade",
       },
     ]}
   />
 
   <TestimonialsSection
-    title="Redefining Rural Value Chains"
-    subTitle="Empowering farmers through technology and fair remuneration to drive sustainable food sovereignty."
+    title="Restructurer les Chaînes de Valeur Rurales"
+    subTitle="Soutenir la souveraineté alimentaire nationale par la juste rémunération des productrices et l'innovation."
     testimonials={[
       {
         content:
-          "TooluBaay has completely changed how we work. With the meteorological help and the direct purchase prices, our cooperative's income has increased, and we are proud to see our peanut paste in premium packaging.",
+          "TooluBaay a complètement changé notre quotidien. Grâce au suivi météo et au prix d'achat garanti, les revenus de notre coopérative ont augmenté, et nous sommes fières de voir notre pâte d'arachide vendue dans des pots premium.",
         author: "Manio Keita",
-        role: "President | GIE KamBen (Dialacoto)",
+        role: "Présidente | GIE KamBen (Dialacoto)",
         avatarSrc:
           "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=320&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
       },
@@ -108,30 +108,30 @@ const avatarSrcs: Array<string> = [
       {
         count: "120+",
         description:
-          "women farmers empowered in Dialacoto, Missira, and Netteboulou",
+          "femmes rurales accompagnées à Dialacoto, Missira et Netteboulou",
       },
       {
         count: "+25%",
         description:
-          "increase in cooperative revenues in Phase 1",
+          "de hausse de revenus pour les coopératives partenaires en Phase 1",
       },
       {
         count: "10",
         description:
-          "active GIE cooperatives structured in Tambacounda region",
+          "GIE de femmes structurés dans la région de Tambacounda",
       },
       {
         count: "100%",
-        description: "natural premium peanut paste, aflatoxin-free certified",
+        description: "naturel, garanti sans aflatoxine pour un standard B2B premium",
       },
     ]}
   />
 
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Support Sovereignty & Impact"
-    subTitle="Join us in expanding the inclusive peanut transformation value chain across Senegal."
-    url="/contact"
+    title="Soutenir l'Autonomie & l'Impact"
+    subTitle="Rejoignez-nous pour étendre la chaîne de valeur inclusive de transformation d'arachide au Sénégal."
+    url={getRelativeLocaleUrl("fr", "contact")}
   />
 </MainLayout>

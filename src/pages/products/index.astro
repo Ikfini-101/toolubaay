@@ -15,7 +15,7 @@ import { SITE } from "@data/constants";
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id }) => {
-    return id.startsWith("en/");
+    return id.startsWith("fr/");
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
@@ -23,40 +23,41 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Define variables for page content
-const title: string = "Premium Peanut Paste";
+const title: string = "Pâte d'Arachide Premium";
 const subTitle: string =
-  "Explore our range of 100% natural, premium peanut paste. Handcrafted by local women cooperatives in Tambacounda, Senegal. Guaranteed aflatoxin-free, rich in nutrition and social impact.";
+  "Découvrez notre gamme de pâte d'arachide 100% naturelle et de qualité supérieure. Fabriquée artisanalement par des coopératives de femmes rurales à Tambacounda, Sénégal. Garantie sans aflatoxine, riche en nutriments et à fort impact social.";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
   {
     content:
-      " \"We have integrated TooluBaay's peanut paste into our restaurant recipes. The rich ocre color, smooth texture, and consistent quality are outstanding. Our clients love the taste, and we love the traceability and impact!\" ",
+      " \"Nous avons intégré la pâte d'arachide de TooluBaay dans les recettes de notre restaurant. La couleur ocre riche, la texture onctueuse et la qualité constante sont exceptionnelles. Nos clients adorent le goût, et nous adorons la traçabilité et l'impact !\" ",
     author: "Abdou Diop",
-    role: "Chef & Restaurant Owner | Dakar Delights",
+    role: "Chef & Propriétaire | Dakar Delights",
     avatarSrc:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Description de l'image",
   },
   {
     content:
-      " \"Our import business relies on compliance and safety. TooluBaay's certified aflatoxin-free peanut paste and standard B2B packaging are exactly what we need to distribute premium products at a fair price.\" ",
+      " \"Notre activité d'importation repose sur la conformité et la sécurité sanitaire. La pâte d'arachide certifiée sans aflatoxine de TooluBaay et ses emballages B2B standards correspondent exactement à nos besoins pour distribuer des produits premium à un prix équitable.\" ",
     author: "Sophie Dubois",
-    role: "B2B Distributor | Africa Foods Import",
+    role: "Distributrice B2B | Africa Foods Import",
     avatarSrc:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Description de l'image",
   },
 ];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle = `Produits | ${SITE.title}`;
 const metaDescription =
-  "Discover our 100% natural, premium peanut paste formats, handcrafted by Senegalese women cooperatives.";
-const ogTitle = "Premium Peanut Paste | TooluBaay";
+  "Découvrez nos formats de pâte d'arachide 100% naturelle et premium, fabriquée par des coopératives de femmes au Sénégal.";
+const ogTitle = "Pâte d'Arachide Premium | TooluBaay";
 ---
 
 <MainLayout
   title={pageTitle}
+  lang="fr"
   customDescription={metaDescription}
   customOgTitle={ogTitle}
   structuredData={{
@@ -64,17 +65,17 @@ const ogTitle = "Premium Peanut Paste | TooluBaay";
     "@type": "WebPage",
     "@id": "https://toolubaay.sn/products",
     url: "https://toolubaay.sn/products",
-    name: "Premium Peanut Paste | TooluBaay",
+    name: "Pâte d'Arachide Premium | TooluBaay",
     description:
-      "Discover our 100% natural, premium peanut paste formats, handcrafted by Senegalese women cooperatives.",
+      "Découvrez nos formats de pâte d'arachide 100% naturelle et premium, fabriquée par des coopératives de femmes au Sénégal.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://toolubaay.sn",
       name: "TooluBaay",
       description:
-        "TooluBaay structures the peanut value chain in Senegal, providing rural women cooperatives with B2B market access.",
+        "TooluBaay structure la filière arachide au Sénégal, offrant aux coopératives de femmes rurales un accès au marché B2B.",
     },
-    inLanguage: "en-US",
+    inLanguage: "fr",
   }}
 >
   <div
@@ -95,16 +96,22 @@ const ogTitle = "Premium Peanut Paste | TooluBaay";
           )
         }
       </div>
-      <PrimaryCTA title="Partner Stories" url="#testimonials" noArrow={true} />
+      <PrimaryCTA
+        title="Témoignages"
+        url="#testimonials"
+        noArrow={true}
+      />
     </div>
+    {/* Displaying products in alternating styles. Alternative product gets different card styling. */}
+    {/* Maps through all product entries and displays them with either CardSmall or CardWide based on their position. */}
     <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       {
         product.map((product, index) => {
           const position = index % 4;
           if (position === 0 || position === 3) {
-            return <CardSmall product={product} />;
+            return <CardSmall product={product} productLocale="fr" />;
           } else {
-            return <CardWide product={product} />;
+            return <CardWide product={product} productLocale="fr" />;
           }
         })
       }
@@ -112,17 +119,17 @@ const ogTitle = "Premium Peanut Paste | TooluBaay";
   </div>
   {/* Features statistics section */}
   <FeaturesStatsAlt
-    title="Why Choose TooluBaay?"
-    subTitle="By choosing our products, you directly support Senegalese rural women. We guarantee high-grade raw peanut selection, strict quality control (zero aflatoxin, zero additives), and a transparent, traceable supply chain."
+    title="Pourquoi choisir TooluBaay ?"
+    subTitle="En choisissant nos produits, vous soutenez directement les femmes rurales sénégalaises. Nous garantissons une sélection rigoureuse des arachides brutes de qualité supérieure, un contrôle qualité strict (sans aflatoxine, sans additif) et une chaîne d'approvisionnement transparente et traçable."
     benefits={[
-      "100% natural peanut paste with premium texture and ocre color.",
-      "Fair price purchasing directly empowering rural women GIEs.",
-      "Aflatoxin-free certified for highest food safety compliance.",
+      "Pâte d'arachide 100% naturelle avec texture onctueuse et couleur ocre riche.",
+      "Achat à prix garanti rémunérant équitablement les GIE de femmes rurales.",
+      "Certification sans aflatoxine garantissant une sécurité alimentaire optimale.",
     ]}
   />
   {/* Testimonials section */}
   <TestimonialsSectionAlt
-    title="What Our Partners Say"
+    title="Ce que disent nos partenaires"
     testimonials={testimonials}
   />
 </MainLayout>
