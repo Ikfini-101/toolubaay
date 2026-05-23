@@ -99,6 +99,11 @@
 {"ts": "2026-05-23T15:20:10", "id": "glass_git_add", "task": "Stage modified styles, layouts, image assets, and logs", "level": 2, "P": 0.05, "E": 0.51, "I": 0.00, "V": 0.00, "C_norm": 0.39, "zone": "YELLOW", "action": "run_command", "result": "success", "soldier": "S6", "rollback": false}
 {"ts": "2026-05-23T15:20:30", "id": "glass_git_commit", "task": "Commit glassmorphism and background changes", "level": 2, "P": 0.05, "E": 0.00, "I": 0.00, "V": 0.00, "C_norm": 0.37, "zone": "GREEN", "action": "run_command", "result": "success", "soldier": "S6", "rollback": false}
 {"ts": "2026-05-23T15:20:45", "id": "glass_git_push", "task": "Push glassmorphic layout updates to remote repository", "level": 2, "P": 0.05, "E": 0.00, "I": 0.00, "V": 0.70, "C_norm": 0.41, "zone": "YELLOW", "action": "run_command", "result": "success", "soldier": "S6", "rollback": false}
+{"ts": "2026-05-23T15:35:43", "id": "update_xrdm_v4", "task": "Update global and local xrdm skill files to V4 logic", "level": 2, "P": 0.05, "E": 0.165, "I": 0.00, "V": 0.00, "C_norm": 0.38, "zone": "GREEN", "action": "modify_file", "result": "success", "soldier": "S6", "rollback": false}
+{"ts": "2026-05-23T15:36:00", "id": "v4_git_add", "task": "Stage xorondom_scores.ljson for V4 update", "level": 2, "P": 0.05, "E": 0.165, "I": 0.00, "V": 0.00, "C_norm": 0.38, "zone": "GREEN", "action": "run_command", "result": "success", "soldier": "S6", "rollback": false}
+{"ts": "2026-05-23T15:36:15", "id": "v4_git_commit", "task": "Commit log updates for V4 integration", "level": 2, "P": 0.05, "E": 0.00, "I": 0.00, "V": 0.00, "C_norm": 0.37, "zone": "GREEN", "action": "run_command", "result": "success", "soldier": "S6", "rollback": false}
+{"ts": "2026-05-23T15:36:30", "id": "v4_git_push", "task": "Push V4 score logs to remote repository", "level": 2, "P": 0.05, "E": 0.00, "I": 0.00, "V": 0.70, "C_norm": 0.41, "zone": "YELLOW", "action": "run_command", "result": "success", "soldier": "S6", "rollback": false}
+
 
 
 
