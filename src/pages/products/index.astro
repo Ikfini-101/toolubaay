@@ -5,7 +5,6 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
-import FloatingPeanuts from "@components/ui/decorations/FloatingPeanuts.astro";
 // Importing necessary functions from Astro
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -57,11 +56,9 @@ const ogTitle = "Pâte d'Arachide Premium | TooluBaay";
     inLanguage: "fr",
   }}
 >
-  <div class="relative w-full overflow-hidden">
-    <FloatingPeanuts />
-    <div
-      class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full relative z-10"
-    >
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
     <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
       <div class="flex items-center gap-12">
         <h1
@@ -91,7 +88,6 @@ const ogTitle = "Pâte d'Arachide Premium | TooluBaay";
         })
       }
     </section>
-    </div>
   </div>
   {/* Features statistics section */}
   <FeaturesStatsAlt
