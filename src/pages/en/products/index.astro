@@ -5,6 +5,8 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import { Image } from "astro:assets";
+import peanutBg from "@images/decorations/peanut_without-bg.png";
 // Importing necessary functions from Astro
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -55,8 +57,18 @@ const ogTitle = "Premium Peanut Paste | TooluBaay";
     inLanguage: "en-US",
   }}
 >
+  <!-- Glassmorphism Background & Giant Peanut -->
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0 bg-white/20 dark:bg-black/30 backdrop-blur-md"></div>
+    <Image 
+      src={peanutBg} 
+      alt="" 
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] md:w-[90%] lg:w-[70%] max-w-none h-auto object-contain opacity-80 drop-shadow-2xl"
+    />
+  </div>
+
   <div
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full relative z-10"
   >
     <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
       <div class="flex items-center gap-12">
