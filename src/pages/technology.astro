@@ -4,7 +4,7 @@ import { SITE } from "@data/constants";
 
 const pageTitle = `Technologie | ${SITE.title}`;
 const metaDescription =
-  "Découvrez la technologie TooluBaay : application agrométéo multilingue, QR code de traçabilité, mobile money et innovations numériques au service des femmes rurales sénégalaises.";
+  "Découvrez la technologie TooluBaay : application agrométéo multilingue, QR code de traçabilité, mobile money et innovations numériques au service des femmes et des jeunes en milieu rural au Sénégal.";
 const ogTitle = "Technologie & Innovation | TooluBaay";
 
 const techPillars = [
@@ -17,7 +17,7 @@ const techPillars = [
       "Prévisions météo localisées (semis, récolte, irrigation)",
       "Alertes sécheresse et excès de pluie en temps réel",
       "Conseils variétés arachide & calendrier agricole",
-      "Interface vocale adaptée aux femmes peu alphabétisées",
+      "Interface vocale adaptée aux femmes et jeunes peu alphabétisés",
     ],
     color: "emerald",
   },
@@ -25,12 +25,12 @@ const techPillars = [
     icon: "🔍",
     title: "QR Code de Traçabilité",
     description:
-      "Chaque pot de pâte d'arachide TooluBaay est équipé d'un QR code unique. Le consommateur B2B peut scanner et accéder à l'historique complet du lot : GIE producteur, récolte, contrôles qualité.",
+      "Chaque pot de pâte d'arachide TooluBaay est équipé d'un QR code unique. Le consommateur peut scanner et accéder à l'historique complet du lot : GIE producteur, récolte, contrôles qualité.",
     features: [
       "Identification unique de chaque lot produit",
       "Lien direct vers fiche GIE de la coopérative",
       "Données qualité (taux aflatoxine, humidité)",
-      "Renforce la confiance des acheteurs B2B et export",
+      "Renforce la confiance des acheteurs premium et export",
     ],
     color: "amber",
   },
@@ -54,7 +54,7 @@ const techPillars = [
       "Bibliothèque de vidéos courtes intégrées à l'application : bonnes pratiques d'hygiène, techniques de broyage, gestion de la qualité, maîtrise du packaging TooluBaay.",
     features: [
       "Vidéos courtes en langues locales (wolof, pulaar)",
-      "Protocoles hygiène & sécurité alimentaire",
+      "Protocoles d'hygiène, de sécurité alimentaire et conformité HACCP",
       "Tutoriels utilisation équipements GIE",
       "Mise à jour continue selon retours terrain",
     ],
@@ -66,7 +66,7 @@ const impactMetrics = [
   { value: "3", label: "Langues locales", sub: "Wolof, Pulaar, Mandingue" },
   { value: ">60%", label: "Pénétration mobile money", sub: "Au Sénégal" },
   { value: "7", label: "Étapes contrôle qualité", sub: "Traçées numériquement" },
-  { value: "QR", label: "Code unique / lot", sub: "Sur chaque pot B2B" },
+  { value: "QR", label: "Code unique / lot", sub: "Sur chaque pot de pâte d'arachide" },
 ];
 ---
 
@@ -81,12 +81,12 @@ const impactMetrics = [
     "@id": "https://toolubaay.sn/technology",
     url: "https://toolubaay.sn/technology",
     name: "Technologie & Innovation | TooluBaay",
-    description: "Application agrométéo multilingue, QR code de traçabilité et mobile money au service des GIE de femmes rurales.",
+    description: "Application agrométéo multilingue, QR code de traçabilité et mobile money au service des GIE de femmes et de jeunes en milieu rural.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://toolubaay.sn",
       name: "TooluBaay",
-      description: "AgriTech et coopérative de transformation d'arachide par des femmes rurales au Sénégal.",
+      description: "AgriTech et coopérative de transformation d'arachide par des femmes et des jeunes au Sénégal.",
     },
     inLanguage: "fr",
   }}
@@ -107,7 +107,7 @@ const impactMetrics = [
           <span class="text-emerald-400"> du Terrain</span>
         </h1>
         <p class="mt-6 text-lg text-neutral-300 leading-relaxed">
-          TooluBaay développe des outils numériques pensés pour les réalités des femmes rurales sénégalaises. Application mobile multilingue, traçabilité QR code et paiements mobile money — la technologie comme levier d'autonomisation.
+          TooluBaay développe des outils numériques pensés pour les réalités des femmes et des jeunes en milieu rural au Sénégal. Application mobile multilingue, traçabilité QR code et paiements mobile money — la technologie comme levier d'autonomisation.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
@@ -197,8 +197,8 @@ const impactMetrics = [
             {[
               { step: "1", title: "GIE Mieux Informés", desc: "Prévisions météo et conseils agronomiques précis réduisent les pertes pré-récolte." },
               { step: "2", title: "Meilleure Qualité de Pâte", desc: "Arachide mieux gérée = moins de rejets qualité au centre de conditionnement." },
-              { step: "3", title: "Revenus GIE Stables", desc: "Moins de rejets = paiements garantis réguliers pour les femmes des GIE." },
-              { step: "4", title: "Approvisionnement Fiable", desc: "TooluBaay maintient ses engagements clients B2B et export avec constance." },
+              { step: "3", title: "Revenus GIE Stables", desc: "Moins de rejets = paiements garantis réguliers pour les femmes et jeunes des GIE." },
+              { step: "4", title: "Approvisionnement Fiable", desc: "TooluBaay maintient ses engagements de qualité premium et export avec constance." },
             ].map((item) => (
               <div class="flex gap-4">
                 <div class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-emerald-600 text-white text-sm font-bold">
@@ -257,7 +257,7 @@ const impactMetrics = [
           Contacter sur WhatsApp
         </a>
         <a
-          href="mailto:senephilippeaugustemoundor@gmail.com?subject=Partenariat Tech TooluBaay"
+          href="mailto:info.toolubaay@gmail.com?subject=Partenariat Tech TooluBaay"
           class="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-emerald-600/50 px-6 py-3 font-semibold text-white transition hover:bg-emerald-600"
         >
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
