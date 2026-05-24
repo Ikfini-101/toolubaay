@@ -1,7 +1,7 @@
 ---
 // Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
@@ -20,6 +20,11 @@ const product: CollectionEntry<"products">[] = (
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
     a.data.main.id - b.data.main.id
 );
+
+// Define variables for page content
+const title: string = "Premium Peanut Paste";
+const subTitle: string =
+  "Explore our range of 100% natural, premium peanut paste. Handcrafted by local women cooperatives in Tambacounda, Senegal. Guaranteed aflatoxin-free, rich in nutrition and social impact.";
 
 // Define variables for page content
 const title: string = "Premium Peanut Paste";

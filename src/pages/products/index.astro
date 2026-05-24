@@ -1,7 +1,7 @@
 ---
 // Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
 import CardSmall from "@components/ui/cards/CardSmall.astro";
 import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
@@ -20,6 +20,11 @@ const product: CollectionEntry<"products">[] = (
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
     a.data.main.id - b.data.main.id
 );
+
+// Define variables for page content
+const title: string = "Pâte d'Arachide Premium";
+const subTitle: string =
+  "Découvrez notre gamme de pâte d'arachide 100% naturelle et de qualité supérieure. Fabriquée artisanalement par des coopératives de femmes rurales à Tambacounda, Sénégal. Garantie sans aflatoxine, riche en nutriments et à fort impact social.";
 
 // Define variables for page content
 
