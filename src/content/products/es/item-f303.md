@@ -5,8 +5,8 @@ main:
   id: 3
   content: |
     Descubra nuestra pasta de maní premium de 1kg. Elaborada por GIE de mujeres rurales en Senegal, garantizada libre de aflatoxinas, natural y cremosa.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_1kg.png"
+  imgMain: "@/images/product_1kg.png"
   imgAlt: "Tarro de pasta de maní TooluBaay 1kg"
 tabs:
   - id: "tabs-with-card-item-1"

@@ -5,8 +5,8 @@ main:
   id: 3
   content: |
     Discover our 1kg premium peanut paste. Handcrafted by local women GIE cooperatives in Senegal, guaranteed aflatoxin-free, natural, ocre and delicious.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_1kg.png"
+  imgMain: "@/images/product_1kg.png"
   imgAlt: "TooluBaay 1kg peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"

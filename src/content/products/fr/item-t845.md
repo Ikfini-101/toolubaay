@@ -5,8 +5,8 @@ main:
   id: 4
   content: |
     Découvrez notre pâte d'arachide premium en seau de 5kg. Un conditionnement adapté pour les professionnels de la restauration, de la pâtisserie ou de l'exportation. 100% naturelle et sans aflatoxine.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_5kg.png"
+  imgMain: "@/images/product_5kg.png"
   imgAlt: "Seau de pâte d'arachide TooluBaay 5kg"
 tabs:
   - id: "tabs-with-card-item-1"

@@ -5,8 +5,8 @@ main:
   id: 2
   content: |
     Discover our 500g premium peanut paste. Sourced from local agricultural cooperatives of rural women, zero additives, and certified aflatoxin-free.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_500g.png"
+  imgMain: "@/images/product_500g.png"
   imgAlt: "TooluBaay 500g peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"

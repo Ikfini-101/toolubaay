@@ -5,8 +5,8 @@ main:
   id: 4
   content: |
     Descubra nuestra pasta de maní premium en cubo de 5kg. Un empaque adecuado para profesionales de la restauración, repostería o exportación. 100% natural y libre de aflatoxinas.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_5kg.png"
+  imgMain: "@/images/product_5kg.png"
   imgAlt: "Cubo de pasta de maní TooluBaay 5kg"
 tabs:
   - id: "tabs-with-card-item-1"

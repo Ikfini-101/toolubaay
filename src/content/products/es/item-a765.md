@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Descubra nuestra pasta de maní premium de 250g. Elaborada artesanalmente por GIE de mujeres rurales en Tambacounda, Senegal, sin aditivos y certificada libre de aflatoxinas.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_250g.png"
+  imgMain: "@/images/product_250g.png"
   imgAlt: "Tarro de pasta de maní TooluBaay 250g"
 tabs:
   - id: "tabs-with-card-item-1"

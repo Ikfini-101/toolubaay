@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Discover our 250g premium peanut paste. Handcrafted by rural women GIE cooperatives in Tambacounda, Senegal, using zero additives and rigorously tested for aflatoxins.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_250g.png"
+  imgMain: "@/images/product_250g.png"
   imgAlt: "TooluBaay 250g peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"

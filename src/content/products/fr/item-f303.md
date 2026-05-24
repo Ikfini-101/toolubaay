@@ -5,8 +5,8 @@ main:
   id: 3
   content: |
     Découvrez notre pâte d'arachide premium de 1kg. Fabriquée par des GIE de femmes rurales au Sénégal, garantie sans aflatoxine, naturelle et onctueuse.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_1kg.png"
+  imgMain: "@/images/product_1kg.png"
   imgAlt: "Pot de pâte d'arachide TooluBaay 1kg"
 tabs:
   - id: "tabs-with-card-item-1"

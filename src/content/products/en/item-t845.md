@@ -5,8 +5,8 @@ main:
   id: 4
   content: |
     Discover our 5kg premium peanut paste bucket. Specially packaged for bulk B2B clients, catering, and exporters. 100% natural and certified aflatoxin-free.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_5kg.png"
+  imgMain: "@/images/product_5kg.png"
   imgAlt: "TooluBaay 5kg peanut paste bucket"
 tabs:
   - id: "tabs-with-card-item-1"

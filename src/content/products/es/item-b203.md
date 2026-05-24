@@ -5,8 +5,8 @@ main:
   id: 2
   content: |
     Descubra nuestra pasta de maní premium de 500g. Elaborada por cooperativas de mujeres rurales aliadas en Senegal, sin conservantes ni aflatoxinas.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_500g.png"
+  imgMain: "@/images/product_500g.png"
   imgAlt: "Tarro de pasta de maní TooluBaay 500g"
 tabs:
   - id: "tabs-with-card-item-1"

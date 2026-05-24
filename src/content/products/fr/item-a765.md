@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Découvrez notre pâte d'arachide premium de 250g. Fabriquée artisanalement par des GIE de femmes rurales à Tambacounda au Sénégal, sans aucun additif et certifiée sans aflatoxine.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_250g.png"
+  imgMain: "@/images/product_250g.png"
   imgAlt: "Pot de pâte d'arachide TooluBaay 250g"
 tabs:
   - id: "tabs-with-card-item-1"
