@@ -1,0 +1,266 @@
+---
+// Composant formulaire contact — Astro 5 · TailwindCSS 4 · Resend via /api/contact
+// Langues supportées : fr | en
+
+interface Props {
+  lang?: "fr" | "en";
+}
+
+const { lang = "fr" } = Astro.props;
+
+const labels = {
+  fr: {
+    firstName: "Prénom",
+    lastName: "Nom",
+    email: "Email",
+    subject: "Sujet",
+    subjectOptional: "(optionnel)",
+    message: "Message",
+    submit: "Envoyer le message →",
+    sending: "Envoi en cours...",
+    required: "Champs obligatoires",
+    replyTime: "Réponse sous 24–48h",
+    successTitle: "Message envoyé !",
+    successText: "Nous reviendrons vers vous dans les meilleurs délais.",
+    successReset: "Envoyer un autre message",
+    placeholderFirstName: "Votre prénom",
+    placeholderLastName: "Votre nom",
+    placeholderEmail: "votre@email.com",
+    placeholderSubject: "Ex : Demande d'information",
+    placeholderMessage: "Décrivez votre demande...",
+  },
+  en: {
+    firstName: "First name",
+    lastName: "Last name",
+    email: "Email",
+    subject: "Subject",
+    subjectOptional: "(optional)",
+    message: "Message",
+    submit: "Send message →",
+    sending: "Sending...",
+    required: "Required fields",
+    replyTime: "Reply within 24–48h",
+    successTitle: "Message sent!",
+    successText: "We will get back to you as soon as possible.",
+    successReset: "Send another message",
+    placeholderFirstName: "Your first name",
+    placeholderLastName: "Your last name",
+    placeholderEmail: "your@email.com",
+    placeholderSubject: "e.g. Information request",
+    placeholderMessage: "Describe your request...",
+  },
+} as const;
+
+const t = labels[lang];
+---
+
+<div id="contact-form-wrapper" class="w-full">
+
+  <!-- État succès -->
+  <div id="contact-success" class="hidden flex-col items-center justify-center gap-6 py-16 text-center">
+    <div class="flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-3xl text-green-600">
+      ✓
+    </div>
+    <div>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">{t.successTitle}</h3>
+      <p class="mt-2 text-neutral-500 dark:text-neutral-400">{t.successText}</p>
+    </div>
+    <button
+      id="contact-reset"
+      class="text-sm underline underline-offset-4 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+    >
+      {t.successReset}
+    </button>
+  </div>
+
+  <!-- Formulaire -->
+  <form id="contact-form" class="flex flex-col gap-5" novalidate>
+
+    <!-- Prénom / Nom -->
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div class="flex flex-col gap-1.5">
+        <label for="cf-firstName" class="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+          {t.firstName} <span class="text-red-500">*</span>
+        </label>
+        <input
+          id="cf-firstName"
+          name="firstName"
+          type="text"
+          autocomplete="given-name"
+          required
+          placeholder={t.placeholderFirstName}
+          class="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-100 dark:focus:ring-neutral-700 disabled:opacity-60"
+        />
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label for="cf-lastName" class="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+          {t.lastName} <span class="text-red-500">*</span>
+        </label>
+        <input
+          id="cf-lastName"
+          name="lastName"
+          type="text"
+          autocomplete="family-name"
+          required
+          placeholder={t.placeholderLastName}
+          class="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-100 dark:focus:ring-neutral-700 disabled:opacity-60"
+        />
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="flex flex-col gap-1.5">
+      <label for="cf-email" class="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+        {t.email} <span class="text-red-500">*</span>
+      </label>
+      <input
+        id="cf-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        placeholder={t.placeholderEmail}
+        class="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-100 dark:focus:ring-neutral-700 disabled:opacity-60"
+      />
+    </div>
+
+    <!-- Sujet (optionnel) -->
+    <div class="flex flex-col gap-1.5">
+      <label for="cf-subject" class="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+        {t.subject} <span class="text-xs font-normal text-neutral-400">{t.subjectOptional}</span>
+      </label>
+      <input
+        id="cf-subject"
+        name="subject"
+        type="text"
+        placeholder={t.placeholderSubject}
+        class="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-100 dark:focus:ring-neutral-700 disabled:opacity-60"
+      />
+    </div>
+
+    <!-- Message -->
+    <div class="flex flex-col gap-1.5">
+      <label for="cf-message" class="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+        {t.message} <span class="text-red-500">*</span>
+      </label>
+      <textarea
+        id="cf-message"
+        name="message"
+        required
+        rows={5}
+        placeholder={t.placeholderMessage}
+        class="resize-y rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-100 dark:focus:ring-neutral-700 disabled:opacity-60"
+      ></textarea>
+    </div>
+
+    <!-- Erreur -->
+    <div id="contact-error" class="hidden rounded-lg border border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-950/40 px-4 py-3 text-sm text-red-700 dark:text-red-300"></div>
+
+    <!-- Submit -->
+    <button
+      id="contact-submit"
+      type="submit"
+      class="mt-2 flex items-center justify-center gap-2 rounded-lg bg-neutral-900 dark:bg-neutral-100 px-6 py-3.5 text-sm font-semibold text-white dark:text-neutral-900 transition-all hover:bg-neutral-700 dark:hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    >
+      <span id="contact-submit-text">{t.submit}</span>
+      <span id="contact-submit-spinner" class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
+    </button>
+
+    <p class="text-center text-xs text-neutral-400">
+      {t.replyTime} · <span class="text-red-400">*</span> {t.required}
+    </p>
+
+  </form>
+</div>
+
+<script>
+  function initContactForm() {
+    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+    const successDiv = document.getElementById("contact-success");
+    const resetBtn = document.getElementById("contact-reset");
+    const errorDiv = document.getElementById("contact-error");
+    const submitBtn = document.getElementById("contact-submit") as HTMLButtonElement | null;
+    const submitText = document.getElementById("contact-submit-text");
+    const submitSpinner = document.getElementById("contact-submit-spinner");
+
+    if (!form || !successDiv || !resetBtn || !errorDiv || !submitBtn || !submitText || !submitSpinner) return;
+
+    function setLoading(loading: boolean) {
+      submitBtn!.disabled = loading;
+      submitText!.textContent = loading
+        ? (document.documentElement.lang === "en" ? "Sending..." : "Envoi en cours...")
+        : (document.documentElement.lang === "en" ? "Send message →" : "Envoyer le message →");
+      submitSpinner!.classList.toggle("hidden", !loading);
+      form!.querySelectorAll("input, textarea").forEach((el) => {
+        (el as HTMLInputElement | HTMLTextAreaElement).disabled = loading;
+      });
+    }
+
+    function showError(msg: string) {
+      errorDiv!.textContent = msg;
+      errorDiv!.classList.remove("hidden");
+    }
+
+    function hideError() {
+      errorDiv!.classList.add("hidden");
+    }
+
+    function showSuccess() {
+      form!.classList.add("hidden");
+      successDiv!.classList.remove("hidden");
+      successDiv!.classList.add("flex");
+    }
+
+    resetBtn.addEventListener("click", () => {
+      form!.reset();
+      form!.classList.remove("hidden");
+      successDiv!.classList.add("hidden");
+      successDiv!.classList.remove("flex");
+      hideError();
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      hideError();
+
+      const formData = new FormData(form);
+      const payload = {
+        firstName: (formData.get("firstName") as string)?.trim(),
+        lastName: (formData.get("lastName") as string)?.trim(),
+        email: (formData.get("email") as string)?.trim(),
+        subject: (formData.get("subject") as string)?.trim(),
+        message: (formData.get("message") as string)?.trim(),
+      };
+
+      setLoading(true);
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json() as { success: boolean; error?: string };
+
+        if (result.success) {
+          showSuccess();
+        } else {
+          showError(result.error ?? "Une erreur est survenue. Veuillez réessayer.");
+        }
+      } catch {
+        showError(
+          document.documentElement.lang === "en"
+            ? "Network error. Check your connection and try again."
+            : "Erreur réseau. Vérifiez votre connexion et réessayez."
+        );
+      } finally {
+        setLoading(false);
+      }
+    });
+  }
+
+  // Astro View Transitions compatible
+  document.addEventListener("astro:page-load", initContactForm);
+  initContactForm();
+</script>
