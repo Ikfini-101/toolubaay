@@ -1,4 +1,4 @@
----
+﻿---
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
@@ -27,8 +27,8 @@ const avatarSrcs: Array<string> = [
 
   <HeroSection
     title=`Valoriser les Femmes et les Jeunes, <span class="text-yellow-500 dark:text-yellow-400">Transformer l'Agriculture</span>`
-    subTitle="TooluBaay structure la filière arachide au Sénégal, fournissant aux coopératives de femmes et de jeunes en milieu rural des outils numériques, des formations durables et un accès au marché pour une qualité premium."
-    primaryBtn="Découvrir nos produits"
+    subTitle="TooluBaay structure la filiÃ¨re arachide au SÃ©nÃ©gal, fournissant aux coopÃ©ratives de femmes et de jeunes en milieu rural des outils numÃ©riques, des formations durables et un accÃ¨s au marchÃ© pour une qualitÃ© premium."
+    primaryBtn="DÃ©couvrir nos produits"
     primaryBtnURL={getRelativeLocaleUrl("fr", "products")}
     secondaryBtn="Devenir Partenaire"
     secondaryBtnURL={getRelativeLocaleUrl("fr", "contact")}
@@ -36,23 +36,23 @@ const avatarSrcs: Array<string> = [
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
-    reviews=`À partir de plus de <span class="font-bold">12,8k</span> avis`
+    reviews=`Ã€ partir de plus de <span class="font-bold">12,8k</span> avis`
     src={heroImage}
-    alt="Coopérative de culture d'arachide au Sénégal"
+    alt="CoopÃ©rative de culture d'arachide au SÃ©nÃ©gal"
   />
 
   <PhotoCarousel
-    title="La Vie de nos Coopératives en Images"
-    subTitle="Découvrez en images le quotidien de nos productrices et de nos GIE partenaires."
+    title="La Vie de nos CoopÃ©ratives en Images"
+    subTitle="DÃ©couvrez en images le quotidien de nos producteurs et de nos GIE partenaires."
   />
 
   <CEOSection />
 
   <FeaturesGeneral
     title="Cultiver l'Impact & l'Innovation"
-    subTitle="Chez TooluBaay, nous relevons les défis uniques de l'agriculture familiale au Sénégal. En combinant solutions AgriTech et transformation locale, nous renforçons les GIE de femmes et de jeunes, améliorons la résilience des cultures et livrons une pâte d'arachide premium conforme aux normes HACCP pour une qualité premium."
+    subTitle="Chez TooluBaay, nous relevons les dÃ©fis uniques de l'agriculture familiale au SÃ©nÃ©gal. En combinant solutions AgriTech et transformation locale, nous renforÃ§ons les GIE de femmes et de jeunes, amÃ©liorons la rÃ©silience des cultures et livrons une pÃ¢te d'arachide premium conforme aux normes HACCP pour une qualitÃ© premium."
     src={featureImage}
-    alt="Transformation de la pâte d'arachide par des femmes locales"
+    alt="Transformation de la pÃ¢te d'arachide par des femmes locales"
     features={features}
   />
 
@@ -62,7 +62,7 @@ const avatarSrcs: Array<string> = [
       {
         heading: "Suivi Agroclimatique",
         content:
-          "Notre application mobile fournit des prévisions météo agricoles localisées et vocales dans les langues locales (wolof, pulaar, mandingue), aidant les paysans à planifier au mieux leurs récoltes.",
+          "Notre application mobile fournit des prÃ©visions mÃ©tÃ©o agricoles localisÃ©es et vocales dans les langues locales (wolof, pulaar, mandingue), aidant les paysans Ã  planifier au mieux leurs rÃ©coltes.",
         svg: "tools",
         src: tools,
         alt: "Application mobile TooluBaay",
@@ -71,16 +71,16 @@ const avatarSrcs: Array<string> = [
       {
         heading: "Chatbot IA Vocal",
         content:
-          "Un conseiller agricole virtuel interactif (en cours de développement) conçu pour répondre en langues locales aux questions des producteurs pour démocratiser l'accès au conseil.",
+          "Un conseiller agricole virtuel interactif (en cours de dÃ©veloppement) conÃ§u pour rÃ©pondre en langues locales aux questions des producteurs pour dÃ©mocratiser l'accÃ¨s au conseil.",
         svg: "dashboard",
         src: tools,
-        alt: "Schéma du conseiller IA vocal",
+        alt: "SchÃ©ma du conseiller IA vocal",
         second: true,
       },
       {
         heading: "Diagnostic de Maladies par Photo",
         content:
-          "Grâce à la reconnaissance d'images par IA, le producteur prend une photo d'une feuille malade et reçoit instantanément un diagnostic et des suggestions de traitement bio.",
+          "GrÃ¢ce Ã  la reconnaissance d'images par IA, le producteur prend une photo d'une feuille malade et reÃ§oit instantanÃ©ment un diagnostic et des suggestions de traitement bio.",
         svg: "house",
         src: tools,
         alt: "Prise de photo d'une feuille malade",
@@ -89,14 +89,14 @@ const avatarSrcs: Array<string> = [
   />
 
   <TestimonialsSection
-    title="Restructurer les Chaînes de Valeur Rurales"
-    subTitle="Soutenir la souveraineté alimentaire nationale par la juste rémunération des femmes et des jeunes et l'innovation."
+    title="Restructurer les ChaÃ®nes de Valeur Rurales"
+    subTitle="Soutenir la souverainetÃ© alimentaire nationale par la juste rÃ©munÃ©ration des femmes et des jeunes et l'innovation."
     testimonials={[
       {
         content:
-          "TooluBaay a complètement changé notre quotidien. Grâce au suivi météo et au prix d'achat garanti, les revenus de notre coopérative ont augmenté, et nous sommes fières de voir notre pâte d'arachide vendue dans des pots premium.",
+          "TooluBaay a complÃ¨tement changÃ© notre quotidien. GrÃ¢ce au suivi mÃ©tÃ©o et au prix d'achat garanti, les revenus de notre coopÃ©rative ont augmentÃ©, et nous sommes fiÃ¨res de voir notre pÃ¢te d'arachide vendue dans des pots premium.",
         author: "M. K.",
-        role: "Présidente | GIE K*** (D***)",
+        role: "PrÃ©sidente | GIE K*** (D***)",
         avatarSrc:
           "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=320&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
       },
@@ -105,30 +105,31 @@ const avatarSrcs: Array<string> = [
       {
         count: "120+",
         description:
-          "femmes et jeunes accompagnés dans nos pôles agricoles",
+          "femmes et jeunes accompagnÃ©s dans nos pÃ´les agricoles",
       },
       {
         count: "+25%",
         description:
-          "de hausse de revenus pour les coopératives partenaires en Phase 1",
+          "de hausse de revenus pour les coopÃ©ratives partenaires en Phase 1",
       },
       {
         count: "21+",
         description:
-          "GIE de femmes et de jeunes structurés dans les pôles agricoles",
+          "GIE de femmes et de jeunes structurÃ©s dans les pÃ´les agricoles",
       },
       {
         count: "100%",
-        description: "naturel, garanti sans aflatoxine et conforme aux normes HACCP pour une qualité premium",
+        description: "naturel, garanti sans aflatoxine et conforme aux normes HACCP pour une qualitÃ© premium",
       },
     ]}
   />
 
-  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+  <FAQ title="Questions<br />frÃ©quemment posÃ©es" faqs={faqs} />
 
   <HeroSectionAlt
     title="Soutenir l'Autonomie & l'Impact"
-    subTitle="Rejoignez-nous pour étendre la chaîne de valeur inclusive de transformation d'arachide au Sénégal."
+    subTitle="Rejoignez-nous pour Ã©tendre la chaÃ®ne de valeur inclusive de transformation d'arachide au SÃ©nÃ©gal."
     url={getRelativeLocaleUrl("fr", "contact")}
   />
 </MainLayout>
+

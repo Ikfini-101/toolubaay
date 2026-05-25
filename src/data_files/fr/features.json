@@ -1,12 +1,12 @@
-[
+﻿[
   {
     "heading": "Autonomisation des GIE de Femmes",
-    "content": "Soutien aux GIE ruraux dans le Sénégal oriental, garantissant des prix d'achat équitables et une inclusion structurelle.",
+    "content": "Soutien aux GIE ruraux dans le SÃ©nÃ©gal oriental, garantissant des prix d'achat Ã©quitables et une inclusion structurelle.",
     "svg": "groups"
   },
   {
-    "heading": "Assurance Qualité Premium",
-    "content": "Contrôle rigoureux de l'aflatoxine et transformation 100% naturelle de pâte d'arachide premium, conforme aux normes B2B.",
+    "heading": "Assurance QualitÃ© Premium",
+    "content": "ContrÃ´le rigoureux de l'aflatoxine et transformation 100% naturelle de pÃ¢te d'arachide premium, HACCP.",
     "svg": "verified"
   },
   {
@@ -15,8 +15,8 @@
     "svg": "books"
   },
   {
-    "heading": "Traçabilité et Impact Social",
-    "content": "Chaque pot contient un QR code reliant directement le consommateur au GIE de femmes productrices à l'origine du lot.",
+    "heading": "TraÃ§abilitÃ© et Impact Social",
+    "content": "Chaque pot contient un QR code reliant directement le consommateur au GIE de femmes producteurs Ã  l'origine du lot.",
     "svg": "frame"
   }
 ]

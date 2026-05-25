@@ -1,4 +1,4 @@
----
+﻿---
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
@@ -26,9 +26,9 @@ const avatarSrcs: Array<string> = [
 
 
   <HeroSection
-    title=`Empoderar a las Mujeres y Jóvenes, <span
+    title=`Empoderar a las Mujeres y JÃ³venes, <span
         class="text-yellow-500 dark:text-yellow-400">Transformar la Agricultura</span>`
-    subTitle="TooluBaay estructura la cadena de valor del maní en Senegal, proporcionando herramientas digitales, formación sostenible y acceso a mercados para una calidad premium a cooperativas de mujeres y jóvenes en el medio rural."
+    subTitle="TooluBaay estructura la cadena de valor del manÃ­ en Senegal, proporcionando herramientas digitales, formaciÃ³n sostenible y acceso a mercados para una calidad premium a GIE de mujeres y jÃ³venes en el medio rural."
     primaryBtn="Explorar Nuestros Productos"
     primaryBtnURL={getRelativeLocaleUrl("es", "products")}
     secondaryBtn="Asociarse con Nosotros"
@@ -37,23 +37,23 @@ const avatarSrcs: Array<string> = [
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
-    reviews=`De más de <span class="font-bold">12.8k</span> Reseñas`
+    reviews=`De mÃ¡s de <span class="font-bold">12.8k</span> ReseÃ±as`
     src={heroImage}
-    alt="Cooperativa de cultivo de maní en Senegal"
+    alt="Cooperativa de cultivo de manÃ­ en Senegal"
   />
 
   <PhotoCarousel
-    title="Nuestras Cooperativas en Acción"
-    subTitle="Descubre en imágenes la vida cotidiana y los logros de nuestras cooperativas de mujeres y jóvenes."
+    title="Nuestras Cooperativas en AcciÃ³n"
+    subTitle="Descubre en imÃ¡genes la vida cotidiana y los logros de nuestras GIE de mujeres y jÃ³venes."
   />
 
   <CEOSection />
 
   <FeaturesGeneral
-    title="Cultivando Impacto e Innovación"
-    subTitle="En TooluBaay abordamos los desafíos de la agricultura rural en Senegal. Al combinar soluciones AgriTech con la transformación local, apoyamos a las cooperativas de mujeres y jóvenes, mejoramos la resiliencia de los cultivos y entregamos pasta de maní de calidad premium conforme a las normas HACCP."
+    title="Cultivando Impacto e InnovaciÃ³n"
+    subTitle="En TooluBaay abordamos los desafÃ­os de la agricultura rural en Senegal. Al combinar soluciones AgriTech con la transformaciÃ³n local, apoyamos a las GIE de mujeres y jÃ³venes, mejoramos la resiliencia de los cultivos y entregamos pasta de manÃ­ de calidad premium conforme a las normas HACCP."
     src={featureImage}
-    alt="Transformación de maní por la cooperativa local de mujeres GIE"
+    alt="TransformaciÃ³n de manÃ­ por la cooperativa local de mujeres GIE"
     features={features}
   />
 
@@ -61,27 +61,27 @@ const avatarSrcs: Array<string> = [
     title=`Aprovechando <span class="text-yellow-500 dark:text-yellow-400">AgriTech</span> para una Agricultura Inteligente.`
     tabs={[
       {
-        heading: "Seguimiento Meteorológico Inteligente",
+        heading: "Seguimiento MeteorolÃ³gico Inteligente",
         content:
-          "Nuestra aplicación ofrece pronósticos agrometeorológicos localizados en lenguas locales (wolof, pulaar, mandingue), asegurando que los agricultores tomen decisiones informadas sobre cuándo sembrar, regar y cosechar.",
+          "Nuestra aplicaciÃ³n ofrece pronÃ³sticos agrometeorolÃ³gicos localizados en lenguas locales (wolof, pulaar, mandingue), asegurando que los agricultores tomen decisiones informadas sobre cuÃ¡ndo sembrar, regar y cosechar.",
         svg: "tools",
         src: tools,
-        alt: "Captura de pantalla de la aplicación móvil TooluBaay",
+        alt: "Captura de pantalla de la aplicaciÃ³n mÃ³vil TooluBaay",
         first: true,
       },
       {
         heading: "Asistencia de Chatbot IA",
         content:
-          "Un chatbot de voz interactivo (actualmente en desarrollo) diseñado para responder preguntas agrícolas en lenguas locales, haciendo que el asesoramiento agrícola experto sea accesible para todos.",
+          "Un chatbot de voz interactivo (actualmente en desarrollo) diseÃ±ado para responder preguntas agrÃ­colas en lenguas locales, haciendo que el asesoramiento agrÃ­cola experto sea accesible para todos.",
         svg: "dashboard",
         src: tools,
         alt: "Diagrama del chatbot de voz",
         second: true,
       },
       {
-        heading: "Diagnóstico de Enfermedades de Cultivos",
+        heading: "DiagnÃ³stico de Enfermedades de Cultivos",
         content:
-          "Utilizando reconocimiento de imágenes por IA, los agricultores pueden tomar fotos de las hojas de los cultivos para identificar plagas y enfermedades al instante, recibiendo sugerencias inmediatas de biotratamiento.",
+          "Utilizando reconocimiento de imÃ¡genes por IA, los agricultores pueden tomar fotos de las hojas de los cultivos para identificar plagas y enfermedades al instante, recibiendo sugerencias inmediatas de biotratamiento.",
         svg: "house",
         src: tools,
         alt: "Tomando foto de la hoja del cultivo",
@@ -91,11 +91,11 @@ const avatarSrcs: Array<string> = [
 
   <TestimonialsSection
     title="Redefiniendo las Cadenas de Valor Rurales"
-    subTitle="Empoderando a los agricultores a través de la tecnología y una remuneración justa para impulsar la soberanía alimentaria sostenible."
+    subTitle="Empoderando a los agricultores a travÃ©s de la tecnologÃ­a y una remuneraciÃ³n justa para impulsar la soberanÃ­a alimentaria sostenible."
     testimonials={[
       {
         content:
-          "TooluBaay ha cambiado por completo nuestra forma de trabajar. Con la ayuda meteorológica y los precios de compra directos, los ingresos de nuestra cooperativa han aumentado, y estamos orgullosas de ver nuestra pasta de maní en un empaque premium.",
+          "TooluBaay ha cambiado por completo nuestra forma de trabajar. Con la ayuda meteorolÃ³gica y los precios de compra directos, los ingresos de nuestra cooperativa han aumentado, y estamos orgullosas de ver nuestra pasta de manÃ­ en un empaque premium.",
         author: "Manio Keita",
         role: "Presidenta | GIE KamBen (Dialacoto)",
         avatarSrc:
@@ -106,7 +106,7 @@ const avatarSrcs: Array<string> = [
       {
         count: "120+",
         description:
-          "mujeres y jóvenes empoderados en nuestros polos agrícolas",
+          "mujeres y jÃ³venes empoderados en nuestros polos agrÃ­colas",
       },
       {
         count: "+25%",
@@ -116,11 +116,11 @@ const avatarSrcs: Array<string> = [
       {
         count: "+20 GIE",
         description:
-          "cooperativas GIE activas estructuradas en nuestros polos agrícolas",
+          "cooperativas GIE activas estructuradas en nuestros polos agrÃ­colas",
       },
       {
         count: "100%",
-        description: "pasta de maní premium natural, certificada libre de aflatoxinas y conforme a las normas HACCP",
+        description: "pasta de manÃ­ premium natural, certificada libre de aflatoxinas y conforme a las normas HACCP",
       },
     ]}
   />
@@ -128,8 +128,9 @@ const avatarSrcs: Array<string> = [
   <FAQ title="Preguntas<br />frecuentes" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Apoye la Soberanía y el Impacto"
-    subTitle="Únase a nosotros para expandir la cadena de valor de transformación de maní inclusiva en todo Senegal."
+    title="Apoye la SoberanÃ­a y el Impacto"
+    subTitle="Ãšnase a nosotros para expandir la cadena de valor de transformaciÃ³n de manÃ­ inclusiva en todo Senegal."
     url={getRelativeLocaleUrl("es", "contact")}
   />
 </MainLayout>
+

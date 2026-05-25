@@ -1,4 +1,4 @@
----
+﻿---
 import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import womenCoop from "@images/women_cooperative.png";
@@ -6,7 +6,7 @@ import { SITE } from "@data/constants";
 
 const pageTitle = `Nuestro Impacto | ${SITE.title}`;
 const metaDescription =
-  "Descubra cómo TooluBaay empodera a las cooperativas de mujeres y jóvenes en el medio rural en Senegal, garantiza ingresos equitables e impulsa una transformación agrícola sostenible.";
+  "Descubra cÃ³mo TooluBaay empodera a las GIE de mujeres y jÃ³venes en el medio rural en Senegal, garantiza ingresos equitables e impulsa una transformaciÃ³n agrÃ­cola sostenible.";
 const ogTitle = "Impacto y Sostenibilidad | TooluBaay";
 
 // GIE Cooperatives data
@@ -17,9 +17,9 @@ const cooperatives = [
   { code: "TB-TBA-004", name: "GIE Fandema Kaffo", location: "Bantantinty", leader: "Fanta Toure", role: "GIE Socio" },
   { code: "TB-TBA-005", name: "GIE And Jubbo", location: "Sinthiou Malem", leader: "Mamadou Aliou Ba", role: "GIE Socio" },
   { code: "TB-TBA-006", name: "GIE Takku Ligguey", location: "Keur Ousmane", leader: "Ndeye Fatou Ndiaye", role: "GIE Socio" },
-  { code: "TB-TBA-007", name: "GIE Berete", location: "Darou Ndibélane", leader: "Fatoumata Bintou Diallo", role: "GIE Socio" },
-  { code: "TB-TBA-008", name: "GIE Deggo", location: "Darou Ndibélane", leader: "Alsane Diop", role: "GIE Socio" },
-  { code: "TB-TBA-009", name: "GIE 4R", location: "Sinthiou Malem", leader: "Ndiémé Camara", role: "GIE Socio" },
+  { code: "TB-TBA-007", name: "GIE Berete", location: "Darou NdibÃ©lane", leader: "Fatoumata Bintou Diallo", role: "GIE Socio" },
+  { code: "TB-TBA-008", name: "GIE Deggo", location: "Darou NdibÃ©lane", leader: "Alsane Diop", role: "GIE Socio" },
+  { code: "TB-TBA-009", name: "GIE 4R", location: "Sinthiou Malem", leader: "NdiÃ©mÃ© Camara", role: "GIE Socio" },
   { code: "TB-TBA-010", name: "GIE Alanso 2", location: "Bantantity", leader: "Coumba Waly", role: "GIE Socio" }
 ];
 
@@ -31,15 +31,15 @@ const sdgs = [
     color: "#E5243B",
     bgClass: "bg-[#E5243B]/10 text-[#E5243B] dark:bg-[#E5243B]/20 dark:text-[#FF6B6B]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(229,36,59,0.3)]",
-    description: "Al comprar la pasta de maní a un precio de compra garantizado y equitativo (superior a las tarifas del mercado local), aseguramos ingresos estables y mayores para las familias en el medio rural."
+    description: "Al comprar la pasta de manÃ­ a un precio de compra garantizado y equitativo (superior a las tarifas del mercado local), aseguramos ingresos estables y mayores para las familias en el medio rural."
   },
   {
     number: "5",
-    title: "Igualdad de Género",
+    title: "Igualdad de GÃ©nero",
     color: "#EF402B",
     bgClass: "bg-[#EF402B]/10 text-[#EF402B] dark:bg-[#EF402B]/20 dark:text-[#FF8E7A]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(239,64,43,0.3)]",
-    description: "Trabajamos directamente con grupos de interés económico (GIE) liderados por mujeres y jóvenes, proporcionando herramientas, formalización y formación para fomentar la independencia financiera."
+    description: "Trabajamos directamente con grupos de interÃ©s econÃ³mico (GIE) liderados por mujeres y jÃ³venes, proporcionando herramientas, formalizaciÃ³n y formaciÃ³n para fomentar la independencia financiera."
   },
   {
     number: "8",
@@ -47,15 +47,15 @@ const sdgs = [
     color: "#A21942",
     bgClass: "bg-[#A21942]/10 text-[#A21942] dark:bg-[#A21942]/20 dark:text-[#FF6B8B]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(162,25,66,0.3)]",
-    description: "Creación de más de 120 empleos directos para mujeres y jóvenes en la Fase 1, profesionalizando el oficio de transformación de maní bajo altos estándares de seguridad, higiene y HACCP."
+    description: "CreaciÃ³n de mÃ¡s de 120 empleos directos para mujeres y jÃ³venes en la Fase 1, profesionalizando el oficio de transformaciÃ³n de manÃ­ bajo altos estÃ¡ndares de seguridad, higiene y HACCP."
   },
   {
     number: "13",
-    title: "Acción por el Clima",
+    title: "AcciÃ³n por el Clima",
     color: "#3F7E44",
     bgClass: "bg-[#3F7E44]/10 text-[#3F7E44] dark:bg-[#3F7E44]/20 dark:text-[#81C784]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(63,126,68,0.3)]",
-    description: "Equipamos a las agricultoras con asesoramiento agroclimático y tecnología móvil para construir resiliencia frente a los patrones climáticos erráticos en Senegal."
+    description: "Equipamos a las agricultoras con asesoramiento agroclimÃ¡tico y tecnologÃ­a mÃ³vil para construir resiliencia frente a los patrones climÃ¡ticos errÃ¡ticos en Senegal."
   }
 ];
 
@@ -63,31 +63,31 @@ const sdgs = [
 const vision2050 = [
   {
     number: "1",
-    title: "Soberanía Alimentaria",
+    title: "SoberanÃ­a Alimentaria",
     color: "#008543",
     bgClass: "bg-[#008543]/10 text-[#008543] dark:bg-[#008543]/20 dark:text-[#34D399]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(0,133,67,0.25)]",
-    description: "Reducción de la dependencia de las importaciones mediante el aumento de la producción local de pasta de maní de calidad premium."
+    description: "ReducciÃ³n de la dependencia de las importaciones mediante el aumento de la producciÃ³n local de pasta de manÃ­ de calidad premium."
   },
   {
     number: "2",
-    title: "Industrialización",
+    title: "IndustrializaciÃ³n",
     color: "#D97706",
     bgClass: "bg-[#D97706]/10 text-[#D97706] dark:bg-[#D97706]/20 dark:text-[#FBBF24]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(217,119,6,0.25)]",
-    description: "Modernización del procesamiento artesanal con equipos semiindustriales que cumplen con los estándares internacionales."
+    description: "ModernizaciÃ³n del procesamiento artesanal con equipos semiindustriales que cumplen con los estÃ¡ndares internacionales."
   },
   {
     number: "3",
-    title: "Inclusión de Jóvenes y Mujeres",
+    title: "InclusiÃ³n de JÃ³venes y Mujeres",
     color: "#E31B23",
     bgClass: "bg-[#E31B23]/10 text-[#E31B23] dark:bg-[#E31B23]/20 dark:text-[#FCA5A5]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(227,27,35,0.25)]",
-    description: "Integración activa y empoderamiento socioeconómico de mujeres y jóvenes rurales a través de las cooperativas GIE."
+    description: "IntegraciÃ³n activa y empoderamiento socioeconÃ³mico de mujeres y jÃ³venes rurales a travÃ©s de las cooperativas GIE."
   },
   {
     number: "4",
-    title: "Empoderamiento Económico",
+    title: "Empoderamiento EconÃ³mico",
     color: "#008543",
     bgClass: "bg-[#008543]/10 text-[#008543] dark:bg-[#008543]/20 dark:text-[#34D399]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(0,133,67,0.25)]",
@@ -99,15 +99,15 @@ const vision2050 = [
     color: "#D97706",
     bgClass: "bg-[#D97706]/10 text-[#D97706] dark:bg-[#D97706]/20 dark:text-[#FBBF24]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(217,119,6,0.25)]",
-    description: "Despliegue de soluciones AgriTech para mejorar la resiliencia de los cultivos frente a los desafíos agroclimáticos."
+    description: "Despliegue de soluciones AgriTech para mejorar la resiliencia de los cultivos frente a los desafÃ­os agroclimÃ¡ticos."
   },
   {
     number: "6",
-    title: "Creación de Valor Local",
+    title: "CreaciÃ³n de Valor Local",
     color: "#E31B23",
     bgClass: "bg-[#E31B23]/10 text-[#E31B23] dark:bg-[#E31B23]/20 dark:text-[#FCA5A5]",
     shadowClass: "hover:shadow-[0_10px_30px_-10px_rgba(227,27,35,0.25)]",
-    description: "Procesamiento de materias primas localmente para maximizar los beneficios económicos directos en las comunidades rurales."
+    description: "Procesamiento de materias primas localmente para maximizar los beneficios econÃ³micos directos en las comunidades rurales."
   }
 ];
 ---
@@ -123,12 +123,12 @@ const vision2050 = [
     "@id": "https://toolubaay.sn/es/impact",
     url: "https://toolubaay.sn/es/impact",
     name: "Nuestro Impacto | TooluBaay",
-    description: "Descubra el impacto socioeconómico y ambiental del modelo cooperativo de TooluBaay en Senegal.",
+    description: "Descubra el impacto socioeconÃ³mico y ambiental del modelo cooperativo de TooluBaay en Senegal.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://toolubaay.sn/es",
       name: "TooluBaay",
-      description: "Cooperativa de AgriTech y transformación de maní de mujeres y jóvenes en Senegal."
+      description: "Cooperativa de AgriTech y transformaciÃ³n de manÃ­ de mujeres y jÃ³venes en Senegal."
     },
     inLanguage: "es"
   }}
@@ -139,19 +139,19 @@ const vision2050 = [
       <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
-            Nuestra Misión e Impacto
+            Nuestra MisiÃ³n e Impacto
           </span>
           <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl md:text-5xl">
-            Empoderar a las Mujeres y Jóvenes, <span class="text-emerald-600 dark:text-emerald-500">Transformar las Comunidades</span>
+            Empoderar a las Mujeres y JÃ³venes, <span class="text-emerald-600 dark:text-emerald-500">Transformar las Comunidades</span>
           </h1>
           <p class="mt-6 text-lg text-neutral-600 dark:text-neutral-400">
-            TooluBaay opera un modelo híbrido inclusivo que fusiona la innovación AgriTech con la agrotransformación local. Al apoyar a un red estructurada de GIE (Groupements d'Intérêt Économique) gérés por mujeres y jóvenes en nuestros polos agrícolas, cerramos la brecha entre los pequeños productores y los mercados de calidad premium.
+            TooluBaay opera un modelo hÃ­brido inclusivo que fusiona la innovaciÃ³n AgriTech con la agrotransformaciÃ³n local. Al apoyar a un red estructurada de GIE (Groupements d'IntÃ©rÃªt Ã‰conomique) gÃ©rÃ©s por mujeres y jÃ³venes en nuestros polos agrÃ­colas, cerramos la brecha entre los pequeÃ±os productores y los mercados de calidad premium.
           </p>
         </div>
         <div class="relative">
           <Image
             src={womenCoop}
-            alt="Miembros de la cooperativa de mujeres clasificando y transformando maní"
+            alt="Miembros de la GIE de mujeres clasificando y transformando manÃ­"
             class="w-full rounded-2xl object-cover shadow-xl dark:shadow-neutral-950"
           />
           <div class="absolute -bottom-6 -start-6 h-40 w-40 rounded-2xl bg-amber-500/10 -z-10"></div>
@@ -168,7 +168,7 @@ const vision2050 = [
         <div class="text-center">
           <p class="text-4xl font-extrabold text-amber-500 md:text-5xl">120+</p>
           <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Beneficiarias Directas</h2>
-          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Mujeres y jóvenes en la Fase 1</p>
+          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Mujeres y jÃ³venes en la Fase 1</p>
         </div>
         <div class="text-center">
           <p class="text-4xl font-extrabold text-emerald-600 md:text-5xl">+20 GIE</p>
@@ -182,8 +182,8 @@ const vision2050 = [
         </div>
         <div class="text-center">
           <p class="text-4xl font-extrabold text-emerald-600 md:text-5xl">10%</p>
-          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">Reinversión de Beneficios</h2>
-          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Dedicado a la capacitación empresarial</p>
+          <h2 class="mt-2 text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">ReinversiÃ³n de Beneficios</h2>
+          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Dedicado a la capacitaciÃ³n empresarial</p>
         </div>
       </div>
     </div>
@@ -193,8 +193,8 @@ const vision2050 = [
   <section class="bg-neutral-50 py-16 dark:bg-neutral-900 lg:py-24">
     <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Alineación con los Objetivos de Desarrollo Sostenible</h2>
-        <p class="mt-4 text-neutral-600 dark:text-neutral-400">Nuestro modelo de negocio está diseñado en torno al impacto social, apuntando a los ODS clave de las Naciones Unidas para impulsar un desarrollo rural duradero en Senegal.</p>
+        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">AlineaciÃ³n con los Objetivos de Desarrollo Sostenible</h2>
+        <p class="mt-4 text-neutral-600 dark:text-neutral-400">Nuestro modelo de negocio estÃ¡ diseÃ±ado en torno al impacto social, apuntando a los ODS clave de las Naciones Unidas para impulsar un desarrollo rural duradero en Senegal.</p>
       </div>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -265,16 +265,16 @@ const vision2050 = [
     </div>
   </section>
 
-  <!-- Vision Sénégal 2050 Section -->
+  <!-- Vision SÃ©nÃ©gal 2050 Section -->
   <section class="bg-white py-16 dark:bg-neutral-950 lg:py-24 border-t border-neutral-200/20">
     <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Alineación con la Visión Senegal 2050</h2>
+        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">AlineaciÃ³n con la VisiÃ³n Senegal 2050</h2>
         
         {/* Senegal flag divider */}
         <div class="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-emerald-600 via-amber-400 to-red-600 rounded-full"></div>
         
-        <p class="mt-4 text-neutral-600 dark:text-neutral-400">TooluBaay se alinea plenamente con las directrices estratégicas nacionales de Senegal para fomentar una economy rural fuerte, soberana e inclusiva.</p>
+        <p class="mt-4 text-neutral-600 dark:text-neutral-400">TooluBaay se alinea plenamente con las directrices estratÃ©gicas nacionales de Senegal para fomentar una economy rural fuerte, soberana e inclusiva.</p>
       </div>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -353,9 +353,9 @@ const vision2050 = [
   <section class="bg-neutral-50 py-16 dark:bg-neutral-900 lg:py-24 border-t border-neutral-200/20">
     <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mb-12">
-        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Nuestra Red de Cooperativas GIE de Mujeres y Jóvenes</h2>
+        <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Nuestra Red de Cooperativas GIE de Mujeres y JÃ³venes</h2>
         <p class="mt-4 text-neutral-600 dark:text-neutral-400">
-          Nos asociamos con una red de cooperativas locales en nuestros polos agrícolas, estandarizando los equipos de producción y ofreciendo formación para garantizar altos estándares de higiene, seguridad y conformidad con las normas HACCP.
+          Nos asociamos con una red de cooperativas locales en nuestros polos agrÃ­colas, estandarizando los equipos de producciÃ³n y ofreciendo formaciÃ³n para garantizar altos estÃ¡ndares de higiene, seguridad y conformidad con las normas HACCP.
         </p>
       </div>
 
@@ -373,10 +373,10 @@ const vision2050 = [
                 {coop.name}
               </h3>
               <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-                <span class="font-semibold text-neutral-700 dark:text-neutral-300">Ubicación:</span> {coop.location}
+                <span class="font-semibold text-neutral-700 dark:text-neutral-300">UbicaciÃ³n:</span> {coop.location}
               </p>
               <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-                <span class="font-semibold text-neutral-700 dark:text-neutral-300">Líder:</span> {coop.leader}
+                <span class="font-semibold text-neutral-700 dark:text-neutral-300">LÃ­der:</span> {coop.leader}
               </p>
             </div>
           </div>
@@ -385,3 +385,4 @@ const vision2050 = [
     </div>
   </section>
 </MainLayout>
+

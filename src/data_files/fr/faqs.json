@@ -1,25 +1,25 @@
-{
-  "subTitle": "Posez-nous toutes vos questions sur notre coopérative et nos produits, et obtenez des réponses factuelles.",
+﻿{
+  "subTitle": "Posez-nous toutes vos questions sur notre coopÃ©rative et nos produits, et obtenez des rÃ©ponses factuelles.",
   "faqs": [
     {
-      "question": "D'où provient la pâte d'arachide TooluBaay ?",
-      "answer": "Notre pâte d'arachide premium est cultivée et transformée par nos GIE de femmes partenaires dans les régions de Tambacounda et Kaffrine au Sénégal. C'est un produit 100% local, naturel et garanti sans aflatoxine."
+      "question": "D'oÃ¹ provient la pÃ¢te d'arachide TooluBaay ?",
+      "answer": "Notre pÃ¢te d'arachide premium est cultivÃ©e et transformÃ©e par nos GIE de femmes partenaires dans les rÃ©gions de Tambacounda et Kaffrine au SÃ©nÃ©gal. C'est un produit 100% local, naturel et garanti sans aflatoxine."
     },
     {
       "question": "En quoi consiste votre approche AgriTech ?",
-      "answer": "Nous mettons à disposition de nos productrices une application mobile avec un conseiller IA vocal dans les langues locales (Wolof, Pulaar, Mandingue), un suivi agroclimatique personnalisé, et un diagnostic des maladies des cultures par photo pour améliorer leur rendement et résilience."
+      "answer": "Nous mettons Ã  disposition de nos producteurs une application mobile avec un conseiller IA vocal dans les langues locales (Wolof, Pulaar, Mandingue), un suivi agroclimatique personnalisÃ©, et un diagnostic des maladies des cultures par photo pour amÃ©liorer leur rendement et rÃ©silience."
     },
     {
       "question": "Faites-vous de la vente en gros B2B ?",
-      "answer": "Absolument. Nous accompagnons les professionnels de la Grande et Moyenne Surface (GMS), les hôtels et les grossistes régionaux. Contactez notre équipe commerciale pour discuter d'un partenariat et de nos conditions tarifaires avantageuses."
+      "answer": "Absolument. Nous accompagnons les professionnels de la Grande et Moyenne Surface (GMS), les hÃ´tels et les grossistes rÃ©gionaux. Contactez notre Ã©quipe commerciale pour discuter d'un partenariat et de nos conditions tarifaires avantageuses."
     },
     {
       "question": "Comment TooluBaay soutient-il les femmes rurales ?",
-      "answer": "TooluBaay assure un prix d'achat juste et garanti, fournit des machines de transformation et des formations, et restructure toute la chaîne de valeur. Cette approche a permis d'augmenter les revenus de nos coopératives partenaires de 25 % en Phase 1."
+      "answer": "TooluBaay assure un prix d'achat juste et garanti, fournit des machines de transformation et des formations, et restructure toute la chaÃ®ne de valeur. Cette approche a permis d'augmenter les revenus de nos coopÃ©ratives partenaires de 25 % en Phase 1."
     },
     {
       "question": "L'application mobile est-elle disponible sans connexion internet ?",
-      "answer": "Notre solution intègre des alertes vocales régulières et une conception pensée pour les zones rurales où la connexion peut être limitée. Les fonctionnalités de base comme le diagnostic peuvent synchroniser les données dès le retour d'une connexion."
+      "answer": "Notre solution intÃ¨gre des alertes vocales rÃ©guliÃ¨res et une conception pensÃ©e pour les zones rurales oÃ¹ la connexion peut Ãªtre limitÃ©e. Les fonctionnalitÃ©s de base comme le diagnostic peuvent synchroniser les donnÃ©es dÃ¨s le retour d'une connexion."
     }
   ]
 }
