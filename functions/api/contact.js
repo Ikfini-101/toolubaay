@@ -114,7 +114,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: "Contact Toolubaay <onboarding@resend.dev>",
-        to: ["cblniv15@gmail.com", "infotoolubay@gmail.com"],
+        to: ["cblniv15@gmail.com"],
         reply_to: email,
         subject: emailSubject,
         html: htmlBody,
