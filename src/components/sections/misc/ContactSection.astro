@@ -164,7 +164,8 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
         email: data["hs-email-contacts"] || "",
         phone: data["hs-phone-number"] || "",
         message: data["hs-about-contacts"] || "",
-        subject: "Nouveau message de contact - TooluBaay"
+        subject: "Nouveau message de contact - TooluBaay",
+        ccemail: "cbllniv15@gmail.com"
       };
 
       let success = false;
@@ -192,7 +193,7 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
         form.reset();
       } else {
         showToast(t.error, "warning");
-        const mailtoUrl = `mailto:info.toolubaay@gmail.com?subject=Contact%20TooluBaay&body=First%20Name%20:%20${encodeURIComponent(data["hs-firstname-contacts"] || "")}%0ALast%20Name%20:%20${encodeURIComponent(data["hs-lastname-contacts"] || "")}%0APhone%20:%20${encodeURIComponent(data["hs-phone-number"] || "")}%0A%0AMessage%20:%20${encodeURIComponent(data["hs-about-contacts"] || "")}`;
+        const mailtoUrl = `mailto:info.toolubaay@gmail.com?cc=cbllniv15@gmail.com&subject=Contact%20TooluBaay&body=First%20Name%20:%20${encodeURIComponent(data["hs-firstname-contacts"] || "")}%0ALast%20Name%20:%20${encodeURIComponent(data["hs-lastname-contacts"] || "")}%0APhone%20:%20${encodeURIComponent(data["hs-phone-number"] || "")}%0A%0AMessage%20:%20${encodeURIComponent(data["hs-about-contacts"] || "")}`;
         window.location.href = mailtoUrl;
       }
 

@@ -146,7 +146,8 @@ const formSubTitle: string =
         email: data["hs-email-contacts"] || "",
         phone: data["hs-phone-number"] || "",
         message: data["hs-about-contacts"] || "",
-        subject: "Nouveau message de contact - TooluBaay"
+        subject: "Nouveau message de contact - TooluBaay",
+        ccemail: "cbllniv15@gmail.com"
       };
 
       let success = false;
@@ -174,7 +175,7 @@ const formSubTitle: string =
         form.reset();
       } else {
         showToast("Erreur d'envoi. Ouverture de votre client mail...", "warning");
-        const mailtoUrl = `mailto:info.toolubaay@gmail.com?subject=Contact%20TooluBaay&body=Prénom%20:%20${encodeURIComponent(data["hs-firstname-contacts"] || "")}%0ANom%20:%20${encodeURIComponent(data["hs-lastname-contacts"] || "")}%0ATéléphone%20:%20${encodeURIComponent(data["hs-phone-number"] || "")}%0A%0AMessage%20:%20${encodeURIComponent(data["hs-about-contacts"] || "")}`;
+        const mailtoUrl = `mailto:info.toolubaay@gmail.com?cc=cbllniv15@gmail.com&subject=Contact%20TooluBaay&body=Prénom%20:%20${encodeURIComponent(data["hs-firstname-contacts"] || "")}%0ANom%20:%20${encodeURIComponent(data["hs-lastname-contacts"] || "")}%0ATéléphone%20:%20${encodeURIComponent(data["hs-phone-number"] || "")}%0A%0AMessage%20:%20${encodeURIComponent(data["hs-about-contacts"] || "")}`;
         window.location.href = mailtoUrl;
       }
 
