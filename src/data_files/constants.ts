@@ -2,7 +2,7 @@ import ogImageSrc from "@images/social.png";
 
 export const SITE = {
   title: "TooluBaay",
-  tagline: "AgriTech & GIE Arachide au Sénégal",
+  tagline: "AgriTech & Coopérative Arachide au Sénégal",
   description: "TooluBaay est une entreprise sociale sénégalaise structurant la filière arachide avec un réseau de GIE de femmes et jeunes en milieu rural, combinant innovation numérique (assistance météo, diagnostic IA) et transformation locale durable.",
   description_short: "TooluBaay structure la filière arachide et soutient l'autonomisation des femmes et jeunes en milieu rural au Sénégal grâce à l'AgriTech.",
   url: "https://toolubaay.sn",
@@ -34,7 +34,7 @@ export const OG = {
   type: "website",
   url: SITE.url,
   title: `${SITE.title}: AgriTech & Transformation d'Arachide Inclusive au Sénégal`,
-  description: "Découvrez notre modèle de pâte d'arachide premium 100% naturelle et l'impact direct sur les GIE de femmes et de jeunes en milieu rural.",
+  description: "Découvrez notre modèle de pâte d'arachide premium 100% naturelle et l'impact direct sur les coopératives de femmes et de jeunes en milieu rural.",
   image: ogImageSrc,
 };
 

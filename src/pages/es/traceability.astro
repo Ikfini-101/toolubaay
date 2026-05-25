@@ -1,10 +1,10 @@
-﻿---
+---
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 
 const pageTitle = `Trazabilidad del Producto | ${SITE.title}`;
 const metaDescription =
-  "Siga el recorrido de su pasta de manÃ­ TooluBaay. Ingrese su cÃ³digo de lote para descubrir el origen de la cooperativa GIE de mujeres y jÃ³venes, los detalles de la cosecha y las mÃ©tricas de calidad.";
+  "Siga el recorrido de su pasta de maní TooluBaay. Ingrese su código de lote para descubrir el origen de la cooperativa GIE de mujeres y jóvenes, los detalles de la cosecha y las métricas de calidad.";
 const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
 ---
 
@@ -19,12 +19,12 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
     "@id": "https://toolubaay.sn/es/traceability",
     url: "https://toolubaay.sn/es/traceability",
     name: "Trazabilidad del Producto | TooluBaay",
-    description: "MÃ³dulo interactivo de trazabilidad de lotes de pasta de manÃ­ de calidad premium.",
+    description: "Módulo interactivo de trazabilidad de lotes de pasta de maní de calidad premium.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://toolubaay.sn/es",
       name: "TooluBaay",
-      description: "Cooperativa de AgriTech y transformaciÃ³n de manÃ­ de mujeres y jÃ³venes en el medio rural en Senegal."
+      description: "Cooperativa de AgriTech y transformación de maní de mujeres y jóvenes en el medio rural en Senegal."
     },
     inLanguage: "es"
   }}
@@ -36,10 +36,10 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
           Transparencia y Calidad
         </span>
         <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl md:text-5xl">
-          Rastree su Lote de Pasta de ManÃ­
+          Rastree su Lote de Pasta de Maní
         </h1>
         <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
-          Cada bote de pasta de manÃ­ de TooluBaay viene con un cÃ³digo QR o nÃºmero de lote. Ingrese su cÃ³digo a continuaciÃ³n para ver los registros detallados de la GIE de mujeres y jÃ³venes, las condiciones de cosecha y los controles de seguridad quÃ­mica (incluyendo informes de aflatoxinas).
+          Cada bote de pasta de maní de TooluBaay viene con un código QR o número de lote. Ingrese su código a continuación para ver los registros detallados de la cooperativa de mujeres y jóvenes, las condiciones de cosecha y los controles de seguridad química (incluyendo informes de aflatoxinas).
         </p>
       </div>
 
@@ -48,7 +48,7 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
         <div class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg dark:border-neutral-800 dark:bg-neutral-950">
           <div class="space-y-4">
             <label for="lot-input" class="block text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-              Ingrese el CÃ³digo del Lote
+              Ingrese el Código del Lote
             </label>
             <div class="flex gap-3">
               <input
@@ -66,7 +66,7 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
             </div>
             <div>
               <p class="text-xs text-neutral-500 dark:text-neutral-400">
-                CÃ³digos de ejemplo para probar: 
+                Códigos de ejemplo para probar: 
                 <button class="sample-code-btn font-mono underline hover:text-emerald-600 dark:hover:text-emerald-500 mr-2">TB-TBA-001</button>, 
                 <button class="sample-code-btn font-mono underline hover:text-emerald-600 dark:hover:text-emerald-500 mr-2">TB-TBA-003</button>, 
                 <button class="sample-code-btn font-mono underline hover:text-emerald-600 dark:hover:text-emerald-500">TB-TBA-006</button>
@@ -76,7 +76,7 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
 
           <!-- Error Message Alert (Hidden by default) -->
           <div id="error-alert" class="mt-6 hidden rounded-lg bg-red-50 p-4 text-sm text-red-800 dark:bg-red-950/30 dark:text-red-300">
-            <strong>Error:</strong> CÃ³digo de lote no encontrado. Por favor, intÃ©ntelo de nuevo con uno de los cÃ³digos de ejemplo indicados arriba.
+            <strong>Error:</strong> Código de lote no encontrado. Por favor, inténtelo de nuevo con uno de los códigos de ejemplo indicados arriba.
           </div>
 
           <!-- Results Details (Hidden by default) -->
@@ -93,22 +93,22 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
                   <p id="res-gie" class="mt-1 font-bold text-neutral-800 dark:text-neutral-200"></p>
                 </div>
                 <div>
-                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">UbicaciÃ³n</h4>
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Ubicación</h4>
                   <p id="res-location" class="mt-1 text-neutral-800 dark:text-neutral-200"></p>
                 </div>
                 <div>
-                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">LÃ­der de la Cooperativa</h4>
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Líder de la Cooperativa</h4>
                   <p id="res-leader" class="mt-1 text-neutral-800 dark:text-neutral-200"></p>
                 </div>
               </div>
 
               <div class="space-y-4">
                 <div>
-                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">PerÃ­odo de Cosecha</h4>
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Período de Cosecha</h4>
                   <p id="res-harvest" class="mt-1 text-neutral-800 dark:text-neutral-200"></p>
                 </div>
                 <div>
-                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">AnÃ¡lisis de Aflatoxinas</h4>
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Análisis de Aflatoxinas</h4>
                   <p id="res-aflatoxin" class="mt-1 font-semibold text-emerald-600 dark:text-emerald-500"></p>
                 </div>
                 <div>
@@ -127,7 +127,7 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
                 <div>
                   <h4 class="text-sm font-bold text-emerald-800 dark:text-emerald-300">Calidad Premium Certificada</h4>
                   <p class="text-xs text-emerald-700 dark:text-emerald-400 mt-0.5">
-                    Este lote ha pasado con Ã©xito nuestros puntos de control de calidad centralizados. Clasificado a mano, 100% natural y verificado libre de aflatoxinas.
+                    Este lote ha pasado con éxito nuestros puntos de control de calidad centralizados. Clasificado a mano, 100% natural y verificado libre de aflatoxinas.
                   </p>
                 </div>
               </div>
@@ -200,7 +200,7 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
       },
       "TB-TBA-007": {
         gie: "GIE Berete",
-        location: "Darou NdibÃ©lane (Tambacounda, Senegal)",
+        location: "Darou Ndibélane (Tambacounda, Senegal)",
         leader: "Fatoumata Bintou Diallo",
         harvest: "Noviembre 2025",
         aflatoxin: "Seguridad certificada (< 2.0 ppb)",
@@ -208,7 +208,7 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
       },
       "TB-TBA-008": {
         gie: "GIE Deggo",
-        location: "Darou NdibÃ©lane (Tambacounda, Senegal)",
+        location: "Darou Ndibélane (Tambacounda, Senegal)",
         leader: "Alsane Diop",
         harvest: "Diciembre 2025",
         aflatoxin: "Seguridad certificada (< 1.9 ppb)",
@@ -217,7 +217,7 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
       "TB-TBA-009": {
         gie: "GIE 4R",
         location: "Sinthiou Malem (Tambacounda, Senegal)",
-        leader: "NdiÃ©mÃ© Camara",
+        leader: "Ndiémé Camara",
         harvest: "Noviembre 2025",
         aflatoxin: "Seguridad certificada (< 2.0 ppb)",
         moisture: "6.4%"
@@ -306,4 +306,3 @@ const ogTitle = "Trazabilidad de Lotes Premium | TooluBaay";
     }
   </style>
 </MainLayout>
-
