@@ -1,5 +1,5 @@
 {
-  "subTitle": "Posez-nous toutes vos questions sur notre coopérative et nos produits, et obtenez des réponses factuelles.",
+  "subTitle": "Posez-nous toutes vos questions sur notre GIE et nos produits, et obtenez des réponses factuelles.",
   "faqs": [
     {
       "question": "D'où provient la pâte d'arachide TooluBaay ?",
@@ -7,7 +7,7 @@
     },
     {
       "question": "En quoi consiste votre approche AgriTech ?",
-      "answer": "Nous mettons à disposition de nos productrices une application mobile avec un conseiller IA vocal dans les langues locales (Wolof, Pulaar, Mandingue), un suivi agroclimatique personnalisé, et un diagnostic des maladies des cultures par photo pour améliorer leur rendement et résilience."
+      "answer": "Nous mettons à disposition de nos producteurs une application mobile avec un conseiller IA vocal dans les langues locales (Wolof, Pulaar, Mandingue), un suivi agroclimatique personnalisé, et un diagnostic des maladies des cultures par photo pour améliorer leur rendement et résilience."
     },
     {
       "question": "Faites-vous de la vente en gros B2B ?",
@@ -15,7 +15,7 @@
     },
     {
       "question": "Comment TooluBaay soutient-il les femmes rurales ?",
-      "answer": "TooluBaay assure un prix d'achat juste et garanti, fournit des machines de transformation et des formations, et restructure toute la chaîne de valeur. Cette approche a permis d'augmenter les revenus de nos coopératives partenaires de 25 % en Phase 1."
+      "answer": "TooluBaay assure un prix d'achat juste et garanti, fournit des machines de transformation et des formations, et restructure toute la chaîne de valeur. Cette approche a permis d'augmenter les revenus de nos GIE partenaires de 25 % en Phase 1."
     },
     {
       "question": "L'application mobile est-elle disponible sans connexion internet ?",
