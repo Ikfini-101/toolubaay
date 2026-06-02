@@ -225,19 +225,22 @@ const t = labels[lang];
 
       const formData = new FormData(form);
       const payload = {
-        firstName: (formData.get("firstName") as string)?.trim(),
-        lastName: (formData.get("lastName") as string)?.trim(),
+        access_key: "14e39eb2-cb9b-4792-acd2-b199a8272685",
+        name: `${(formData.get("firstName") as string)?.trim()} ${(formData.get("lastName") as string)?.trim()}`,
         email: (formData.get("email") as string)?.trim(),
-        subject: (formData.get("subject") as string)?.trim(),
+        subject: (formData.get("subject") as string)?.trim() || "Nouveau message de Toolubaay",
         message: (formData.get("message") as string)?.trim(),
       };
 
       setLoading(true);
 
       try {
-        const response = await fetch("/api/contact", {
+        const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
           body: JSON.stringify(payload),
         });
 
