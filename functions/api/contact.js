@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
   }
 
   // --- Clé API Web3Forms ---
-  const accessKey = env.WEB3FORMS_ACCESS_KEY || env.RESEND_API_KEY; // Fallback temporaire si besoin
+  const accessKey = env.WEB3FORMS_ACCESS_KEY || "14e39eb2-cb9b-4792-acd2-b199a8272685";
 
   if (!accessKey || accessKey.startsWith("PLACEHOLDER")) {
     return Response.json(
