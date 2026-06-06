@@ -1,0 +1,155 @@
+---
+const langProp = Astro.props?.lang;
+const raw = (langProp ?? Astro.currentLocale ?? 'fr').toString().toLowerCase();
+const lang = raw.startsWith('en') ? 'en' : 'fr';
+
+const t = {
+  fr: {
+    badge: 'Partenariat',
+    heading: 'En partenariat avec World Vision Sénégal',
+    sub: 'Projet THRIVE — Transformer la Résilience des Ménages dans les Environnements Vulnérables',
+    cards: [
+      { k: '01', t: 'Un partenariat stratégique', d: "TooluBaay est fier de s'associer à World Vision Sénégal dans le cadre du projet THRIVE, pour renforcer durablement la résilience économique des ménages vulnérables grâce à l'approche IMSD (Développement des Systèmes de Marché Inclusifs)." },
+      { k: '02', t: 'Des moyens de subsistance durables', d: "En améliorant l'accès à l'information, aux services, aux marchés et aux opportunités économiques, nous accompagnons les ménages vers des revenus renforcés et une meilleure capacité à faire face aux chocs économiques et climatiques." },
+      { k: '03', t: 'Égalité de genre & inclusion sociale', d: "Une attention particulière est portée à la participation et au leadership des femmes, des jeunes et des groupes marginalisés dans les chaînes de valeur, afin de réduire les inégalités et de garantir des bénéfices partagés." },
+      { k: '04', t: 'Des communautés résilientes', d: "Ensemble, nous œuvrons pour des communautés plus résilientes, inclusives et prospères, capables de bâtir un avenir durable pour les générations présentes et futures." },
+    ],
+  },
+  en: {
+    badge: 'Partnership',
+    heading: 'In partnership with World Vision Senegal',
+    sub: 'THRIVE Project — Transforming Households Resilience in Vulnerable Environments',
+    cards: [
+      { k: '01', t: 'A strategic partnership', d: 'TooluBaay is proud to partner with World Vision Senegal on the THRIVE project, to sustainably strengthen the economic resilience of vulnerable households through the IMSD (Inclusive Market Systems Development) approach.' },
+      { k: '02', t: 'Sustainable livelihoods', d: 'By improving access to information, services, markets and economic opportunities, we help households build stronger incomes and greater capacity to withstand economic and climate shocks.' },
+      { k: '03', t: 'Gender equality & social inclusion', d: 'Special focus is placed on the participation and leadership of women, youth and marginalized groups in value chains, to reduce inequalities and ensure that benefits are shared by all.' },
+      { k: '04', t: 'Resilient communities', d: 'Together, we work toward more resilient, inclusive and prosperous communities, able to build a sustainable future for present and future generations.' },
+    ],
+  },
+}[lang];
+---
+
+<section class="wvt" aria-label={t.heading}>
+  <div class="wvt__inner">
+    <div class="wvt__head">
+      <span class="wvt__badge">{t.badge}</span>
+      <div class="wvt__logo">
+        <img src="/partners/worldvision-thrive.png" alt="VisionFund · World Vision · THRIVE" loading="lazy" />
+      </div>
+      <h2 class="wvt__title">{t.heading}</h2>
+      <p class="wvt__sub">{t.sub}</p>
+    </div>
+
+    <div class="wvt__carousel" data-wvt>
+      <div class="wvt__viewport">
+        {t.cards.map((card) => (
+          <article class="wvt__card" data-wvt-card>
+            <span class="wvt__num">{card.k}</span>
+            <h3 class="wvt__card-title">{card.t}</h3>
+            <p class="wvt__card-text">{card.d}</p>
+          </article>
+        ))}
+      </div>
+      <div class="wvt__dots" data-wvt-dots>
+        {t.cards.map((_, i) => (
+          <button class="wvt__dot" data-wvt-dot type="button" aria-label={`Carte ${i + 1}`}></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wvt {
+    --wv-orange: #F26522;
+    --wv-ink: #1a1a1a;
+    padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  }
+  .wvt__inner { max-width: 1080px; margin: 0 auto; }
+  .wvt__head { text-align: center; margin-bottom: 2rem; }
+  .wvt__badge {
+    display: inline-block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--wv-orange); border: 1px solid var(--wv-orange); border-radius: 999px;
+    padding: .35rem .9rem; margin-bottom: 1rem;
+  }
+  .wvt__logo { background: #000; border-radius: 16px; padding: 1rem 1.25rem; max-width: 520px; margin: 0 auto 1.25rem; }
+  .wvt__logo img { width: 100%; height: auto; display: block; object-fit: contain; }
+  .wvt__title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--wv-ink); margin: 0 0 .4rem; }
+  .wvt__sub { color: #666; max-width: 640px; margin: 0 auto; font-size: .98rem; line-height: 1.5; }
+
+  .wvt__carousel { position: relative; max-width: 640px; margin: 0 auto; padding-right: 2rem; }
+  .wvt__viewport { position: relative; height: 340px; display: grid; place-items: center; overflow: hidden; }
+  .wvt__card {
+    grid-area: 1 / 1; width: min(560px, 92%); box-sizing: border-box;
+    background: #fff; border: 1px solid #eee; border-left: 5px solid var(--wv-orange);
+    border-radius: 18px; padding: 1.6rem 1.8rem; box-shadow: 0 18px 40px -22px rgba(0,0,0,.35);
+    will-change: transform, opacity;
+  }
+  .wvt__num { font-size: .8rem; font-weight: 700; color: var(--wv-orange); letter-spacing: .1em; }
+  .wvt__card-title { font-size: 1.2rem; font-weight: 700; color: var(--wv-ink); margin: .4rem 0 .6rem; }
+  .wvt__card-text { color: #444; line-height: 1.55; font-size: .98rem; margin: 0; }
+
+  .wvt__dots { position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: .55rem; }
+  .wvt__dot { width: 8px; height: 8px; border-radius: 999px; background: #d9d9d9; border: none; padding: 0; cursor: pointer; transition: all .3s ease; }
+  .wvt__dot[aria-current="true"] { background: var(--wv-orange); height: 22px; }
+
+  @media (max-width: 640px) {
+    .wvt__viewport { height: 380px; }
+    .wvt__card { padding: 1.3rem 1.4rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wvt__card { transition: none; }
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+
+  function initWVT(root: HTMLElement) {
+    if (root.dataset.wvtReady) return;      // anti double-init (View Transitions)
+    root.dataset.wvtReady = '1';
+
+    const cards = gsap.utils.toArray('[data-wvt-card]', root);
+    const dots = gsap.utils.toArray('[data-wvt-dot]', root) as HTMLElement[];
+    const n = cards.length;
+    let current = 0;
+    let timer: number | null = null;
+    const INTERVAL = 4200;  // ms par carte (autoplay) — ajustable
+    const SPACING = 80;     // espacement vertical entre cartes (% hauteur carte)
+
+    function render(i: number) {
+      cards.forEach((card, idx) => {
+        let off = idx - i;
+        if (off > n / 2) off -= n;
+        if (off < -n / 2) off += n;
+        const active = off === 0;
+        gsap.to(card as gsap.TweenTarget, {
+          yPercent: off * SPACING,
+          scale: active ? 1 : 0.8,
+          opacity: Math.abs(off) > 1 ? 0 : (active ? 1 : 0.35),
+          zIndex: active ? 5 : 5 - Math.abs(off),
+          duration: 0.7, ease: 'power3.out', overwrite: 'auto',
+        });
+      });
+      dots.forEach((d: HTMLElement, idx: number) => d.setAttribute('aria-current', idx === i ? 'true' : 'false'));
+      current = i;
+    }
+    function go(i: number) { render((i + n) % n); }
+    function next() { go(current + 1); }
+    function start() { stop(); timer = window.setInterval(next, INTERVAL); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    dots.forEach((d: HTMLElement, i: number) => d.addEventListener('click', () => { go(i); start(); }));
+    gsap.set(cards, { yPercent: SPACING });
+    render(0);
+    start();
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+  }
+
+  function boot() { document.querySelectorAll<HTMLElement>('[data-wvt]').forEach(initWVT); }
+  document.addEventListener('astro:page-load', boot);  // Astro VTBot
+  if (document.readyState !== 'loading') boot();
+  else document.addEventListener('DOMContentLoaded', boot);
+</script>
