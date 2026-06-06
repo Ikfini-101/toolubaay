@@ -76,7 +76,7 @@ const t = {
   .wvt__block {
     position: relative; max-width: 1140px; margin: 0 auto;
     display: grid; grid-template-columns: 46% 54%;
-    min-height: 235px; border-radius: 24px; overflow: hidden;
+    height: 540px; border-radius: 24px; overflow: hidden;
     background: rgba(255,255,255,0.04);
     backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
     border: 1px solid rgba(255,255,255,0.22);
@@ -109,7 +109,7 @@ const t = {
 
   /* DROITE : défilement vertical très lent (inchangé) */
   .wvt__viewport {
-    position: relative; overflow: hidden; min-height: 235px;
+    position: relative; overflow: hidden; height: 100%;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
             mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
   }
@@ -134,9 +134,9 @@ const t = {
   .wvt__card-text { color:#0d2630; line-height:1.5; font-size:.9rem; margin:0; }
 
   @media (max-width: 768px) {
-    .wvt__block { grid-template-columns: 1fr; min-height: 0; }
+    .wvt__block { grid-template-columns: 1fr; height: auto; min-height: 0; }
     .wvt__left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.5); justify-content:flex-start; }
-    .wvt__viewport { min-height: 215px; }
+    .wvt__viewport { height: 430px; }
   }
 </style>
 
