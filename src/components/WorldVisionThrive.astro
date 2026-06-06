@@ -102,7 +102,7 @@ const t = {
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
             mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
   }
-  .wvt__track { display: flex; flex-direction: column; gap: 1rem; padding: 1rem 1.25rem; }
+  .wvt__track { display: flex; flex-direction: column; gap: 1rem; padding: 1rem 1.25rem; will-change: transform; }
 
   /* BLOCS RECTANGULAIRES — bleu d'eau translucide, AAA */
   .wvt__card {
@@ -154,12 +154,22 @@ const t = {
     let tween: any = null;
     function build() {
       if (tween) tween.kill();
-      gsap.set(track, { y: 0 });
+      gsap.set(track, { y: 0, force3D: true });
       const first = track!.children[0] as HTMLElement;
-      const firstClone = track!.children[count] as HTMLElement;          // 1er bloc dupliqué
+      const firstClone = track!.children[count] as HTMLElement;
       if (!first || !firstClone) return;
-      const distance = firstClone.offsetTop - first.offsetTop;
-      tween = gsap.to(track, { y: DIR * distance, duration: REV, ease: 'none', repeat: -1 });
+      // Math.round → évite les sub-pixels qui causent le tremblement
+      const distance = Math.round(firstClone.offsetTop - first.offsetTop);
+      // gsap.utils.wrap : remplace le saut dur repeat:-1 par un wrap silencieux
+      const wrapY = gsap.utils.wrap(-distance, 0);
+      tween = gsap.to(track, {
+        y: -distance,
+        duration: REV,
+        ease: 'none',
+        repeat: -1,
+        force3D: true,
+        modifiers: { y: gsap.utils.unitize(wrapY) }
+      });
     }
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
