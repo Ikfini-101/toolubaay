@@ -7,149 +7,156 @@ const t = {
   fr: {
     badge: 'Partenariat',
     heading: 'En partenariat avec World Vision Sénégal',
-    sub: 'Projet THRIVE — Transformer la Résilience des Ménages dans les Environnements Vulnérables',
+    sub: 'Projet THRIVE — Transformer la Résilience des Ménages',
     cards: [
-      { k: '01', t: 'Un partenariat stratégique', d: "TooluBaay est fier de s'associer à World Vision Sénégal dans le cadre du projet THRIVE, pour renforcer durablement la résilience économique des ménages vulnérables grâce à l'approche IMSD (Développement des Systèmes de Marché Inclusifs)." },
-      { k: '02', t: 'Des moyens de subsistance durables', d: "En améliorant l'accès à l'information, aux services, aux marchés et aux opportunités économiques, nous accompagnons les ménages vers des revenus renforcés et une meilleure capacité à faire face aux chocs économiques et climatiques." },
-      { k: '03', t: 'Égalité de genre & inclusion sociale', d: "Une attention particulière est portée à la participation et au leadership des femmes, des jeunes et des groupes marginalisés dans les chaînes de valeur, afin de réduire les inégalités et de garantir des bénéfices partagés." },
-      { k: '04', t: 'Des communautés résilientes', d: "Ensemble, nous œuvrons pour des communautés plus résilientes, inclusives et prospères, capables de bâtir un avenir durable pour les générations présentes et futures." },
+      { k: '01', t: 'Un partenariat stratégique', d: "TooluBaay s'associe à World Vision Sénégal dans le cadre du projet THRIVE, pour renforcer durablement la résilience économique des ménages vulnérables grâce à l'approche IMSD." },
+      { k: '02', t: 'Moyens de subsistance durables', d: "En améliorant l'accès à l'information, aux services et aux marchés, nous accompagnons les ménages vers des revenus renforcés, plus résilients face aux chocs économiques et climatiques." },
+      { k: '03', t: 'Genre & inclusion sociale', d: "Une attention particulière est portée au leadership des femmes, des jeunes et des groupes marginalisés dans les chaînes de valeur, pour réduire les inégalités." },
+      { k: '04', t: 'Communautés résilientes', d: "Ensemble, nous œuvrons pour des communautés plus résilientes, inclusives et prospères, capables de bâtir un avenir durable." },
     ],
   },
   en: {
     badge: 'Partnership',
     heading: 'In partnership with World Vision Senegal',
-    sub: 'THRIVE Project — Transforming Households Resilience in Vulnerable Environments',
+    sub: 'THRIVE Project — Transforming Households Resilience',
     cards: [
-      { k: '01', t: 'A strategic partnership', d: 'TooluBaay is proud to partner with World Vision Senegal on the THRIVE project, to sustainably strengthen the economic resilience of vulnerable households through the IMSD (Inclusive Market Systems Development) approach.' },
-      { k: '02', t: 'Sustainable livelihoods', d: 'By improving access to information, services, markets and economic opportunities, we help households build stronger incomes and greater capacity to withstand economic and climate shocks.' },
-      { k: '03', t: 'Gender equality & social inclusion', d: 'Special focus is placed on the participation and leadership of women, youth and marginalized groups in value chains, to reduce inequalities and ensure that benefits are shared by all.' },
-      { k: '04', t: 'Resilient communities', d: 'Together, we work toward more resilient, inclusive and prosperous communities, able to build a sustainable future for present and future generations.' },
+      { k: '01', t: 'A strategic partnership', d: 'TooluBaay partners with World Vision Senegal on the THRIVE project, to sustainably strengthen the economic resilience of vulnerable households through the IMSD approach.' },
+      { k: '02', t: 'Sustainable livelihoods', d: 'By improving access to information, services and markets, we help households build stronger incomes, more resilient to economic and climate shocks.' },
+      { k: '03', t: 'Gender & social inclusion', d: 'Special focus is placed on the leadership of women, youth and marginalized groups in value chains, to reduce inequalities.' },
+      { k: '04', t: 'Resilient communities', d: 'Together, we work toward more resilient, inclusive and prosperous communities, able to build a sustainable future.' },
     ],
   },
 }[lang];
 ---
 
-<section class="wvt" aria-label={t.heading}>
-  <div class="wvt__inner">
-    <div class="wvt__head">
+<section class="wvt">
+  <div class="wvt__block" data-wvt>
+    <!-- GAUCHE : image transparente, statique -->
+    <div class="wvt__left">
       <span class="wvt__badge">{t.badge}</span>
-      <div class="wvt__logo">
-        <img src="/partners/worldvision-thrive.png" alt="VisionFund · World Vision · THRIVE" loading="lazy" />
-      </div>
+      <img class="wvt__logo" src="/partners/worldvision-thrive.png" alt="VisionFund · World Vision · THRIVE" />
       <h2 class="wvt__title">{t.heading}</h2>
       <p class="wvt__sub">{t.sub}</p>
     </div>
 
-    <div class="wvt__carousel" data-wvt>
-      <div class="wvt__viewport">
-        {t.cards.map((card) => (
-          <article class="wvt__card" data-wvt-card>
-            <span class="wvt__num">{card.k}</span>
-            <h3 class="wvt__card-title">{card.t}</h3>
-            <p class="wvt__card-text">{card.d}</p>
-          </article>
-        ))}
-      </div>
-      <div class="wvt__dots" data-wvt-dots>
-        {t.cards.map((_, i) => (
-          <button class="wvt__dot" data-wvt-dot type="button" aria-label={`Carte ${i + 1}`}></button>
-        ))}
-      </div>
+    <!-- DROITE : viewport orbital (clip au bord gauche = séparation) -->
+    <div class="wvt__orbit" data-wvt-orbit>
+      {t.cards.map((c) => (
+        <article class="wvt__card" data-wvt-card>
+          <span class="wvt__num">{c.k}</span>
+          <h3 class="wvt__card-title">{c.t}</h3>
+          <p class="wvt__card-text">{c.d}</p>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  .wvt {
-    --wv-orange: #F26522;
-    --wv-ink: #1a1a1a;
-    padding: clamp(2.5rem, 6vw, 5rem) 1rem;
-    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-  }
-  .wvt__inner { max-width: 1080px; margin: 0 auto; }
-  .wvt__head { text-align: center; margin-bottom: 2rem; }
-  .wvt__badge {
-    display: inline-block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--wv-orange); border: 1px solid var(--wv-orange); border-radius: 999px;
-    padding: .35rem .9rem; margin-bottom: 1rem;
-  }
-  .wvt__logo { background: #000; border-radius: 16px; padding: 1rem 1.25rem; max-width: 520px; margin: 0 auto 1.25rem; }
-  .wvt__logo img { width: 100%; height: auto; display: block; object-fit: contain; }
-  .wvt__title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--wv-ink); margin: 0 0 .4rem; }
-  .wvt__sub { color: #666; max-width: 640px; margin: 0 auto; font-size: .98rem; line-height: 1.5; }
+  .wvt { --wv-orange:#F26522; --wv-ink:#161616; padding: clamp(2.5rem,6vw,5rem) 1rem; }
 
-  .wvt__carousel { position: relative; max-width: 640px; margin: 0 auto; padding-right: 2rem; }
-  .wvt__viewport { position: relative; height: 340px; display: grid; place-items: center; overflow: hidden; }
+  /* BLOC GLASSMORPHISM — verre frosté assez opaque pour l'AA, laisse voir le fond */
+  .wvt__block {
+    position: relative; max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: 42% 58%;
+    min-height: 460px; border-radius: 24px; overflow: hidden;
+    background: rgba(255,255,255,0.70);
+    backdrop-filter: blur(20px) saturate(135%);
+    -webkit-backdrop-filter: blur(20px) saturate(135%);
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 30px 70px -30px rgba(0,0,0,.45);
+  }
+
+  /* GAUCHE */
+  .wvt__left {
+    position: relative; z-index: 2; padding: 2rem 1.75rem;
+    display: flex; flex-direction: column; justify-content: center; gap: .75rem;
+    border-right: 1px solid rgba(0,0,0,.06);
+  }
+  .wvt__badge {
+    align-self: flex-start; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+    color: var(--wv-orange); border:1px solid var(--wv-orange); border-radius:999px; padding:.3rem .85rem;
+  }
+  .wvt__logo { width:100%; max-width:300px; height:auto; display:block; }
+  .wvt__title { font-size: clamp(1.15rem,2.2vw,1.6rem); font-weight:800; color:var(--wv-ink); margin:.25rem 0 0; }
+  .wvt__sub { color:#3a3a3a; font-size:.92rem; line-height:1.45; margin:0; }
+
+  /* DROITE — viewport, le clip fait disparaître les cartes à la séparation */
+  .wvt__orbit { position: relative; overflow: hidden; min-height: 460px; }
+
+  /* CARTES — blanches pleines = contraste AA garanti */
   .wvt__card {
-    grid-area: 1 / 1; width: min(560px, 92%); box-sizing: border-box;
-    background: #fff; border: 1px solid #eee; border-left: 5px solid var(--wv-orange);
-    border-radius: 18px; padding: 1.6rem 1.8rem; box-shadow: 0 18px 40px -22px rgba(0,0,0,.35);
+    position: absolute; top: 0; left: 0;
+    width: clamp(210px, 56%, 330px); box-sizing: border-box;
+    background:#fff; border:1px solid #ececec; border-left:5px solid var(--wv-orange);
+    border-radius:16px; padding:1.25rem 1.4rem; box-shadow:0 16px 36px -20px rgba(0,0,0,.4);
     will-change: transform, opacity;
   }
-  .wvt__num { font-size: .8rem; font-weight: 700; color: var(--wv-orange); letter-spacing: .1em; }
-  .wvt__card-title { font-size: 1.2rem; font-weight: 700; color: var(--wv-ink); margin: .4rem 0 .6rem; }
-  .wvt__card-text { color: #444; line-height: 1.55; font-size: .98rem; margin: 0; }
+  .wvt__num { font-size:.78rem; font-weight:700; color:var(--wv-orange); letter-spacing:.1em; }
+  .wvt__card-title { font-size:1.05rem; font-weight:750; color:var(--wv-ink); margin:.35rem 0 .5rem; }
+  .wvt__card-text { color:#3d3d3d; line-height:1.5; font-size:.9rem; margin:0; }
 
-  .wvt__dots { position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: .55rem; }
-  .wvt__dot { width: 8px; height: 8px; border-radius: 999px; background: #d9d9d9; border: none; padding: 0; cursor: pointer; transition: all .3s ease; }
-  .wvt__dot[aria-current="true"] { background: var(--wv-orange); height: 22px; }
-
-  @media (max-width: 640px) {
-    .wvt__viewport { height: 380px; }
-    .wvt__card { padding: 1.3rem 1.4rem; }
+  /* MOBILE : empilé, image en haut statique, orbite en dessous */
+  @media (max-width: 768px) {
+    .wvt__block { grid-template-columns: 1fr; min-height: 0; }
+    .wvt__left { border-right:none; border-bottom:1px solid rgba(0,0,0,.06); text-align:center; align-items:center; }
+    .wvt__badge { align-self:center; }
+    .wvt__logo { margin:0 auto; }
+    .wvt__orbit { min-height: 420px; }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .wvt__card { transition: none; }
-  }
+  @media (prefers-reduced-motion: reduce) { .wvt__card { transition:none; } }
 </style>
 
 <script>
   import gsap from 'gsap';
 
   function initWVT(root: HTMLElement) {
-    if (root.dataset.wvtReady) return;      // anti double-init (View Transitions)
+    if (root.dataset.wvtReady) return;            // anti double-init (View Transitions)
     root.dataset.wvtReady = '1';
 
-    const cards = gsap.utils.toArray('[data-wvt-card]', root);
-    const dots = gsap.utils.toArray('[data-wvt-dot]', root) as HTMLElement[];
+    const orbit = root.querySelector<HTMLElement>('[data-wvt-orbit]');
+    if (!orbit) return;
+    const cards = gsap.utils.toArray('[data-wvt-card]', orbit) as HTMLElement[];
     const n = cards.length;
-    let current = 0;
-    let timer: number | null = null;
-    const INTERVAL = 4200;  // ms par carte (autoplay) — ajustable
-    const SPACING = 80;     // espacement vertical entre cartes (% hauteur carte)
+    const state = { a: 0 };
 
-    function render(i: number) {
-      cards.forEach((card, idx) => {
-        let off = idx - i;
-        if (off > n / 2) off -= n;
-        if (off < -n / 2) off += n;
-        const active = off === 0;
-        gsap.to(card as gsap.TweenTarget, {
-          yPercent: off * SPACING,
-          scale: active ? 1 : 0.8,
-          opacity: Math.abs(off) > 1 ? 0 : (active ? 1 : 0.35),
-          zIndex: active ? 5 : 5 - Math.abs(off),
-          duration: 0.7, ease: 'power3.out', overwrite: 'auto',
+    // ⚙️ RÉGLAGES
+    const DIR = -1;     // -1 = émerge en bas / monte à droite / disparaît en haut. Mettre +1 pour inverser.
+    const REV = 18;     // secondes par tour complet. Plus petit = plus rapide.
+
+    function geom() {
+      const W = orbit!.clientWidth, H = orbit!.clientHeight;
+      return { Cx: 0, Cy: H / 2, R: Math.min(H * 0.40, W * 0.32) }; // centre sur le bord gauche = séparation
+    }
+    function render() {
+      const { Cx, Cy, R } = geom();
+      cards.forEach((card: HTMLElement, i: number) => {
+        const theta = (state.a + i * (Math.PI * 2 / n)) * DIR;
+        const x = Cx + R * Math.cos(theta);
+        const y = Cy + R * Math.sin(theta);
+        const front = Math.cos(theta);            // >0 = arc droit visible
+        const depth = (front + 1) / 2;            // 0..1
+        gsap.set(card, {
+          x, y, xPercent: 0, yPercent: -50,       // ancrage : bord gauche + centre vertical au point d'orbite
+          scale: 0.82 + 0.18 * depth,
+          opacity: front <= -0.15 ? 0 : Math.min(1, (front + 0.15) * 2.2),
+          zIndex: Math.round(depth * 100),
         });
       });
-      dots.forEach((d: HTMLElement, idx: number) => d.setAttribute('aria-current', idx === i ? 'true' : 'false'));
-      current = i;
     }
-    function go(i: number) { render((i + n) % n); }
-    function next() { go(current + 1); }
-    function start() { stop(); timer = window.setInterval(next, INTERVAL); }
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
 
-    dots.forEach((d: HTMLElement, i: number) => d.addEventListener('click', () => { go(i); start(); }));
-    gsap.set(cards, { yPercent: SPACING });
-    render(0);
-    start();
-    root.addEventListener('mouseenter', stop);
-    root.addEventListener('mouseleave', start);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    render();
+    if (reduce) return;                            // pas d'autoplay si l'utilisateur l'a désactivé
+
+    const tween = gsap.to(state, { a: '+=' + Math.PI * 2, duration: REV, ease: 'none', repeat: -1, onUpdate: render });
+    root.addEventListener('mouseenter', () => tween.pause());
+    root.addEventListener('mouseleave', () => tween.resume());
+    window.addEventListener('resize', render);
   }
 
   function boot() { document.querySelectorAll<HTMLElement>('[data-wvt]').forEach(initWVT); }
-  document.addEventListener('astro:page-load', boot);  // Astro VTBot
+  document.addEventListener('astro:page-load', boot);
   if (document.readyState !== 'loading') boot();
   else document.addEventListener('DOMContentLoaded', boot);
 </script>
