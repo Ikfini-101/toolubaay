@@ -33,7 +33,9 @@ const t = {
   <div class="wvt__block" data-wvt>
     <div class="wvt__left">
       <span class="wvt__badge">{t.badge}</span>
-      <img class="wvt__logo" src="/partners/worldvision-thrive.png" alt="VisionFund · World Vision · THRIVE" />
+      <div class="wvt__logo-wrap">
+        <img class="wvt__logo" src="/partners/worldvision-thrive.png" alt="VisionFund · World Vision · THRIVE" />
+      </div>
       <h2 class="wvt__title">{t.heading}</h2>
       <p class="wvt__sub">{t.sub}</p>
     </div>
@@ -51,75 +53,87 @@ const t = {
 </section>
 
 <style>
-  .wvt { --wv-orange:#F26522; --wv-ink:#161616; padding: clamp(2.5rem,6vw,5rem) 1rem; }
+  .wvt {
+    --wv-orange:#F26522;          /* accent non-textuel (contours, glow) */
+    --wv-orange-ink:#A8430F;      /* accent TEXTE foncé = AAA sur fond clair */
+    --wv-ink:#0c1f24;             /* texte principal = AAA */
+    --wv-water-1: rgba(196,228,238,0.84);  /* bleu d'eau clair (floor opaque pour AAA) */
+    --wv-water-2: rgba(158,206,224,0.78);
+    padding: clamp(2.5rem,6vw,5rem) 1rem;
+  }
 
-  /* CONTENEUR : quasi transparent — plus de gris. Silhouette rectangulaire conservée. */
+  /* CONTENEUR : transparent (le champ se voit au travers) */
   .wvt__block {
     position: relative; max-width: 1080px; margin: 0 auto;
     display: grid; grid-template-columns: 42% 58%;
-    min-height: 460px; border-radius: 24px; overflow: hidden;
+    min-height: 470px; border-radius: 24px; overflow: hidden;
     background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
     border: 1px solid rgba(255,255,255,0.22);
     box-shadow: 0 30px 70px -30px rgba(0,0,0,.40);
   }
 
-  /* GAUCHE : panneau VERRE LIQUIDE clair (rend l'image + titre lisibles, AA) */
+  /* GAUCHE : verre clair dense → WV lisible + AAA */
   .wvt__left {
     position: relative; z-index: 2; padding: 2rem 1.75rem;
-    display: flex; flex-direction: column; justify-content: center; gap: .75rem;
-    background: linear-gradient(160deg, rgba(255,255,255,0.58), rgba(255,255,255,0.42));
-    backdrop-filter: blur(22px) saturate(165%);
-    -webkit-backdrop-filter: blur(22px) saturate(165%);
-    border-right: 1px solid rgba(255,255,255,0.45);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.75);
+    display: flex; flex-direction: column; justify-content: center; gap: .9rem;
+    background: linear-gradient(160deg, rgba(255,255,255,0.88), rgba(255,255,255,0.74));
+    backdrop-filter: blur(20px) saturate(150%); -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border-right: 1px solid rgba(255,255,255,0.5);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
   }
   .wvt__badge {
-    align-self:flex-start; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--wv-orange); border:1px solid var(--wv-orange); border-radius:999px; padding:.3rem .85rem;
+    align-self:flex-start; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
+    color:var(--wv-orange-ink); border:1px solid var(--wv-orange-ink); border-radius:999px; padding:.3rem .85rem;
   }
-  .wvt__logo { width:100%; max-width:300px; height:auto; display:block; }
-  .wvt__title { font-size: clamp(1.15rem,2.2vw,1.6rem); font-weight:800; color:var(--wv-ink); margin:.25rem 0 0; } /* sombre, plus blanc */
-  .wvt__sub { color:#333; font-size:.92rem; line-height:1.45; margin:0; }
+  /* fond blanc propre derrière les logos = lisibilité */
+  .wvt__logo-wrap {
+    align-self:flex-start; max-width:340px; background:rgba(255,255,255,0.94);
+    border-radius:14px; padding:1rem 1.25rem; box-shadow:0 6px 18px -10px rgba(0,0,0,.3);
+  }
+  .wvt__logo { width:100%; height:auto; display:block; }
+  .wvt__title { font-size: clamp(1.15rem,2.2vw,1.6rem); font-weight:800; color:var(--wv-ink); margin:.25rem 0 0; }
+  .wvt__sub { color:#15333b; font-size:.92rem; line-height:1.45; margin:0; }
 
-  /* DROITE : viewport transparent, clip au bord gauche (= séparation) */
-  .wvt__orbit { position: relative; overflow: hidden; min-height: 460px; background: transparent; }
+  /* DROITE : viewport transparent, clip au bord gauche */
+  .wvt__orbit { position: relative; overflow: hidden; min-height: 470px; background: transparent; }
 
-  /* CARTES : LIQUID MORPHISM — verre dépoli translucide + reflet + bord lumineux */
+  /* CARTES : GOUTTE D'EAU bleue translucide + reflet liquide */
   .wvt__card {
     position: absolute; top: 0; left: 0;
-    width: clamp(210px, 56%, 330px); box-sizing: border-box;
-    padding: 1.25rem 1.4rem; border-radius: 18px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.60), rgba(255,255,255,0.44));
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.55);
-    border-left: 5px solid var(--wv-orange);
+    width: clamp(215px, 56%, 330px); box-sizing: border-box;
+    padding: 1.45rem 1.6rem;
+    border-radius: 58% 42% 56% 44% / 60% 56% 44% 40%;   /* goutte organique */
+    background: linear-gradient(135deg, var(--wv-water-1), var(--wv-water-2));
+    backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border: 1.5px solid rgba(242,101,34,0.5);
     box-shadow:
-      0 18px 44px -18px rgba(0,0,0,.45),
-      inset 0 1px 0 rgba(255,255,255,0.85),
-      inset 0 0 26px rgba(255,255,255,0.20);
-    color: var(--wv-ink);
-    overflow: hidden; will-change: transform, opacity;
+      0 18px 42px -18px rgba(0,0,0,.5),
+      inset 0 1px 0 rgba(255,255,255,0.9),
+      0 0 22px -8px rgba(242,101,34,0.30);
+    color: var(--wv-ink); overflow: hidden; will-change: transform, opacity;
   }
   /* reflet gloss diagonal */
   .wvt__card::before {
-    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
-    background: linear-gradient(120deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 42%);
-    mix-blend-mode: screen;
+    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:1;
+    background: linear-gradient(125deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0) 46%);
   }
-  .wvt__card > * { position: relative; z-index: 1; }
-  .wvt__num { font-size:.78rem; font-weight:700; color:var(--wv-orange); letter-spacing:.1em; }
+  /* reflet spéculaire (lumière sur l'eau) */
+  .wvt__card::after {
+    content:''; position:absolute; top:9%; left:11%; width:42%; height:30%; border-radius:50%;
+    background: radial-gradient(circle at 32% 32%, rgba(255,255,255,0.75), rgba(255,255,255,0) 70%);
+    filter: blur(2px); pointer-events:none; z-index:2;
+  }
+  .wvt__card > * { position:relative; z-index:3; }
+  .wvt__num { font-size:.82rem; font-weight:800; color:var(--wv-orange-ink); letter-spacing:.1em; }
   .wvt__card-title { font-size:1.05rem; font-weight:750; color:var(--wv-ink); margin:.35rem 0 .5rem; }
-  .wvt__card-text { color:#2c2c2c; line-height:1.5; font-size:.9rem; margin:0; }
+  .wvt__card-text { color:#0d2630; line-height:1.5; font-size:.9rem; margin:0; }
 
   @media (max-width: 768px) {
     .wvt__block { grid-template-columns: 1fr; min-height: 0; }
-    .wvt__left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.45); text-align:center; align-items:center; }
-    .wvt__badge { align-self:center; }
-    .wvt__logo { margin:0 auto; }
-    .wvt__orbit { min-height: 420px; }
+    .wvt__left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.5); text-align:center; align-items:center; }
+    .wvt__badge, .wvt__logo-wrap { align-self:center; }
+    .wvt__orbit { min-height: 430px; }
   }
   @media (prefers-reduced-motion: reduce) { .wvt__card { transition:none; } }
 </style>
@@ -138,8 +152,8 @@ const t = {
     const state = { a: 0 };
 
     // ⚙️ RÉGLAGES
-    const DIR = -1;     // -1 = émerge en bas / monte à droite / disparaît en haut. +1 pour inverser.
-    const REV = 14;     // secondes par tour (était 18 = plus lent). Plus petit = plus rapide.
+    const DIR = -1;   // -1 = émerge en bas / monte à droite / disparaît en haut. +1 pour inverser.
+    const REV = 14;   // secondes par tour. Plus petit = plus rapide.
 
     function geom() {
       const W = orbit!.clientWidth, H = orbit!.clientHeight;
