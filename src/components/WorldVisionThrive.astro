@@ -40,29 +40,31 @@ const t = {
       <p class="wvt__sub">{t.sub}</p>
     </div>
 
-    <div class="wvt__orbit" data-wvt-orbit>
-      {t.cards.map((c) => (
-        <article class="wvt__card" data-wvt-card>
-          <span class="wvt__num">{c.k}</span>
-          <h3 class="wvt__card-title">{c.t}</h3>
-          <p class="wvt__card-text">{c.d}</p>
-        </article>
-      ))}
+    <div class="wvt__viewport" data-wvt-viewport>
+      <div class="wvt__track" data-wvt-track>
+        {t.cards.map((c) => (
+          <article class="wvt__card" data-wvt-card>
+            <span class="wvt__num">{c.k}</span>
+            <h3 class="wvt__card-title">{c.t}</h3>
+            <p class="wvt__card-text">{c.d}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .wvt {
-    --wv-orange:#F26522;          /* accent non-textuel (contours, glow) */
-    --wv-orange-ink:#A8430F;      /* accent TEXTE foncé = AAA sur fond clair */
-    --wv-ink:#0c1f24;             /* texte principal = AAA */
-    --wv-water-1: rgba(196,228,238,0.84);  /* bleu d'eau clair (floor opaque pour AAA) */
+    --wv-orange:#F26522;
+    --wv-orange-ink:#A8430F;
+    --wv-ink:#0c1f24;
+    --wv-water-1: rgba(196,228,238,0.84);   /* bleu d'eau (floor opaque pour AAA) */
     --wv-water-2: rgba(158,206,224,0.78);
     padding: clamp(2.5rem,6vw,5rem) 1rem;
   }
 
-  /* CONTENEUR : transparent (le champ se voit au travers) */
+  /* CONTENEUR transparent */
   .wvt__block {
     position: relative; max-width: 1080px; margin: 0 auto;
     display: grid; grid-template-columns: 42% 58%;
@@ -73,7 +75,7 @@ const t = {
     box-shadow: 0 30px 70px -30px rgba(0,0,0,.40);
   }
 
-  /* GAUCHE : verre clair dense → WV lisible + AAA */
+  /* GAUCHE : verre clair dense → WV lisible + AAA (inchangé) */
   .wvt__left {
     position: relative; z-index: 2; padding: 2rem 1.75rem;
     display: flex; flex-direction: column; justify-content: center; gap: .9rem;
@@ -86,7 +88,6 @@ const t = {
     align-self:flex-start; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
     color:var(--wv-orange-ink); border:1px solid var(--wv-orange-ink); border-radius:999px; padding:.3rem .85rem;
   }
-  /* fond blanc propre derrière les logos = lisibilité */
   .wvt__logo-wrap {
     align-self:flex-start; max-width:340px; background:rgba(255,255,255,0.94);
     border-radius:14px; padding:1rem 1.25rem; box-shadow:0 6px 18px -10px rgba(0,0,0,.3);
@@ -95,36 +96,30 @@ const t = {
   .wvt__title { font-size: clamp(1.15rem,2.2vw,1.6rem); font-weight:800; color:var(--wv-ink); margin:.25rem 0 0; }
   .wvt__sub { color:#15333b; font-size:.92rem; line-height:1.45; margin:0; }
 
-  /* DROITE : viewport transparent, clip au bord gauche */
-  .wvt__orbit { position: relative; overflow: hidden; min-height: 470px; background: transparent; }
+  /* DROITE : viewport avec fondu haut/bas */
+  .wvt__viewport {
+    position: relative; overflow: hidden; min-height: 470px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  }
+  .wvt__track { display: flex; flex-direction: column; gap: 1rem; padding: 1rem 1.25rem; }
 
-  /* CARTES : GOUTTE D'EAU bleue translucide + reflet liquide */
+  /* BLOCS RECTANGULAIRES — bleu d'eau translucide, AAA */
   .wvt__card {
-    position: absolute; top: 0; left: 0;
-    width: clamp(215px, 56%, 330px); box-sizing: border-box;
-    padding: 1.45rem 1.6rem;
-    border-radius: 58% 42% 56% 44% / 60% 56% 44% 40%;   /* goutte organique */
+    position: relative; width: 100%; box-sizing: border-box;
+    padding: 1.3rem 1.5rem; border-radius: 16px;
     background: linear-gradient(135deg, var(--wv-water-1), var(--wv-water-2));
     backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
-    border: 1.5px solid rgba(242,101,34,0.5);
-    box-shadow:
-      0 18px 42px -18px rgba(0,0,0,.5),
-      inset 0 1px 0 rgba(255,255,255,0.9),
-      0 0 22px -8px rgba(242,101,34,0.30);
-    color: var(--wv-ink); overflow: hidden; will-change: transform, opacity;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-left: 5px solid var(--wv-orange);
+    box-shadow: 0 14px 34px -20px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,0.85);
+    color: var(--wv-ink); overflow: hidden;
   }
-  /* reflet gloss diagonal */
   .wvt__card::before {
-    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:1;
-    background: linear-gradient(125deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0) 46%);
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background: linear-gradient(125deg, rgba(255,255,255,0.35), rgba(255,255,255,0) 50%);
   }
-  /* reflet spéculaire (lumière sur l'eau) */
-  .wvt__card::after {
-    content:''; position:absolute; top:9%; left:11%; width:42%; height:30%; border-radius:50%;
-    background: radial-gradient(circle at 32% 32%, rgba(255,255,255,0.75), rgba(255,255,255,0) 70%);
-    filter: blur(2px); pointer-events:none; z-index:2;
-  }
-  .wvt__card > * { position:relative; z-index:3; }
+  .wvt__card > * { position:relative; z-index:1; }
   .wvt__num { font-size:.82rem; font-weight:800; color:var(--wv-orange-ink); letter-spacing:.1em; }
   .wvt__card-title { font-size:1.05rem; font-weight:750; color:var(--wv-ink); margin:.35rem 0 .5rem; }
   .wvt__card-text { color:#0d2630; line-height:1.5; font-size:.9rem; margin:0; }
@@ -133,9 +128,8 @@ const t = {
     .wvt__block { grid-template-columns: 1fr; min-height: 0; }
     .wvt__left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.5); text-align:center; align-items:center; }
     .wvt__badge, .wvt__logo-wrap { align-self:center; }
-    .wvt__orbit { min-height: 430px; }
+    .wvt__viewport { min-height: 430px; }
   }
-  @media (prefers-reduced-motion: reduce) { .wvt__card { transition:none; } }
 </style>
 
 <script>
@@ -145,45 +139,36 @@ const t = {
     if (root.dataset.wvtReady) return;
     root.dataset.wvtReady = '1';
 
-    const orbit = root.querySelector<HTMLElement>('[data-wvt-orbit]');
-    if (!orbit) return;
-    const cards = gsap.utils.toArray('[data-wvt-card]', orbit) as HTMLElement[];
-    const n = cards.length;
-    const state = { a: 0 };
+    const track = root.querySelector<HTMLElement>('[data-wvt-track]');
+    if (!track) return;
+    const cards = gsap.utils.toArray('[data-wvt-card]', track) as HTMLElement[];
+    const count = cards.length;
+
+    // duplique le set pour une boucle verticale sans couture
+    cards.forEach((c) => track!.appendChild(c.cloneNode(true)));
 
     // ⚙️ RÉGLAGES
-    const DIR = -1;   // -1 = émerge en bas / monte à droite / disparaît en haut. +1 pour inverser.
-    const REV = 14;   // secondes par tour. Plus petit = plus rapide.
+    const REV = 32;     // secondes pour avancer d'un set complet. PLUS GRAND = PLUS LENT.
+    const DIR = -1;     // -1 = défile vers le haut. +1 = vers le bas.
 
-    function geom() {
-      const W = orbit!.clientWidth, H = orbit!.clientHeight;
-      return { Cx: 0, Cy: H / 2, R: Math.min(H * 0.40, W * 0.32) };
-    }
-    function render() {
-      const { Cx, Cy, R } = geom();
-      cards.forEach((card: HTMLElement, i: number) => {
-        const theta = (state.a + i * (Math.PI * 2 / n)) * DIR;
-        const x = Cx + R * Math.cos(theta);
-        const y = Cy + R * Math.sin(theta);
-        const front = Math.cos(theta);
-        const depth = (front + 1) / 2;
-        gsap.set(card, {
-          x, y, xPercent: 0, yPercent: -50,
-          scale: 0.82 + 0.18 * depth,
-          opacity: front <= -0.15 ? 0 : Math.min(1, (front + 0.15) * 2.2),
-          zIndex: Math.round(depth * 100),
-        });
-      });
+    let tween: any = null;
+    function build() {
+      if (tween) tween.kill();
+      gsap.set(track, { y: 0 });
+      const first = track!.children[0] as HTMLElement;
+      const firstClone = track!.children[count] as HTMLElement;          // 1er bloc dupliqué
+      if (!first || !firstClone) return;
+      const distance = firstClone.offsetTop - first.offsetTop;
+      tween = gsap.to(track, { y: DIR * distance, duration: REV, ease: 'none', repeat: -1 });
     }
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    render();
-    if (reduce) return;
+    build();
+    if (reduce && tween) tween.pause();
 
-    const tween = gsap.to(state, { a: '+=' + Math.PI * 2, duration: REV, ease: 'none', repeat: -1, onUpdate: render });
-    root.addEventListener('mouseenter', () => tween.pause());
-    root.addEventListener('mouseleave', () => tween.resume());
-    window.addEventListener('resize', render);
+    root.addEventListener('mouseenter', () => tween && tween.pause());
+    root.addEventListener('mouseleave', () => { if (tween && !reduce) tween.resume(); });
+    window.addEventListener('resize', build);
   }
 
   function boot() { document.querySelectorAll<HTMLElement>('[data-wvt]').forEach(initWVT); }
