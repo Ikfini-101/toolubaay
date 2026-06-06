@@ -49,16 +49,18 @@ const t = {
       <p class="wvt__tag">{t.tag}</p>
     </div>
 
-    <div class="wvt__viewport" data-wvt-viewport>
-      <div class="wvt__track" data-wvt-track>
+    <div class="wvt__right">
+      <ul class="wvt__list">
         {t.cards.map((c) => (
-          <article class="wvt__card" data-wvt-card>
+          <li class="wvt__item">
             <span class="wvt__num">{c.k}</span>
-            <h3 class="wvt__card-title">{c.t}</h3>
-            <p class="wvt__card-text">{c.d}</p>
-          </article>
+            <div class="wvt__item-content">
+              <h3 class="wvt__item-title">{c.t}</h3>
+              <p class="wvt__item-text">{c.d}</p>
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </div>
 </section>
@@ -140,89 +142,39 @@ const t = {
   .wvt__imsd { color:var(--wv-ink-muted) !important; font-size:.8rem; line-height:1.4; margin:0; padding-left:.75rem; border-left:3px solid var(--wv-orange); transition: color 0.3s ease; }
   .wvt__tag { margin:0; font-size:.65rem; letter-spacing:.06em; text-transform:uppercase; color:var(--wv-ink-light) !important; font-weight:700; transition: color 0.3s ease; }
 
-  /* DROITE : défilement vertical très lent */
-  .wvt__viewport {
-    position: relative; overflow: hidden; height: 100%;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
-            mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
-  }
-  .wvt__track { display: flex; flex-direction: column; gap: 1rem; padding: 1rem 1.25rem; will-change: transform; }
-  
-  /* CARTES : Liquid morphism transparent */
-  .wvt__card {
-    position: relative; width: 100%; box-sizing: border-box;
-    padding: 1.3rem 1.5rem; border-radius: 16px;
+  /* DROITE : Bloc fixe Liquid Morphism avec liste */
+  .wvt__right {
+    position: relative; padding: 2.5rem 2.5rem;
+    display: flex; flex-direction: column; justify-content: center;
     background: var(--wv-card-bg);
     backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid var(--wv-card-border);
-    border-left: 5px solid var(--wv-orange);
-    box-shadow: 0 14px 34px -20px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,0.2);
-    color: var(--wv-ink); overflow: hidden;
+    border-left: 1px solid var(--wv-card-border);
+    color: var(--wv-ink); overflow-y: auto; height: 100%;
     transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
-  .wvt__card::before {
-    content:''; position:absolute; inset:0; pointer-events:none;
-    background: linear-gradient(125deg, var(--wv-card-glare), rgba(255,255,255,0) 60%);
+  
+  .wvt__list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 1.4rem;
   }
-  .wvt__card > * { position:relative; z-index:1; }
-  .wvt__num { font-size:.82rem; font-weight:800; color:var(--wv-orange-ink) !important; letter-spacing:.1em; }
-  .wvt__card-title { font-size:1.05rem; font-weight:750; color:var(--wv-ink) !important; margin:.35rem 0 .5rem; transition: color 0.3s ease; }
-  .wvt__card-text { color:var(--wv-ink-muted) !important; line-height:1.5; font-size:.9rem; margin:0; transition: color 0.3s ease; }
+  
+  .wvt__item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+  }
+  
+  .wvt__num {
+    font-size: 0.9rem; font-weight: 800; color: var(--wv-orange-ink) !important;
+    background: rgba(242, 101, 34, 0.1); padding: 0.4rem 0.6rem; border-radius: 8px;
+    letter-spacing: 0.05em; flex-shrink: 0; line-height: 1;
+  }
+  
+  .wvt__item-content { flex-grow: 1; }
+  .wvt__item-title { font-size: 1rem; font-weight: 750; color: var(--wv-ink) !important; margin: 0 0 0.3rem; transition: color 0.3s ease; }
+  .wvt__item-text { color: var(--wv-ink-muted) !important; line-height: 1.45; font-size: 0.85rem; margin: 0; transition: color 0.3s ease; }
 
   @media (max-width: 768px) {
     .wvt__block { grid-template-columns: 1fr; height: auto; min-height: 0; }
-    .wvt__left { border-right:none; border-bottom:1px solid var(--wv-border-left); justify-content:flex-start; }
-    .wvt__viewport { height: 430px; }
+    .wvt__left { border-right: none; border-bottom: 1px solid var(--wv-border-left); justify-content: flex-start; }
+    .wvt__right { padding: 1.5rem; border-left: none; }
   }
 </style>
-
-<script>
-  // @ts-nocheck
-  import gsap from 'gsap';
-
-  function initWVT(root) {
-    if (root.dataset.wvtReady) return;
-    root.dataset.wvtReady = '1';
-
-    const track = root.querySelector('[data-wvt-track]');
-    if (!track) return;
-    const cards = gsap.utils.toArray('[data-wvt-card]', track);
-    const count = cards.length;
-    cards.forEach((c) => track.appendChild(c.cloneNode(true)));
-
-    // ⚙️ RÉGLAGES
-    const REV = 32;     // secondes / set. PLUS GRAND = PLUS LENT.
-    const DIR = -1;     // -1 = vers le haut. +1 = vers le bas.
-
-    let tween = null;
-    function build() {
-      if (tween) tween.kill();
-      gsap.set(track, { y: 0, force3D: true });
-      const first = track.children[0];
-      const firstClone = track.children[count];
-      if (!first || !firstClone) return;
-      const distance = Math.round(firstClone.offsetTop - first.offsetTop);
-      const wrapY = gsap.utils.wrap(-distance, 0);
-      tween = gsap.to(track, {
-        y: DIR * distance,
-        duration: REV,
-        ease: 'none',
-        repeat: -1,
-        force3D: true,
-        modifiers: { y: gsap.utils.unitize(wrapY) }
-      });
-    }
-
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    build();
-    if (reduce && tween) tween.pause();
-    root.addEventListener('mouseenter', () => tween && tween.pause());
-    root.addEventListener('mouseleave', () => { if (tween && !reduce) tween.resume(); });
-    window.addEventListener('resize', build);
-  }
-
-  function boot() { document.querySelectorAll('[data-wvt]').forEach(initWVT); }
-  document.addEventListener('astro:page-load', boot);
-  if (document.readyState !== 'loading') boot();
-  else document.addEventListener('DOMContentLoaded', boot);
-</script>
