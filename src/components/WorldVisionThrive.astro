@@ -7,7 +7,10 @@ const t = {
   fr: {
     badge: 'Partenariat',
     heading: 'En partenariat avec World Vision Sénégal',
-    sub: 'Projet THRIVE — Transformer la Résilience des Ménages',
+    sub: 'Projet THRIVE — Transformer la Résilience des Ménages dans les Environnements Vulnérables',
+    intro: "TooluBaay est fier de s'associer à World Vision Sénégal pour renforcer durablement la résilience économique des ménages vulnérables, à travers une approche fondée sur les principes de l'IMSD.",
+    imsd: "L'IMSD — Développement des Systèmes de Marché Inclusifs — favorise des systèmes de marché plus inclusifs, performants et résilients, au service des communautés.",
+    tag: 'World Vision Sénégal · VisionFund · TooluBaay',
     cards: [
       { k: '01', t: 'Un partenariat stratégique', d: "TooluBaay s'associe à World Vision Sénégal dans le cadre du projet THRIVE, pour renforcer durablement la résilience économique des ménages vulnérables grâce à l'approche IMSD." },
       { k: '02', t: 'Moyens de subsistance durables', d: "En améliorant l'accès à l'information, aux services et aux marchés, nous accompagnons les ménages vers des revenus renforcés, plus résilients face aux chocs économiques et climatiques." },
@@ -18,7 +21,10 @@ const t = {
   en: {
     badge: 'Partnership',
     heading: 'In partnership with World Vision Senegal',
-    sub: 'THRIVE Project — Transforming Households Resilience',
+    sub: 'THRIVE Project — Transforming Households Resilience in Vulnerable Environments',
+    intro: 'TooluBaay is proud to partner with World Vision Senegal to sustainably strengthen the economic resilience of vulnerable households, through an approach grounded in IMSD principles.',
+    imsd: 'IMSD — Inclusive Market Systems Development — fosters more inclusive, effective and resilient market systems that serve communities.',
+    tag: 'World Vision Senegal · VisionFund · TooluBaay',
     cards: [
       { k: '01', t: 'A strategic partnership', d: 'TooluBaay partners with World Vision Senegal on the THRIVE project, to sustainably strengthen the economic resilience of vulnerable households through the IMSD approach.' },
       { k: '02', t: 'Sustainable livelihoods', d: 'By improving access to information, services and markets, we help households build stronger incomes, more resilient to economic and climate shocks.' },
@@ -38,6 +44,9 @@ const t = {
       </div>
       <h2 class="wvt__title">{t.heading}</h2>
       <p class="wvt__sub">{t.sub}</p>
+      <p class="wvt__intro">{t.intro}</p>
+      <p class="wvt__imsd">{t.imsd}</p>
+      <p class="wvt__tag">{t.tag}</p>
     </div>
 
     <div class="wvt__viewport" data-wvt-viewport>
@@ -59,12 +68,11 @@ const t = {
     --wv-orange:#F26522;
     --wv-orange-ink:#A8430F;
     --wv-ink:#0c1f24;
-    --wv-water-1: rgba(196,228,238,0.84);   /* bleu d'eau (floor opaque pour AAA) */
+    --wv-water-1: rgba(196,228,238,0.84);
     --wv-water-2: rgba(158,206,224,0.78);
     padding: clamp(2.5rem,6vw,5rem) 1rem;
   }
 
-  /* CONTENEUR transparent */
   .wvt__block {
     position: relative; max-width: 1080px; margin: 0 auto;
     display: grid; grid-template-columns: 42% 58%;
@@ -75,11 +83,11 @@ const t = {
     box-shadow: 0 30px 70px -30px rgba(0,0,0,.40);
   }
 
-  /* GAUCHE : verre clair dense → WV lisible + AAA (inchangé) */
+  /* GAUCHE : verre clair dense, contenu réparti du haut vers le bas */
   .wvt__left {
     position: relative; z-index: 2; padding: 2rem 1.75rem;
-    display: flex; flex-direction: column; justify-content: center; gap: .9rem;
-    background: linear-gradient(160deg, rgba(255,255,255,0.88), rgba(255,255,255,0.74));
+    display: flex; flex-direction: column; justify-content: center; gap: .85rem;
+    background: linear-gradient(160deg, rgba(255,255,255,0.90), rgba(255,255,255,0.78));
     backdrop-filter: blur(20px) saturate(150%); -webkit-backdrop-filter: blur(20px) saturate(150%);
     border-right: 1px solid rgba(255,255,255,0.5);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
@@ -89,22 +97,23 @@ const t = {
     color:var(--wv-orange-ink); border:1px solid var(--wv-orange-ink); border-radius:999px; padding:.3rem .85rem;
   }
   .wvt__logo-wrap {
-    align-self:flex-start; max-width:340px; background:rgba(255,255,255,0.94);
+    align-self:flex-start; max-width:330px; background:rgba(255,255,255,0.96);
     border-radius:14px; padding:1rem 1.25rem; box-shadow:0 6px 18px -10px rgba(0,0,0,.3);
   }
   .wvt__logo { width:100%; height:auto; display:block; }
-  .wvt__title { font-size: clamp(1.15rem,2.2vw,1.6rem); font-weight:800; color:var(--wv-ink); margin:.25rem 0 0; }
-  .wvt__sub { color:#15333b; font-size:.92rem; line-height:1.45; margin:0; }
+  .wvt__title { font-size: clamp(1.15rem,2.2vw,1.55rem); font-weight:800; color:var(--wv-ink) !important; margin:.15rem 0 0; line-height:1.2; }
+  .wvt__sub { color:#15333b !important; font-size:.9rem; line-height:1.4; margin:0; font-weight:600; }
+  .wvt__intro { color:#13313a !important; font-size:.92rem; line-height:1.55; margin:.2rem 0 0; }
+  .wvt__imsd { color:#1c3f48 !important; font-size:.84rem; line-height:1.5; margin:0; padding-left:.85rem; border-left:3px solid var(--wv-orange); }
+  .wvt__tag { margin:.3rem 0 0; font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:#3a5a62 !important; font-weight:700; }
 
-  /* DROITE : viewport avec fondu haut/bas */
+  /* DROITE : défilement vertical très lent (inchangé) */
   .wvt__viewport {
     position: relative; overflow: hidden; min-height: 470px;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
             mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
   }
   .wvt__track { display: flex; flex-direction: column; gap: 1rem; padding: 1rem 1.25rem; will-change: transform; }
-
-  /* BLOCS RECTANGULAIRES — bleu d'eau translucide, AAA */
   .wvt__card {
     position: relative; width: 100%; box-sizing: border-box;
     padding: 1.3rem 1.5rem; border-radius: 16px;
@@ -126,44 +135,40 @@ const t = {
 
   @media (max-width: 768px) {
     .wvt__block { grid-template-columns: 1fr; min-height: 0; }
-    .wvt__left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.5); text-align:center; align-items:center; }
-    .wvt__badge, .wvt__logo-wrap { align-self:center; }
+    .wvt__left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.5); justify-content:flex-start; }
     .wvt__viewport { min-height: 430px; }
   }
 </style>
 
 <script>
+  // @ts-nocheck
   import gsap from 'gsap';
 
-  function initWVT(root: HTMLElement) {
+  function initWVT(root) {
     if (root.dataset.wvtReady) return;
     root.dataset.wvtReady = '1';
 
-    const track = root.querySelector<HTMLElement>('[data-wvt-track]');
+    const track = root.querySelector('[data-wvt-track]');
     if (!track) return;
-    const cards = gsap.utils.toArray('[data-wvt-card]', track) as HTMLElement[];
+    const cards = gsap.utils.toArray('[data-wvt-card]', track);
     const count = cards.length;
-
-    // duplique le set pour une boucle verticale sans couture
-    cards.forEach((c) => track!.appendChild(c.cloneNode(true)));
+    cards.forEach((c) => track.appendChild(c.cloneNode(true)));
 
     // ⚙️ RÉGLAGES
-    const REV = 32;     // secondes pour avancer d'un set complet. PLUS GRAND = PLUS LENT.
-    const DIR = -1;     // -1 = défile vers le haut. +1 = vers le bas.
+    const REV = 32;     // secondes / set. PLUS GRAND = PLUS LENT.
+    const DIR = -1;     // -1 = vers le haut. +1 = vers le bas.
 
-    let tween: any = null;
+    let tween = null;
     function build() {
       if (tween) tween.kill();
       gsap.set(track, { y: 0, force3D: true });
-      const first = track!.children[0] as HTMLElement;
-      const firstClone = track!.children[count] as HTMLElement;
+      const first = track.children[0];
+      const firstClone = track.children[count];
       if (!first || !firstClone) return;
-      // Math.round → évite les sub-pixels qui causent le tremblement
       const distance = Math.round(firstClone.offsetTop - first.offsetTop);
-      // gsap.utils.wrap : remplace le saut dur repeat:-1 par un wrap silencieux
       const wrapY = gsap.utils.wrap(-distance, 0);
       tween = gsap.to(track, {
-        y: -distance,
+        y: DIR * distance,
         duration: REV,
         ease: 'none',
         repeat: -1,
@@ -175,13 +180,12 @@ const t = {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     build();
     if (reduce && tween) tween.pause();
-
     root.addEventListener('mouseenter', () => tween && tween.pause());
     root.addEventListener('mouseleave', () => { if (tween && !reduce) tween.resume(); });
     window.addEventListener('resize', build);
   }
 
-  function boot() { document.querySelectorAll<HTMLElement>('[data-wvt]').forEach(initWVT); }
+  function boot() { document.querySelectorAll('[data-wvt]').forEach(initWVT); }
   document.addEventListener('astro:page-load', boot);
   if (document.readyState !== 'loading') boot();
   else document.addEventListener('DOMContentLoaded', boot);
