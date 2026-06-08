@@ -5,8 +5,8 @@ main:
   id: 2
   content: |
     Découvrez notre pâte d'arachide premium de 500g. Conçue par des coopératives de femmes rurales partenaires du Sénégal, sans conservateur ni aflatoxine.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_500g.png"
+  imgMain: "@/images/product_500g.png"
   imgAlt: "Pot de pâte d'arachide TooluBaay 500g"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Notre pot de 500g est la taille idéale pour les repas quotidiens des familles (mafé, etc.) ou pour le partage, offrant de la pâte d'arachide de qualité supérieure tout en créant un impact social.
   btnTitle: "Contacter le service commercial"
-  btnURL: "/fr/contact"
+  btnURL: "/contact"
 descriptionList:
   - title: "100% Naturel"
     subTitle: "Uniquement des arachides sélectionnées du Sénégal, sans conservateur ni ajout d'huile ou de sucre."

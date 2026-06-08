@@ -7,7 +7,10 @@ const t = {
   fr: {
     badge: 'Partenariat',
     heading: 'En partenariat avec World Vision Sénégal',
-    sub: 'Projet THRIVE — Transformer la Résilience des Ménages',
+    sub: 'Projet THRIVE — Transformer la Résilience des Ménages dans les Environnements Vulnérables',
+    intro: "TooluBaay est fier de s'associer à World Vision Sénégal pour renforcer durablement la résilience économique des ménages vulnérables, à travers une approche fondée sur les principes de l'IMSD.",
+    imsd: "L'IMSD — Développement des Systèmes de Marché Inclusifs — favorise des systèmes de marché plus inclusifs, performants et résilients, au service des communautés.",
+    tag: 'World Vision Sénégal · VisionFund · TooluBaay',
     cards: [
       { k: '01', t: 'Un partenariat stratégique', d: "TooluBaay s'associe à World Vision Sénégal dans le cadre du projet THRIVE, pour renforcer durablement la résilience économique des ménages vulnérables grâce à l'approche IMSD." },
       { k: '02', t: 'Moyens de subsistance durables', d: "En améliorant l'accès à l'information, aux services et aux marchés, nous accompagnons les ménages vers des revenus renforcés, plus résilients face aux chocs économiques et climatiques." },
@@ -18,7 +21,10 @@ const t = {
   en: {
     badge: 'Partnership',
     heading: 'In partnership with World Vision Senegal',
-    sub: 'THRIVE Project — Transforming Households Resilience',
+    sub: 'THRIVE Project — Transforming Households Resilience in Vulnerable Environments',
+    intro: 'TooluBaay is proud to partner with World Vision Senegal to sustainably strengthen the economic resilience of vulnerable households, through an approach grounded in IMSD principles.',
+    imsd: 'IMSD — Inclusive Market Systems Development — fosters more inclusive, effective and resilient market systems that serve communities.',
+    tag: 'World Vision Senegal · VisionFund · TooluBaay',
     cards: [
       { k: '01', t: 'A strategic partnership', d: 'TooluBaay partners with World Vision Senegal on the THRIVE project, to sustainably strengthen the economic resilience of vulnerable households through the IMSD approach.' },
       { k: '02', t: 'Sustainable livelihoods', d: 'By improving access to information, services and markets, we help households build stronger incomes, more resilient to economic and climate shocks.' },
@@ -38,156 +44,137 @@ const t = {
       </div>
       <h2 class="wvt__title">{t.heading}</h2>
       <p class="wvt__sub">{t.sub}</p>
+      <p class="wvt__intro">{t.intro}</p>
+      <p class="wvt__imsd">{t.imsd}</p>
+      <p class="wvt__tag">{t.tag}</p>
     </div>
 
-    <div class="wvt__orbit" data-wvt-orbit>
-      {t.cards.map((c) => (
-        <article class="wvt__card" data-wvt-card>
-          <span class="wvt__num">{c.k}</span>
-          <h3 class="wvt__card-title">{c.t}</h3>
-          <p class="wvt__card-text">{c.d}</p>
-        </article>
-      ))}
+    <div class="wvt__right">
+      <ul class="wvt__list">
+        {t.cards.map((c) => (
+          <li class="wvt__item">
+            <span class="wvt__num">{c.k}</span>
+            <div class="wvt__item-content">
+              <h3 class="wvt__item-title">{c.t}</h3>
+              <p class="wvt__item-text">{c.d}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>
 
 <style>
   .wvt {
-    --wv-orange:#F26522;          /* accent non-textuel (contours, glow) */
-    --wv-orange-ink:#A8430F;      /* accent TEXTE foncé = AAA sur fond clair */
-    --wv-ink:#0c1f24;             /* texte principal = AAA */
-    --wv-water-1: rgba(196,228,238,0.84);  /* bleu d'eau clair (floor opaque pour AAA) */
-    --wv-water-2: rgba(158,206,224,0.78);
+    /* Palette de base */
+    --wv-orange: #F26522;
+    --wv-orange-ink: #A8430F;
+    
+    /* Variables Mode Clair (par défaut) */
+    --wv-ink: #0c1f24;
+    --wv-ink-muted: #15333b;
+    --wv-ink-light: #3a5a62;
+    
+    --wv-bg-left-1: rgba(255, 255, 255, 0.92);
+    --wv-bg-left-2: rgba(255, 255, 255, 0.82);
+    --wv-border-left: rgba(255, 255, 255, 0.6);
+    --wv-logo-bg: rgba(255, 255, 255, 0.96);
+    
+    /* Liquid morphism transparent pour les cartes */
+    --wv-card-bg: rgba(255, 255, 255, 0.35);
+    --wv-card-border: rgba(255, 255, 255, 0.5);
+    --wv-card-glare: rgba(255, 255, 255, 0.4);
+
     padding: clamp(2.5rem,6vw,5rem) 1rem;
   }
 
-  /* CONTENEUR : transparent (le champ se voit au travers) */
+  /* Variables Mode Sombre */
+  :global(.dark) .wvt, :global([data-theme='dark']) .wvt {
+    --wv-orange-ink: #ff915e;
+    
+    --wv-ink: #ffffff;
+    --wv-ink-muted: #dce6e9;
+    --wv-ink-light: #b0c2c6;
+    
+    --wv-bg-left-1: rgba(12, 31, 36, 0.85);
+    --wv-bg-left-2: rgba(12, 31, 36, 0.70);
+    --wv-border-left: rgba(255, 255, 255, 0.15);
+    --wv-logo-bg: rgba(255, 255, 255, 0.96); /* Logo fond blanc pour la lisibilité */
+    
+    --wv-card-bg: rgba(0, 0, 0, 0.35);
+    --wv-card-border: rgba(255, 255, 255, 0.15);
+    --wv-card-glare: rgba(255, 255, 255, 0.05);
+  }
+
   .wvt__block {
-    position: relative; max-width: 1080px; margin: 0 auto;
-    display: grid; grid-template-columns: 42% 58%;
-    min-height: 470px; border-radius: 24px; overflow: hidden;
+    position: relative; max-width: 1140px; margin: 0 auto;
+    display: grid; grid-template-columns: 46% 54%;
+    height: 540px; border-radius: 24px; overflow: hidden;
     background: rgba(255,255,255,0.04);
     backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
     border: 1px solid rgba(255,255,255,0.22);
     box-shadow: 0 30px 70px -30px rgba(0,0,0,.40);
   }
 
-  /* GAUCHE : verre clair dense → WV lisible + AAA */
+  /* GAUCHE : s'adapte au mode sombre/clair */
   .wvt__left {
-    position: relative; z-index: 2; padding: 2rem 1.75rem;
-    display: flex; flex-direction: column; justify-content: center; gap: .9rem;
-    background: linear-gradient(160deg, rgba(255,255,255,0.88), rgba(255,255,255,0.74));
+    position: relative; z-index: 2; padding: 1.5rem 1.75rem;
+    display: flex; flex-direction: column; justify-content: center; gap: .6rem;
+    background: linear-gradient(160deg, var(--wv-bg-left-1), var(--wv-bg-left-2));
     backdrop-filter: blur(20px) saturate(150%); -webkit-backdrop-filter: blur(20px) saturate(150%);
-    border-right: 1px solid rgba(255,255,255,0.5);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+    border-right: 1px solid var(--wv-border-left);
+    box-shadow: inset 0 1px 0 var(--wv-border-left);
+    transition: background 0.3s ease, border-color 0.3s ease;
   }
   .wvt__badge {
-    align-self:flex-start; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
-    color:var(--wv-orange-ink); border:1px solid var(--wv-orange-ink); border-radius:999px; padding:.3rem .85rem;
+    align-self:flex-start; font-size:.65rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
+    color:var(--wv-orange-ink) !important; border:1px solid var(--wv-orange-ink); border-radius:999px; padding:.25rem .75rem;
   }
-  /* fond blanc propre derrière les logos = lisibilité */
   .wvt__logo-wrap {
-    align-self:flex-start; max-width:340px; background:rgba(255,255,255,0.94);
-    border-radius:14px; padding:1rem 1.25rem; box-shadow:0 6px 18px -10px rgba(0,0,0,.3);
+    align-self:flex-start; max-width:280px; background:var(--wv-logo-bg);
+    border-radius:12px; padding:.75rem 1rem; box-shadow:0 6px 18px -10px rgba(0,0,0,.3);
   }
   .wvt__logo { width:100%; height:auto; display:block; }
-  .wvt__title { font-size: clamp(1.15rem,2.2vw,1.6rem); font-weight:800; color:var(--wv-ink); margin:.25rem 0 0; }
-  .wvt__sub { color:#15333b; font-size:.92rem; line-height:1.45; margin:0; }
+  .wvt__title { font-size: clamp(1rem,1.8vw,1.35rem); font-weight:800; color:var(--wv-ink) !important; margin:0; line-height:1.2; transition: color 0.3s ease; }
+  .wvt__sub { color:var(--wv-ink-muted) !important; font-size:.85rem; line-height:1.35; margin:0; font-weight:600; transition: color 0.3s ease; }
+  .wvt__intro { color:var(--wv-ink-muted) !important; font-size:.85rem; line-height:1.45; margin:0; transition: color 0.3s ease; }
+  .wvt__imsd { color:var(--wv-ink-muted) !important; font-size:.8rem; line-height:1.4; margin:0; padding-left:.75rem; border-left:3px solid var(--wv-orange); transition: color 0.3s ease; }
+  .wvt__tag { margin:0; font-size:.65rem; letter-spacing:.06em; text-transform:uppercase; color:var(--wv-ink-light) !important; font-weight:700; transition: color 0.3s ease; }
 
-  /* DROITE : viewport transparent, clip au bord gauche */
-  .wvt__orbit { position: relative; overflow: hidden; min-height: 470px; background: transparent; }
-
-  /* CARTES : GOUTTE D'EAU bleue translucide + reflet liquide */
-  .wvt__card {
-    position: absolute; top: 0; left: 0;
-    width: clamp(215px, 56%, 330px); box-sizing: border-box;
-    padding: 1.45rem 1.6rem;
-    border-radius: 58% 42% 56% 44% / 60% 56% 44% 40%;   /* goutte organique */
-    background: linear-gradient(135deg, var(--wv-water-1), var(--wv-water-2));
-    backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
-    border: 1.5px solid rgba(242,101,34,0.5);
-    box-shadow:
-      0 18px 42px -18px rgba(0,0,0,.5),
-      inset 0 1px 0 rgba(255,255,255,0.9),
-      0 0 22px -8px rgba(242,101,34,0.30);
-    color: var(--wv-ink); overflow: hidden; will-change: transform, opacity;
+  /* DROITE : Bloc fixe Liquid Morphism avec liste */
+  .wvt__right {
+    position: relative; padding: 2.5rem 2.5rem;
+    display: flex; flex-direction: column; justify-content: center;
+    background: var(--wv-card-bg);
+    backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-left: 1px solid var(--wv-card-border);
+    color: var(--wv-ink); overflow-y: auto; height: 100%;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
-  /* reflet gloss diagonal */
-  .wvt__card::before {
-    content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:1;
-    background: linear-gradient(125deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0) 46%);
+  
+  .wvt__list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 1.4rem;
   }
-  /* reflet spéculaire (lumière sur l'eau) */
-  .wvt__card::after {
-    content:''; position:absolute; top:9%; left:11%; width:42%; height:30%; border-radius:50%;
-    background: radial-gradient(circle at 32% 32%, rgba(255,255,255,0.75), rgba(255,255,255,0) 70%);
-    filter: blur(2px); pointer-events:none; z-index:2;
+  
+  .wvt__item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
   }
-  .wvt__card > * { position:relative; z-index:3; }
-  .wvt__num { font-size:.82rem; font-weight:800; color:var(--wv-orange-ink); letter-spacing:.1em; }
-  .wvt__card-title { font-size:1.05rem; font-weight:750; color:var(--wv-ink); margin:.35rem 0 .5rem; }
-  .wvt__card-text { color:#0d2630; line-height:1.5; font-size:.9rem; margin:0; }
+  
+  .wvt__num {
+    font-size: 0.9rem; font-weight: 800; color: var(--wv-orange-ink) !important;
+    background: rgba(242, 101, 34, 0.1); padding: 0.4rem 0.6rem; border-radius: 8px;
+    letter-spacing: 0.05em; flex-shrink: 0; line-height: 1;
+  }
+  
+  .wvt__item-content { flex-grow: 1; }
+  .wvt__item-title { font-size: 1rem; font-weight: 750; color: var(--wv-ink) !important; margin: 0 0 0.3rem; transition: color 0.3s ease; }
+  .wvt__item-text { color: var(--wv-ink-muted) !important; line-height: 1.45; font-size: 0.85rem; margin: 0; transition: color 0.3s ease; }
 
   @media (max-width: 768px) {
-    .wvt__block { grid-template-columns: 1fr; min-height: 0; }
-    .wvt__left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.5); text-align:center; align-items:center; }
-    .wvt__badge, .wvt__logo-wrap { align-self:center; }
-    .wvt__orbit { min-height: 430px; }
+    .wvt__block { grid-template-columns: 1fr; height: auto; min-height: 0; }
+    .wvt__left { border-right: none; border-bottom: 1px solid var(--wv-border-left); justify-content: flex-start; }
+    .wvt__right { padding: 1.5rem; border-left: none; }
   }
-  @media (prefers-reduced-motion: reduce) { .wvt__card { transition:none; } }
 </style>
-
-<script>
-  import gsap from 'gsap';
-
-  function initWVT(root: HTMLElement) {
-    if (root.dataset.wvtReady) return;
-    root.dataset.wvtReady = '1';
-
-    const orbit = root.querySelector<HTMLElement>('[data-wvt-orbit]');
-    if (!orbit) return;
-    const cards = gsap.utils.toArray('[data-wvt-card]', orbit) as HTMLElement[];
-    const n = cards.length;
-    const state = { a: 0 };
-
-    // ⚙️ RÉGLAGES
-    const DIR = -1;   // -1 = émerge en bas / monte à droite / disparaît en haut. +1 pour inverser.
-    const REV = 14;   // secondes par tour. Plus petit = plus rapide.
-
-    function geom() {
-      const W = orbit!.clientWidth, H = orbit!.clientHeight;
-      return { Cx: 0, Cy: H / 2, R: Math.min(H * 0.40, W * 0.32) };
-    }
-    function render() {
-      const { Cx, Cy, R } = geom();
-      cards.forEach((card: HTMLElement, i: number) => {
-        const theta = (state.a + i * (Math.PI * 2 / n)) * DIR;
-        const x = Cx + R * Math.cos(theta);
-        const y = Cy + R * Math.sin(theta);
-        const front = Math.cos(theta);
-        const depth = (front + 1) / 2;
-        gsap.set(card, {
-          x, y, xPercent: 0, yPercent: -50,
-          scale: 0.82 + 0.18 * depth,
-          opacity: front <= -0.15 ? 0 : Math.min(1, (front + 0.15) * 2.2),
-          zIndex: Math.round(depth * 100),
-        });
-      });
-    }
-
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    render();
-    if (reduce) return;
-
-    const tween = gsap.to(state, { a: '+=' + Math.PI * 2, duration: REV, ease: 'none', repeat: -1, onUpdate: render });
-    root.addEventListener('mouseenter', () => tween.pause());
-    root.addEventListener('mouseleave', () => tween.resume());
-    window.addEventListener('resize', render);
-  }
-
-  function boot() { document.querySelectorAll<HTMLElement>('[data-wvt]').forEach(initWVT); }
-  document.addEventListener('astro:page-load', boot);
-  if (document.readyState !== 'loading') boot();
-  else document.addEventListener('DOMContentLoaded', boot);
-</script>

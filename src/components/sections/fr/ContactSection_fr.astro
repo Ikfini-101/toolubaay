@@ -7,11 +7,12 @@ import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astr
 import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
+import ContactForm from "@components/sections/misc/ContactForm.astro";
 
 // Define the variables that will be used in this component
 const title: string = "Contactez-nous";
 const subTitle: string =
-  "Vous avez des questions ou souhaitez discuter d'un projet ? Contactez-nous et laissons-nous élaborer la solution parfaite avec nos outils et services.";
+  "Vous avez des questions sur notre pâte d'arachide, notre démarche AgriTech ou souhaitez discuter d'un partenariat B2B ? Contactez-nous et laissons-nous élaborer la solution parfaite ensemble.";
 const formTitle: string = "Remplissez le formulaire ci-dessous";
 const formSubTitle: string =
   "Nous vous répondrons dans un délai de 1 à 2 jours ouvrables.";
@@ -40,39 +41,7 @@ const formSubTitle: string =
         </h2>
         <!-- Form for user input with various input fields.-->
         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form>
-          <div class="grid gap-4">
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <TextInput
-                id="hs-firstname-contacts"
-                label="Prénom"
-                name="hs-firstname-contacts"
-              />
-              <TextInput
-                id="hs-lastname-contacts"
-                label="Nom"
-                name="hs-firstname-contacts"
-              />
-            </div>
-            <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
-            <TextAreaInput
-              id="hs-about-contacts"
-              label="Détails"
-              name="hs-about-contacts"
-            />
-          </div>
-
-          <div class="mt-4 grid">
-            <AuthBtn title="Envoyer un message" />
-          </div>
-
-          <div class="mt-3 text-center">
-            <p class="text-sm text-neutral-600 dark:text-neutral-400">
-              {formSubTitle}
-            </p>
-          </div>
-        </form>
+        <ContactForm lang="fr" />
       </div>
 
       <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
@@ -99,9 +68,9 @@ const formSubTitle: string =
 
         <ContactIconBlock
           heading="Visitez notre bureau"
-          content="ScrewFast UK"
+          content="TooluBaay"
           isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
+          addressContent="Tambacounda, Sénégal"
           ><Icon name="mapPin" />
         </ContactIconBlock>
 
@@ -109,11 +78,12 @@ const formSubTitle: string =
           heading="Contactez-nous par e-mail"
           content="Préférez-vous le texte écrit ? Envoyez-nous un e-mail à"
           isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
-          linkURL="#"
+          linkTitle="info.toolubaay@gmail.com"
+          linkURL="mailto:info.toolubaay@gmail.com"
           ><Icon name="envelopeOpen" />
         </ContactIconBlock>
       </div>
     </div>
   </div>
 </section>
+

@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import peanutSingle from "@images/decorations/peanut_single.png";
+import peanutShell from "@images/decorations/peanut_shell.png";
+import peanutHalf from "@images/decorations/peanut_half.png";
+import peanutFragment from "@images/decorations/peanut_fragment.png";
+---
+
+<div class="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+  <!-- Peanuts scattered with subtle floating animations and depth of field (blur) -->
+  
+  <div class="absolute top-[10%] left-[3%] lg:left-[5%] animate-float-slow opacity-80" style="animation-delay: 0s;">
+    <Image src={peanutShell} alt="" class="w-16 md:w-20 h-auto rotate-12 blur-[2px]" />
+  </div>
+  
+  <div class="absolute top-[15%] right-[5%] lg:right-[8%] animate-float-fast opacity-90" style="animation-delay: 1.5s;">
+    <Image src={peanutHalf} alt="" class="w-16 md:w-24 h-auto -rotate-12 drop-shadow-2xl" />
+  </div>
+  
+  <div class="absolute top-[40%] left-[10%] lg:left-[15%] animate-float-medium opacity-100" style="animation-delay: 0.5s;">
+    <Image src={peanutSingle} alt="" class="w-14 md:w-20 h-auto rotate-[60deg] drop-shadow-xl" />
+  </div>
+  
+  <div class="absolute top-[60%] right-[3%] lg:right-[10%] animate-float-slow opacity-70" style="animation-delay: 2s;">
+    <Image src={peanutFragment} alt="" class="w-12 md:w-16 h-auto -rotate-45 blur-[3px]" />
+  </div>
+
+  <div class="absolute top-[75%] left-[25%] animate-float-medium opacity-60" style="animation-delay: 1s;">
+    <Image src={peanutSingle} alt="" class="w-10 md:w-14 h-auto rotate-[-30deg] blur-[1px] drop-shadow-lg" />
+  </div>
+
+  <div class="absolute top-[85%] right-[35%] animate-float-fast opacity-100" style="animation-delay: 2.5s;">
+    <Image src={peanutHalf} alt="" class="w-14 md:w-20 h-auto rotate-[110deg] drop-shadow-2xl" />
+  </div>
+
+  <div class="absolute top-[90%] left-[5%] animate-float-slow opacity-80" style="animation-delay: 0.2s;">
+    <Image src={peanutShell} alt="" class="w-20 md:w-28 h-auto rotate-[80deg] blur-[2px]" />
+  </div>
+</div>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(-5deg); }
+  }
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+  .animate-float-medium {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-float-fast {
+    animation: float-fast 4s ease-in-out infinite;
+  }
+</style>

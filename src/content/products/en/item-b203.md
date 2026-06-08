@@ -5,8 +5,8 @@ main:
   id: 2
   content: |
     Discover our 500g premium peanut paste. Sourced from local agricultural cooperatives of rural women, zero additives, and certified aflatoxin-free.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_500g.png"
+  imgMain: "@/images/product_500g.png"
   imgAlt: "TooluBaay 500g peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Our 500g pot is the ideal choice for regular consumption by families who enjoy rich peanut stews (mafé) or delicious peanut spreads, while creating positive social change.
   btnTitle: "Contact sales to order"
-  btnURL: "/contact"
+  btnURL: "/en/contact"
 descriptionList:
   - title: "100% Natural"
     subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."

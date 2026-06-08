@@ -5,8 +5,8 @@ main:
   id: 3
   content: |
     Discover our 1kg premium peanut paste. Handcrafted by local women GIE cooperatives in Senegal, guaranteed aflatoxin-free, natural, ocre and delicious.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_1kg.png"
+  imgMain: "@/images/product_1kg.png"
   imgAlt: "TooluBaay 1kg peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Loved by restaurant owners and larger households, our 1kg pot offers the perfect value for money. Experience authentic Senegalese arachide paste with complete traceability.
   btnTitle: "Contact sales to order"
-  btnURL: "/contact"
+  btnURL: "/en/contact"
 descriptionList:
   - title: "100% Natural"
     subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."

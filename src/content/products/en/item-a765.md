@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Discover our 250g premium peanut paste. Handcrafted by rural women GIE cooperatives in Tambacounda, Senegal, using zero additives and rigorously tested for aflatoxins.
-  imgCard: "@/images/peanut_paste_jar.png"
-  imgMain: "@/images/peanut_paste_jar.png"
+  imgCard: "@/images/product_250g.png"
+  imgMain: "@/images/product_250g.png"
   imgAlt: "TooluBaay 250g peanut paste pot"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -20,7 +20,7 @@ longDescription:
   subTitle: |
     Perfect for small households, tastings, and retail trials, our 250g pot brings the rich taste of authentic Senegalese peanuts to your table while supporting sustainable rural development.
   btnTitle: "Contact sales to order"
-  btnURL: "/contact"
+  btnURL: "/en/contact"
 descriptionList:
   - title: "100% Natural"
     subTitle: "Only high-grade Senegalese peanuts, with no preservatives, zero added oil or sugar."
